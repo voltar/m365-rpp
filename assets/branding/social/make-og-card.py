@@ -55,7 +55,7 @@ def bell_only(im):
 img = backdrop()
 d = ImageDraw.Draw(img)
 
-bell = bell_only(Image.open(os.path.join(HERE, "swisskmu.png")).convert("RGBA"))
+bell = bell_only(Image.open(os.path.join(HERE, "color.png")).convert("RGBA"))
 bell.thumbnail((360, 490), Image.LANCZOS)
 bx = 250 - bell.size[0] // 2
 img.paste(bell, (bx, (H - bell.size[1]) // 2), bell)

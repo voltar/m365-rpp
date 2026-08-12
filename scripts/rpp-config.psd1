@@ -1,23 +1,23 @@
 @{
     # =========================================================================
-    # RPP PowerShell Scripts – Shared Configuration
+    # RPP PowerShell Scripts — Shared Configuration
     # Profile: azure  (default)  →  .\configure-entra-sso.ps1
-    # Sibling: swisskmu          →  .\configure-entra-sso.ps1 -Profile swisskmu
+    # Sibling: example           →  .\configure-entra-sso.ps1 -Profile example
     # =========================================================================
     # All values below are PUBLIC IDENTIFIERS (not secrets).
     # Secrets (client secrets, connection strings) must NEVER appear here.
-    # See: docs/secret-management.md
+    # See: docs/projectmanagement/secret-management.md
     # =========================================================================
 
-    # Entra App Registration (Azure Web App / Azure SQL edition)
-    AppId    = '1de7afde-9862-45b3-b632-0b25210f7d97'
-    ObjectId = '2d357c89-b32e-4ce1-8c76-fdd1df38bc6d'
+    # Entra App Registration (replace with your tenant's app)
+    AppId    = '00000000-0000-0000-0000-000000000002'
+    ObjectId = '00000000-0000-0000-0000-000000000012'
 
     # RPP Web API domain (used to construct the Teams SSO identifier URI)
-    ApiDomain = 'rpp-dev-bmdkd3hmhqc9fjgd.switzerlandnorth-01.azurewebsites.net'
+    ApiDomain = 'rpp-api.example.com'
 
     # SharePoint Online (default site; scripts may override via parameters)
-    SharePointSiteUrl = 'https://voltarsystemsgmbh.sharepoint.com/sites/rpp'
+    SharePointSiteUrl = 'https://contoso.sharepoint.com/sites/rpp'
 
     # Microsoft Graph well-known AppId (constant across all tenants)
     GraphResourceAppId = '00000003-0000-0000-c000-000000000000'
