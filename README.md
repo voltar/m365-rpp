@@ -20,6 +20,23 @@ memberships, and RPP owns the planning logic — nothing more, and nothing less.
 
 ---
 
+## Live-Demo
+
+Eine öffentliche Browser-Demo läuft unter:
+
+**https://rpp.swisskmu.org**
+
+Im normalen Browser startet die Demo mit **Mock-Daten** (kein Login nötig). Dieselbe Installation
+kann in Microsoft Teams mit API/Graph laufen; ausserhalb von Teams bleibt der Standalone-Browser
+bewusst im Demo-Modus.
+
+**Sprache:** Es gibt **keinen** URL-Parameter (z. B. `?lang=de`). Die UI-Sprache folgt dem
+Microsoft-365-/Teams-Kontext, sonst der Browsersprache (`navigator.languages`), mit
+HTML-Fallback `lang="de"` und Englisch als letzter Fallback. Es gibt keinen Sprachumschalter in der App.
+Wer Deutsch sehen will: Browser/OS auf Deutsch stellen (oder Teams mit deutscher UI öffnen).
+
+---
+
 ## Quick start (mock demo)
 
 Node version is pinned in [.nvmrc](.nvmrc) (currently 22). Machine setup for macOS, Linux and
