@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nature of Calendars – Part 1</title>
+<style>
+  :root{
+    --ink:#2b2420; --soft:#5c5148; --paper:#f6efe2; --card:#fffdf8;
+    --accent:#9c5a2d; --accent2:#c9962f; --line:#e3d8c4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Iowan Old Style",Georgia,"Times New Roman",serif;
+    font-size:19px; line-height:1.7;
+  }
+  .wrap{max-width:780px; margin:0 auto; padding:0 22px 80px;}
+  header.hero{
+    position:relative; height:min(58vh,460px); overflow:hidden;
+    display:flex; align-items:flex-end; margin-bottom:38px;
+    border-bottom:5px solid var(--accent2);
+  }
+  header.hero img{position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; filter:saturate(1.05);}
+  header.hero .veil{position:absolute; inset:0;
+    background:linear-gradient(180deg,rgba(20,12,6,.15),rgba(20,12,6,.78));}
+  header.hero .htext{position:relative; color:#fdf6e6; max-width:780px;
+    margin:0 auto; width:100%; padding:0 22px 30px;}
+  .kicker{letter-spacing:.32em; text-transform:uppercase; font-size:13px;
+    color:var(--accent2); font-family:Georgia,serif;}
+  h1{font-size:clamp(30px,6vw,50px); line-height:1.08; margin:.15em 0 .1em;
+    font-weight:700;}
+  .sub{font-size:19px; color:#f0e4cf; font-style:italic; margin:0;}
+  h2{font-size:27px; color:var(--accent); margin:2.4em 0 .4em; line-height:1.2;}
+  h3{font-size:21px; color:var(--accent); margin:1.6em 0 .35em; line-height:1.25;}
+  p{margin:0 0 1.15em;}
+  .lead{font-size:21px;}
+  .lead::first-letter{font-size:3.4em; float:left; line-height:.8;
+    padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  figure{margin:2em 0;}
+  figure img{width:100%; border-radius:8px; display:block;
+    box-shadow:0 10px 30px rgba(60,40,20,.18);}
+  figcaption{font-size:14.5px; color:var(--soft); font-style:italic;
+    margin-top:.6em; text-align:center;}
+  .pull{border-left:4px solid var(--accent2); background:var(--card);
+    padding:14px 20px; margin:1.8em 0; font-style:italic; font-size:20px;
+    color:#4a3b2c; border-radius:0 8px 8px 0;}
+  .box{background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:16px 20px; margin:1.6em 0;}
+  .box b{color:var(--accent);}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:2em 0;}
+  .grid2 figure{margin:0;}
+  ul{margin:0 0 1.2em; padding-left:1.3em;}
+  li{margin-bottom:.4em;}
+  .series-nav{
+    display:flex; justify-content:space-between; align-items:center;
+    gap:12px; margin:2.5em 0 1em; padding:14px 18px;
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    font-size:15px; font-family:Georgia,serif;
+  }
+  .series-nav a{
+    color:var(--accent); text-decoration:none; font-weight:600;
+    white-space:nowrap;
+  }
+  .series-nav a:hover{text-decoration:underline;}
+  .series-nav .mid{color:var(--soft); letter-spacing:.08em; text-transform:uppercase;
+    font-size:12px; text-align:center;}
+  .series-nav .placeholder{visibility:hidden; pointer-events:none;}
+  footer{border-top:1px solid var(--line); margin-top:50px; padding-top:22px;
+    font-size:13.5px; color:var(--soft); font-family:Georgia,serif;}
+  footer a{color:var(--accent);}
+  footer h3{font-size:15px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--ink); border:none; margin:0 0 .6em; padding:0;}
+  hr{border:none; border-top:1px solid var(--line); margin:2.5em 0;}
+  @media(max-width:560px){
+    .grid2{grid-template-columns:1fr;}
+    body{font-size:18px;}
+    .series-nav{flex-direction:column; gap:8px;}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monolito%20de%20la%20Piedra%20del%20Sol.jpg?width=1400" alt="Aztec Sun Stone">
+  <div class="veil"></div>
+  <div class="htext">
+    <div class="kicker">Part 1 · How time works</div>
+    <h1>The Nature of Calendars</h1>
+    <p class="sub">How people ordered time with the sun, the moon and a little mathematics</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="series-nav">
+  <span class="placeholder">← Back</span>
+  <span class="mid">Part 1 of 3</span>
+  <a href="2_history_of_calendars.html">Continue →</a>
+</nav>
+
+<p class="lead">The term “calendarology” can loosely describe the study of calendars: how they arise, why different cultures build them differently, what role they play in religion, politics and everyday life, and how they help people find shared rhythms. Behind every calendar lies not only mathematics but also tradition, power and social order. In this sense a calendar is more than a timekeeper — it is a cultural technique with which people structure their shared future.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monolito%20de%20la%20Piedra%20del%20Sol.jpg?width=1200" alt="Aztec Sun Stone">
+  <figcaption>The Aztec “Sun Stone” — a symbol of how many cultures developed their own ways of reckoning time.</figcaption>
+</figure>
+
+<p>Imagine having to promise someone a meeting “in eighty sunrises” — and not being allowed to lose count. That is exactly the problem humanity faced for tens of thousands of years. A calendar is, at heart, an agreed solution: a set of rules that cuts the endless flow of time into manageable portions — days, weeks, months, years.</p>
+
+<p>Importantly, there is no single “the” calendar. Over the millennia, very different cultures devised very different systems — the Egyptian, Babylonian, Jewish, Islamic, Chinese, Indian, Maya calendars and many more. Each answers the same question in its own way. The fact that most of the world today uses the same calendar in everyday life is a very recent development — more on that at the end of Part&nbsp;2.</p>
+
+<h2>Where the word “calendar” comes from</h2>
+<p>The word takes us straight to ancient Rome. It comes from Latin <b>calendarium</b>, the “account book” of a moneylender. At its root are the <b>Kalendae</b> (also <em>Calendae</em>) — the first day of every Roman month, when interest and debts traditionally fell due. The Kalendae in turn are linked to the verb <b>calare</b>, “to call out” or “to proclaim”: at the beginning of the month it was publicly <em>announced</em> when the new moon days would fall. From “proclaiming the start of the month” came the “account book,” and from that eventually our word calendar.</p>
+
+<h2>Three celestial clocks that refuse to agree</h2>
+<p>The first clock is the <b>Sun</b>. One rotation of the Earth on its axis gives us the <em>day</em> — the basic unit no one disputes. When the sun stands highest, it is noon; that could already be read thousands of years ago with a simple shadow stick.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ancient-egyptian-sundial.jpg?width=1000" alt="Ancient Egyptian sundial">
+  <figcaption>One of the oldest known sundials from ancient Egypt — humanity’s first “pointer clock.”</figcaption>
+</figure>
+
+<p>The second clock is the <b>Moon</b>. It waxes and wanes in a reliable rhythm of about 29½ days — from new moon to new moon. These lunar phases are so striking that almost everywhere in the world they inspired the invention of the <em>month</em>. “Month” and “moon” are not related by chance.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Moon%20phases%20en.jpg?width=1200" alt="Phases of the Moon">
+  <figcaption>The Moon passes through its phases in about 29.5 days — the natural timekeeper for the month.</figcaption>
+</figure>
+
+<p>The third clock is the Sun again, but on the large scale: one full orbit of the Earth around the Sun produces the <b>year</b> with its seasons. For farmers it was a matter of survival to know when to sow and when to harvest.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Seasons.svg?width=1100" alt="Earth orbiting the Sun">
+  <figcaption>Because the Earth’s axis is tilted, the four seasons arise on its path around the Sun.</figcaption>
+</figure>
+
+<div class="pull">The whole drama of calendar-making can be summed up in one sentence: the year does not last exactly 365 days, and the month does not fit cleanly into the year.</div>
+
+<h2>The flaw in the system</h2>
+<p>Here the trouble begins. A solar year does not last 365 days but about <b>365.2422 days</b> — almost a quarter of a day longer. And twelve lunar months add up to only about 354 days, eleven days <em>too few</em> for a full year. The three celestial clocks inevitably drift apart. Anyone who does nothing will see their calendar slowly wander through the seasons.</p>
+
+<p>Every culture had to decide which clock to favour — and that is precisely the reason for the variety of calendars. <b>Pure lunar calendars</b> (like the Islamic one) follow the Moon faithfully and let their festivals drift through the seasons. <b>Solar calendars</b> (like the one in common use today) follow the year and let the months keep only a rough connection to the Moon. <b>Lunisolar calendars</b> (like the Jewish or Chinese ones) try to bridge the gap and occasionally insert a whole intercalary month to reconcile both clocks.</p>
+
+<h2>The elegant trick: the leap day</h2>
+<p>A widespread solution to the awkward quarter-day is elegantly simple. Instead of being a few hours off every year, one collects four quarter-days and adds them as a whole day: the <b>29th of February</b>. That is why almost every fourth year has an extra day.</p>
+
+<div class="box">
+  <p style="margin:0"><b>The leap-year rule in three lines:</b> A year is a leap year if it is divisible by 4 — <b>except</b> when it is divisible by 100, <b>unless</b> it is also divisible by 400. That is why 2000 was a leap year, but 1900 was not. This fine-tuning is so accurate that it is only one day off after more than 3,000 years.</p>
+</div>
+
+<h2>And where does the week come from?</h2>
+<p>The week is the odd one out: it has <em>no</em> astronomical cause. Seven days cannot be derived from either the Moon or the Sun. It most likely comes from Babylon, where people revered the seven “wandering stars” visible to the naked eye — the Sun, the Moon and the five classical planets. Their names still live on in our days of the week. The week is therefore the purely human chapter in a story otherwise dictated by the heavens.</p>
+
+<p>In the end a calendar is a small masterpiece of compromise: an age-old peace treaty between the Sun, the Moon and the human desire for order.</p>
+
+<nav class="series-nav">
+  <span class="placeholder">← Back</span>
+  <span class="mid">Part 1 of 3</span>
+  <a href="2_history_of_calendars.html">Continue →</a>
+</nav>
+
+<footer>
+  <h3>Image sources</h3>
+  <p><b>Wikimedia Commons</b> (Public Domain / Creative Commons — please check the licence on each file page):<br>
+    <a href="https://commons.wikimedia.org/wiki/File:Monolito_de_la_Piedra_del_Sol.jpg">Sun Stone</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Ancient-egyptian-sundial.jpg">Sundial</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Moon_phases_en.jpg">Moon phases</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Seasons.svg">Seasons</a>
+  </p>
+</footer>
+</div>
+</body>
+</html>

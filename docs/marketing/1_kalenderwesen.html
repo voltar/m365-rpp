@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Das Kalenderwesen – Folge 1</title>
+<style>
+  :root{
+    --ink:#2b2420; --soft:#5c5148; --paper:#f6efe2; --card:#fffdf8;
+    --accent:#9c5a2d; --accent2:#c9962f; --line:#e3d8c4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Iowan Old Style",Georgia,"Times New Roman",serif;
+    font-size:19px; line-height:1.7;
+  }
+  .wrap{max-width:780px; margin:0 auto; padding:0 22px 80px;}
+  header.hero{
+    position:relative; height:min(58vh,460px); overflow:hidden;
+    display:flex; align-items:flex-end; margin-bottom:38px;
+    border-bottom:5px solid var(--accent2);
+  }
+  header.hero img{position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; filter:saturate(1.05);}
+  header.hero .veil{position:absolute; inset:0;
+    background:linear-gradient(180deg,rgba(20,12,6,.15),rgba(20,12,6,.78));}
+  header.hero .htext{position:relative; color:#fdf6e6; max-width:780px;
+    margin:0 auto; width:100%; padding:0 22px 30px;}
+  .kicker{letter-spacing:.32em; text-transform:uppercase; font-size:13px;
+    color:var(--accent2); font-family:Georgia,serif;}
+  h1{font-size:clamp(30px,6vw,50px); line-height:1.08; margin:.15em 0 .1em;
+    font-weight:700;}
+  .sub{font-size:19px; color:#f0e4cf; font-style:italic; margin:0;}
+  h2{font-size:27px; color:var(--accent); margin:2.4em 0 .4em; line-height:1.2;}
+  h3{font-size:21px; color:var(--accent); margin:1.6em 0 .35em; line-height:1.25;}
+  p{margin:0 0 1.15em;}
+  .lead{font-size:21px;}
+  .lead::first-letter{font-size:3.4em; float:left; line-height:.8;
+    padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  figure{margin:2em 0;}
+  figure img{width:100%; border-radius:8px; display:block;
+    box-shadow:0 10px 30px rgba(60,40,20,.18);}
+  figcaption{font-size:14.5px; color:var(--soft); font-style:italic;
+    margin-top:.6em; text-align:center;}
+  .pull{border-left:4px solid var(--accent2); background:var(--card);
+    padding:14px 20px; margin:1.8em 0; font-style:italic; font-size:20px;
+    color:#4a3b2c; border-radius:0 8px 8px 0;}
+  .box{background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:16px 20px; margin:1.6em 0;}
+  .box b{color:var(--accent);}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:2em 0;}
+  .grid2 figure{margin:0;}
+  ul{margin:0 0 1.2em; padding-left:1.3em;}
+  li{margin-bottom:.4em;}
+  .series-nav{
+    display:flex; justify-content:space-between; align-items:center;
+    gap:12px; margin:2.5em 0 1em; padding:14px 18px;
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    font-size:15px; font-family:Georgia,serif;
+  }
+  .series-nav a{
+    color:var(--accent); text-decoration:none; font-weight:600;
+    white-space:nowrap;
+  }
+  .series-nav a:hover{text-decoration:underline;}
+  .series-nav .mid{color:var(--soft); letter-spacing:.08em; text-transform:uppercase;
+    font-size:12px; text-align:center;}
+  .series-nav .placeholder{visibility:hidden; pointer-events:none;}
+  footer{border-top:1px solid var(--line); margin-top:50px; padding-top:22px;
+    font-size:13.5px; color:var(--soft); font-family:Georgia,serif;}
+  footer a{color:var(--accent);}
+  footer h3{font-size:15px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--ink); border:none; margin:0 0 .6em; padding:0;}
+  hr{border:none; border-top:1px solid var(--line); margin:2.5em 0;}
+  @media(max-width:560px){
+    .grid2{grid-template-columns:1fr;}
+    body{font-size:18px;}
+    .series-nav{flex-direction:column; gap:8px;}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monolito%20de%20la%20Piedra%20del%20Sol.jpg?width=1400" alt="Aztekischer Sonnenstein">
+  <div class="veil"></div>
+  <div class="htext">
+    <div class="kicker">Folge 1 · Wie die Zeit funktioniert</div>
+    <h1>Das Kalenderwesen</h1>
+    <p class="sub">Wie Menschen aus Sonne, Mond und ein bisschen Mathematik die Zeit ordneten</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="series-nav">
+  <span class="placeholder">← Zurück</span>
+  <span class="mid">Teil 1 von 3</span>
+  <a href="2_geschichte_der_kalender.html">Fortsetzung →</a>
+</nav>
+
+<p class="lead">Mit dem Begriff „Kalenderologie“ lässt sich grob die Beschäftigung mit Kalendern beschreiben: Wie sie entstehen, warum verschiedene Kulturen sie unterschiedlich bauen, welche Rolle sie in Religion, Politik und Alltag spielen und wie sie Menschen dabei helfen, gemeinsame Rhythmen zu finden. Hinter jedem Kalender steckt nicht nur Mathematik, sondern auch Tradition, Macht und gesellschaftliche Ordnung. In diesem Sinn ist ein Kalender mehr als ein Zeitmesser – er ist eine kulturelle Technik, mit der Menschen ihre gemeinsame Zukunft strukturieren.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monolito%20de%20la%20Piedra%20del%20Sol.jpg?width=1200" alt="Aztekischer Sonnenstein">
+  <figcaption>Der aztekische „Sonnenstein“ – Sinnbild dafür, dass viele Kulturen ihre ganz eigene Zeitrechnung entwickelten.</figcaption>
+</figure>
+
+<p>Stell dir vor, du müsstest jemandem ein Treffen „in achtzig Sonnenaufgängen“ versprechen – und dich dabei nicht verzählen. Genau dieses Problem hatte die Menschheit zehntausende Jahre lang. Ein Kalender ist im Grunde nichts anderes als eine vereinbarte Lösung dafür: ein Regelwerk, das den endlosen Fluss der Zeit in handliche Portionen schneidet – Tage, Wochen, Monate, Jahre.</p>
+
+<p>Wichtig dabei: Es gibt nicht „den“ Kalender. Über die Jahrtausende haben ganz verschiedene Kulturen ganz verschiedene Systeme erdacht – der ägyptische, der babylonische, der jüdische, der islamische, der chinesische, der indische, der Maya-Kalender und viele mehr. Sie alle beantworten dieselbe Frage auf ihre eigene Art. Dass heute weltweit meist derselbe Kalender im Alltag benutzt wird, ist eine sehr junge Entwicklung – dazu am Ende von Folge&nbsp;2 mehr.</p>
+
+<h2>Woher das Wort „Kalender“ stammt</h2>
+<p>Das Wort führt uns direkt ins alte Rom. Es kommt von lateinisch <b>calendarium</b>, dem „Schuldbuch“ eines Geldverleihers. Dessen Wortkern sind die <b>Kalendae</b> (auch <em>Calendae</em>) – der erste Tag jedes römischen Monats, an dem traditionell Zinsen und Schulden fällig wurden. Die Kalendae wiederum hängen mit dem Verb <b>calare</b> zusammen, „ausrufen“: Zu Monatsbeginn wurde öffentlich <em>ausgerufen</em>, wann die neuen Mondtage lagen. Aus dem „Ausrufen des Monatsanfangs“ wurde das „Schuldbuch“ und daraus schließlich unser Wort Kalender.</p>
+
+<h2>Drei Himmelsuhren, die sich nicht einigen</h2>
+<p>Die erste Uhr ist die <b>Sonne</b>. Eine Drehung der Erde um die eigene Achse gibt uns den <em>Tag</em> – die Grundeinheit, an der niemand rüttelt. Steht die Sonne am höchsten, ist Mittag; das ließ sich schon vor Jahrtausenden mit einem einfachen Schattenstab ablesen.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ancient-egyptian-sundial.jpg?width=1000" alt="Antike ägyptische Sonnenuhr">
+  <figcaption>Eine der ältesten bekannten Sonnenuhren aus dem alten Ägypten – die erste „Zeigeruhr“ der Menschheit.</figcaption>
+</figure>
+
+<p>Die zweite Uhr ist der <b>Mond</b>. Er wächst und schwindet in einem verlässlichen Rhythmus von rund 29½ Tagen – von Neumond zu Neumond. Diese Mondphasen sind so auffällig, dass sie fast überall auf der Welt die Erfindung des <em>Monats</em> inspirierten. „Monat“ und das englische „moon“ sind nicht zufällig verwandt.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Moon%20phases%20en.jpg?width=1200" alt="Die Phasen des Mondes">
+  <figcaption>Der Mond durchläuft seine Phasen in etwa 29,5 Tagen – der natürliche Taktgeber für den Monat.</figcaption>
+</figure>
+
+<p>Die dritte Uhr ist wieder die Sonne, aber im Großen: Ein voller Umlauf der Erde um die Sonne ergibt das <b>Jahr</b> mit seinen Jahreszeiten. Für Bauern war es überlebenswichtig zu wissen, wann gesät und geerntet werden muss.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Seasons.svg?width=1100" alt="Die Erde umkreist die Sonne">
+  <figcaption>Weil die Erdachse geneigt ist, entstehen auf dem Weg um die Sonne die vier Jahreszeiten.</figcaption>
+</figure>
+
+<div class="pull">Das ganze Drama des Kalenderwesens lässt sich in einem Satz zusammenfassen: Das Jahr dauert nicht genau 365 Tage, und der Monat passt nicht sauber ins Jahr.</div>
+
+<h2>Der Schönheitsfehler im System</h2>
+<p>Hier beginnt der Ärger. Ein Sonnenjahr dauert nicht 365 Tage, sondern rund <b>365,2422 Tage</b> – fast einen Vierteltag länger. Und zwölf Mondmonate ergeben nur etwa 354 Tage, also elf Tage <em>zu wenig</em> für ein volles Jahr. Die drei Himmelsuhren gehen unweigerlich auseinander. Wer nichts unternimmt, dessen Kalender wandert langsam durch die Jahreszeiten.</p>
+
+<p>Jede Kultur musste entscheiden, welcher Uhr sie den Vorzug gibt – und genau hier liegt der Grund für die Vielfalt der Kalender. <b>Reine Mondkalender</b> (wie der islamische) folgen treu dem Mond und lassen ihre Feste durch die Jahreszeiten wandern. <b>Sonnenkalender</b> (wie der heute übliche) richten sich nach dem Jahr und lassen die Monate nur noch grob mit dem Mond mitlaufen. <b>Lunisolare Kalender</b> (wie der jüdische oder chinesische) versuchen den Spagat und schieben ab und zu einen ganzen Schaltmonat ein, um beide Uhren zu versöhnen.</p>
+
+<h2>Der geniale Trick: der Schalttag</h2>
+<p>Eine verbreitete Lösung für den lästigen Vierteltag ist elegant einfach. Statt jedes Jahr um ein paar Stunden danebenzuliegen, sammelt man vier Vierteltage und hängt sie als ganzen Tag an: den <b>29. Februar</b>. Deshalb hat fast jedes vierte Jahr einen Tag mehr.</p>
+
+<div class="box">
+  <p style="margin:0"><b>Die Schaltjahr-Regel in drei Zeilen:</b> Ein Jahr ist ein Schaltjahr, wenn es durch 4 teilbar ist – <b>außer</b> es ist durch 100 teilbar, <b>es sei denn</b> es ist sogar durch 400 teilbar. Deshalb war 2000 ein Schaltjahr, 1900 aber nicht. Diese Feinjustierung ist so genau, dass sie erst nach über 3000 Jahren um einen einzigen Tag danebenliegt.</p>
+</div>
+
+<h2>Und woher kommt die Woche?</h2>
+<p>Die Woche ist der Sonderling: Sie hat <em>keine</em> astronomische Ursache. Sieben Tage lassen sich weder aus Mond noch Sonne ableiten. Vermutlich stammt sie aus Babylon, wo man die sieben mit bloßem Auge sichtbaren „Wandelsterne“ – Sonne, Mond und fünf Planeten – verehrte. Ihre Namen stecken bis heute in unseren Wochentagen. Die Woche ist damit das rein menschliche Kapitel in einer ansonsten vom Himmel diktierten Geschichte.</p>
+
+<p>Am Ende ist ein Kalender ein kleines Meisterwerk des Kompromisses: ein jahrtausendealter Friedensvertrag zwischen Sonne, Mond und dem menschlichen Wunsch nach Ordnung.</p>
+
+<nav class="series-nav">
+  <span class="placeholder">← Zurück</span>
+  <span class="mid">Teil 1 von 3</span>
+  <a href="2_geschichte_der_kalender.html">Fortsetzung →</a>
+</nav>
+
+<footer>
+  <h3>Bildquellen</h3>
+  <p><b>Wikimedia Commons</b> (Public Domain / Creative Commons – Lizenz jeweils auf der Dateiseite prüfen):<br>
+    <a href="https://commons.wikimedia.org/wiki/File:Monolito_de_la_Piedra_del_Sol.jpg">Sonnenstein</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Ancient-egyptian-sundial.jpg">Sonnenuhr</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Moon_phases_en.jpg">Mondphasen</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Seasons.svg">Jahreszeiten</a>
+  </p>
+</footer>
+</div>
+</body>
+</html>

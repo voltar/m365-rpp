@@ -1,0 +1,888 @@
+.page {
+  display: grid;
+  gap: var(--app-space-md);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
+.sharedPlanningPanel {
+  grid-column: 1 / -1;
+}
+
+.panel {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  box-shadow: var(--app-shadow-2);
+  display: grid;
+  gap: var(--app-space-md);
+  min-width: 0;
+  padding: var(--app-space-lg);
+}
+
+.panelHeader {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--app-space-sm);
+}
+
+.panelBadge {
+  align-items: center;
+  background: var(--app-brand-bg);
+  border-radius: 50%;
+  color: var(--app-brand-text);
+  display: inline-flex;
+  flex: none;
+  font-size: 13px;
+  font-weight: 700;
+  height: 26px;
+  justify-content: center;
+  width: 26px;
+}
+
+.panelTitle {
+  color: var(--app-brand-bg);
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.panelSubtitle {
+  color: var(--app-brand-bg);
+  font-size: 12px;
+  margin: 2px 0 0;
+  opacity: 0.75;
+}
+
+/* Panel: shared planning */
+
+.orgFilterRow {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-sm);
+}
+
+.sharedPlanningFilters {
+  align-items: end;
+  display: grid;
+  gap: var(--app-space-sm);
+  grid-template-columns: repeat(2, max-content) minmax(150px, 1fr);
+  min-width: 0;
+}
+
+.filterGroup {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+
+.filterLabel {
+  color: var(--app-text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.segmented {
+  background: var(--app-bg-subtle, var(--app-surface));
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  display: inline-flex;
+  padding: 2px;
+}
+
+.segmentButton {
+  background: transparent;
+  border: 0;
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 14px;
+}
+
+.segmentButtonActive {
+  background: var(--app-surface);
+  box-shadow: var(--app-shadow-2);
+  color: var(--app-text);
+}
+
+.reportSelect {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text);
+  font: inherit;
+  font-size: 13px;
+  min-height: 32px;
+  min-width: 0;
+  padding: 4px 28px 4px 10px;
+  width: 100%;
+}
+
+.reportSelect:focus {
+  border-color: var(--app-brand-bg);
+  outline: 2px solid var(--app-brand-bg);
+  outline-offset: 1px;
+}
+
+.reportTableScroller {
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  max-width: 100%;
+  min-width: 0;
+  overflow: auto;
+}
+
+.memberTable {
+  border-collapse: collapse;
+  min-width: 640px;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.memberTable th,
+.memberTable td {
+  border-bottom: 1px solid var(--app-border);
+  font-size: 13px;
+  padding: 6px var(--app-space-xs);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.memberTable th {
+  background: color-mix(in srgb, var(--app-text-muted) 7%, var(--app-surface));
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.reportSortHeader {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--app-text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  gap: 5px;
+  padding: 0;
+  text-align: left;
+}
+
+.reportSortHeader:hover {
+  color: var(--app-brand-bg);
+}
+
+.memberButton {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text);
+  cursor: pointer;
+  display: flex;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  gap: var(--app-space-xs);
+  padding: 2px 4px;
+  text-align: left;
+}
+
+.memberButton:hover {
+  background: color-mix(in srgb, var(--app-brand-bg) 8%, transparent);
+  color: var(--app-brand-bg);
+}
+
+.memberAvatar {
+  align-items: center;
+  background: var(--app-brand-bg);
+  border-radius: 50%;
+  color: var(--app-brand-text);
+  display: inline-flex;
+  flex: none;
+  font-size: 9px;
+  font-weight: 700;
+  height: 22px;
+  justify-content: center;
+  width: 22px;
+}
+
+.memberText {
+  display: grid;
+  gap: 1px;
+}
+
+.memberText small {
+  color: var(--app-text-muted);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.orgBadge {
+  background: var(--app-bg-subtle, var(--app-surface));
+  border: 1px solid var(--app-brand-bg);
+  border-radius: 999px;
+  color: var(--app-text);
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+}
+
+.locationCell {
+  display: grid;
+  gap: 1px;
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.chip {
+  background: var(--app-bg-subtle, var(--app-surface));
+  border-radius: 4px;
+  color: var(--app-text);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+.chipPrimary {
+  background: var(--app-bg-subtle, var(--app-surface));
+  border: 1px solid var(--app-brand-bg);
+  border-radius: 4px;
+  color: var(--app-text);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+.filterHint {
+  color: var(--app-brand-bg);
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Panel: understaffing analysis */
+
+.kpiRow {
+  display: grid;
+  gap: var(--app-space-sm);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.kpi {
+  display: grid;
+  gap: 2px;
+}
+
+.kpiValue {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.kpiCritical {
+  color: var(--app-danger-text);
+}
+
+.kpiWarning {
+  color: var(--app-warning-text);
+}
+
+.kpiOk {
+  color: var(--app-success-text);
+}
+
+.kpiLabel {
+  color: var(--app-text);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.kpiHint {
+  color: var(--app-text-muted);
+  font-size: 11px;
+}
+
+.chartTitle {
+  color: var(--app-text);
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.chart {
+  display: block;
+  width: 100%;
+}
+
+.legendRow {
+  color: var(--app-text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 11px;
+  gap: var(--app-space-md);
+}
+
+.legendItem {
+  align-items: center;
+  display: inline-flex;
+  gap: 5px;
+}
+
+.legendSwatch {
+  border-top: 2px solid var(--app-brand-bg);
+  display: inline-block;
+  width: 18px;
+}
+
+.legendSwatchMin {
+  border-top-color: var(--app-text-muted);
+  border-top-style: dashed;
+}
+
+.legendSwatchWarning {
+  border-top-color: var(--app-warning-text);
+  border-top-style: dashed;
+}
+
+.criticalWeeksRow {
+  align-items: center;
+  border-top: 1px solid var(--app-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-xs);
+  justify-content: space-between;
+  padding-top: var(--app-space-sm);
+}
+
+.criticalWeeksLabel {
+  color: var(--app-text);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.weekChipGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-xs);
+}
+
+.weekChip {
+  background: var(--app-danger-bg);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: var(--app-danger-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+}
+
+.weekChip:hover,
+.weekChipActive {
+  border-color: var(--app-danger-text);
+  box-shadow: var(--app-shadow-2);
+}
+
+.criticalWeekDetails {
+  background: var(--app-danger-bg);
+  border: 1px solid var(--app-danger-text);
+  border-radius: var(--app-radius-md);
+  display: grid;
+  gap: var(--app-space-sm);
+  padding: var(--app-space-sm);
+}
+
+.criticalWeekDetailsTitle,
+.criticalWeekDetailsMeta {
+  display: block;
+}
+
+.criticalWeekDetailsTitle {
+  color: var(--app-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.criticalWeekDetailsMeta {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.criticalTeamList {
+  display: grid;
+  gap: var(--app-space-xs);
+}
+
+.criticalTeamItem {
+  align-items: center;
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  display: grid;
+  gap: var(--app-space-xs);
+  grid-template-columns: minmax(110px, 1fr) minmax(120px, 1fr) minmax(90px, 0.7fr) minmax(90px, 0.7fr);
+  padding: 6px 8px;
+}
+
+.criticalTeamItem strong {
+  color: var(--app-text);
+  font-size: 12px;
+}
+
+.criticalTeamItem span {
+  color: var(--app-text-muted);
+  font-size: 12px;
+}
+
+.noCriticalWeeks {
+  color: var(--app-success-text);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Panel: my absences */
+
+.absencePanelBody {
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  display: grid;
+  gap: var(--app-space-sm);
+  padding: var(--app-space-md);
+}
+
+.absenceHeading {
+  align-items: center;
+  display: flex;
+  gap: var(--app-space-sm);
+  justify-content: space-between;
+}
+
+.absenceHeading h4 {
+  color: var(--app-text);
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.absenceList {
+  display: grid;
+  gap: var(--app-space-xs);
+}
+
+.absenceItem {
+  align-items: center;
+  border-bottom: 1px solid var(--app-border);
+  display: flex;
+  gap: var(--app-space-sm);
+  padding: var(--app-space-xs) 0;
+}
+
+.absenceItem:last-child {
+  border-bottom: 0;
+}
+
+.absenceIcon {
+  align-items: center;
+  color: var(--app-brand-bg);
+  display: inline-flex;
+  flex: none;
+  font-size: 18px;
+  justify-content: center;
+  width: 22px;
+}
+
+.absenceText {
+  display: grid;
+  flex: 1;
+  gap: 1px;
+}
+
+.absenceTitle {
+  color: var(--app-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.absenceDates {
+  color: var(--app-text-muted);
+  font-size: 12px;
+}
+
+.badge {
+  border-radius: 4px;
+  flex: none;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+}
+
+.badgeRequested {
+  background: var(--app-brand-bg);
+  color: var(--app-brand-text);
+}
+
+.badgePlanned {
+  background: color-mix(in srgb, var(--app-brand-bg) 14%, transparent);
+  color: var(--app-brand-bg);
+}
+
+.badgeDraft {
+  background: color-mix(in srgb, var(--app-text-muted) 14%, transparent);
+  color: var(--app-text-muted);
+}
+
+.badgeRejected {
+  background: var(--app-danger-bg);
+  color: var(--app-danger-text);
+}
+
+.emptyState {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  margin: 0;
+}
+
+.outlookBox {
+  align-items: flex-start;
+  background: color-mix(in srgb, var(--app-brand-bg) 6%, var(--app-surface));
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  display: flex;
+  gap: var(--app-space-sm);
+  padding: var(--app-space-md);
+}
+
+.outlookIcon {
+  color: var(--app-brand-bg);
+  flex: none;
+  font-size: 22px;
+}
+
+.outlookText {
+  display: grid;
+  gap: 3px;
+}
+
+.outlookTitle {
+  color: var(--app-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.outlookDescription {
+  color: var(--app-text-muted);
+  font-size: 12px;
+}
+
+.syncStatus {
+  align-items: center;
+  color: var(--app-success-text);
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 600;
+  gap: 4px;
+}
+
+/* Person profile card */
+
+.overlay {
+  align-items: flex-start;
+  background: color-mix(in srgb, #000 32%, transparent);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 7vh var(--app-space-md) var(--app-space-md);
+  position: fixed;
+  z-index: 40;
+}
+
+.personCard {
+  background: var(--app-surface);
+  border-radius: var(--app-radius-md);
+  box-shadow: var(--app-shadow-4);
+  display: grid;
+  gap: var(--app-space-md);
+  max-height: 84vh;
+  max-width: 640px;
+  overflow-y: auto;
+  padding: var(--app-space-lg);
+  position: relative;
+  width: 100%;
+}
+
+.personClose {
+  position: absolute;
+  right: var(--app-space-sm);
+  top: var(--app-space-sm);
+}
+
+.personHeader {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--app-space-md);
+}
+
+.personAvatar {
+  align-items: center;
+  background: #0f6a6a;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  flex: none;
+  font-size: 26px;
+  font-weight: 700;
+  height: 72px;
+  justify-content: center;
+  position: relative;
+  width: 72px;
+}
+
+.presenceDot {
+  align-items: center;
+  background: var(--app-warning-text);
+  border: 2px solid var(--app-surface);
+  border-radius: 50%;
+  bottom: -2px;
+  color: #fff;
+  display: inline-flex;
+  font-size: 10px;
+  height: 20px;
+  justify-content: center;
+  position: absolute;
+  right: -2px;
+  width: 20px;
+}
+
+.personIdentity {
+  display: grid;
+  gap: 2px;
+}
+
+.personName {
+  color: var(--app-text);
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.personExtension {
+  color: var(--app-text-muted);
+  font-size: 12px;
+}
+
+.personIconRow {
+  display: flex;
+  gap: var(--app-space-xs);
+  margin-top: var(--app-space-xs);
+}
+
+.personTabs {
+  border-bottom: 1px solid var(--app-border);
+  display: flex;
+  gap: var(--app-space-md);
+}
+
+.personTab {
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  color: var(--app-text-muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 2px;
+}
+
+.personTabActive {
+  border-bottom-color: var(--app-brand-bg);
+  color: var(--app-brand-bg);
+}
+
+.quickMessageRow {
+  align-items: center;
+  display: flex;
+  gap: var(--app-space-xs);
+}
+
+.quickMessageRow input {
+  background: color-mix(in srgb, var(--app-text-muted) 10%, var(--app-surface));
+  border: 1px solid transparent;
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text);
+  flex: 1;
+  font: inherit;
+  min-height: 34px;
+  padding: 6px 10px;
+}
+
+.quickMessageRow input:focus {
+  border-color: var(--app-brand-bg);
+  outline: 0;
+}
+
+.availabilityBox {
+  align-items: center;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  display: flex;
+  gap: var(--app-space-sm);
+  justify-content: space-between;
+  padding: var(--app-space-sm) var(--app-space-md);
+}
+
+.availabilityText {
+  display: grid;
+  gap: 2px;
+}
+
+.availabilityPrimary {
+  align-items: center;
+  color: var(--app-text);
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
+  gap: 6px;
+}
+
+.availabilitySecondary {
+  color: var(--app-text-muted);
+  font-size: 12px;
+}
+
+.officeBadge {
+  background: color-mix(in srgb, var(--app-brand-bg) 12%, transparent);
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text);
+  flex: none;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+}
+
+.timezoneRow {
+  align-items: center;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  color: var(--app-text-muted);
+  display: flex;
+  font-size: 12px;
+  gap: var(--app-space-xs);
+  padding: var(--app-space-xs) var(--app-space-md);
+}
+
+.contactSection {
+  display: grid;
+  gap: var(--app-space-sm);
+}
+
+.contactSection h5 {
+  color: var(--app-text);
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.contactGrid {
+  display: grid;
+  gap: var(--app-space-md);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.contactItem {
+  align-items: flex-start;
+  display: flex;
+  gap: var(--app-space-xs);
+}
+
+.contactItem svg {
+  color: var(--app-text-muted);
+  flex: none;
+  margin-top: 2px;
+}
+
+.contactItemText {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+}
+
+.contactLabel {
+  color: var(--app-text-muted);
+  font-size: 11px;
+}
+
+.contactValue {
+  color: var(--app-brand-bg);
+  font-size: 12px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.contactValuePlain {
+  color: var(--app-text);
+}
+
+.moreLink {
+  background: transparent;
+  border: 0;
+  color: var(--app-brand-bg);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  justify-self: start;
+  padding: 0;
+}
+
+@media (max-width: 1280px) {
+  .page {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .sharedPlanningFilters {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .page {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sharedPlanningFilters {
+    grid-template-columns: 1fr;
+  }
+
+  .segmented {
+    width: 100%;
+  }
+
+  .segmentButton {
+    flex: 1;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .criticalTeamItem {
+    grid-template-columns: 1fr;
+  }
+}

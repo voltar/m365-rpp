@@ -1,0 +1,30 @@
+# backend-requirements.txt
+# RPP Backend (.NET 8) – NuGet Packages
+# Extrahiert aus dem .csproj
+# Verwendung: siehe Installationshinweise unten
+
+Microsoft.AspNetCore.OpenApi 8.0.29
+Microsoft.Graph 5.0.0
+Swashbuckle.AspNetCore 6.6.2
+Microsoft.Identity.Web 3.1.0
+Microsoft.EntityFrameworkCore.SqlServer 8.0.0
+Microsoft.EntityFrameworkCore.Tools 8.0.0
+Cronos 0.9.0
+
+# --------------------------------------------------
+# Installation (im Backend-Projektordner):
+#
+#   dotnet restore
+#
+# oder einzeln:
+#   dotnet add package Microsoft.AspNetCore.OpenApi --version 8.0.29
+#   dotnet add package Microsoft.Graph --version 5.0.0
+#   dotnet add package Swashbuckle.AspNetCore --version 6.6.2
+#   dotnet add package Microsoft.Identity.Web --version 3.1.0
+#   dotnet add package Microsoft.EntityFrameworkCore.SqlServer --version 8.0.0
+#   dotnet add package Microsoft.EntityFrameworkCore.Tools --version 8.0.0
+#   dotnet add package Cronos --version 0.9.0
+#
+# EF Core Tools (global):
+#   dotnet tool install --global dotnet-ef --version 8.0.0
+# --------------------------------------------------

@@ -1,0 +1,5 @@
+{
+  "status": "healthy",
+  "service": "resource-presence-planner",
+  "checkedAt": "static-build"
+}

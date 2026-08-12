@@ -1,0 +1,54 @@
+{
+  "name": "m365-resource-presence-planning",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "M365 Resource & Presence Planning (RPP) — Microsoft Teams tab app for workforce presence and capacity planning.",
+  "author": "Voltar",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run locales:fill && tsc --noEmit && vite build && npm run release:metadata",
+    "build:deployment": "npm run build && npm run validate:deployment && npm run validate:resilience && npm run validate:security && npm run validate:sca",
+    "package:api": "node scripts/package-api.mjs",
+    "stamp:runtime-config": "node scripts/stamp-runtime-config.mjs",
+    "install:git-hooks": "node scripts/install-git-hooks.mjs",
+    "locales:fill": "node scripts/fill-missing-keys.cjs",
+    "locales:fill-one": "node scripts/fill-one-locale.cjs",
+    "preview": "vite preview",
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "release:metadata": "node scripts/write-release-metadata.mjs",
+    "validate:deployment": "node scripts/validate-deployment.mjs",
+    "validate:resilience": "node --test tests/runtime-config-validation.test.mjs tests/retry-policy.test.mjs tests/openholidaysapi-parsing.test.mjs tests/release-alignment.test.mjs",
+    "validate:release-alignment": "node --test tests/release-alignment.test.mjs",
+    "validate:release": "node scripts/validate-release-consistency.mjs",
+    "validate:security": "node scripts/validate-security.mjs",
+    "validate:sca": "cd RppWebApi && dotnet list package --vulnerable --include-transitive && cd .. && npm audit --audit-level=moderate",
+    "validate:repo-hygiene": "node scripts/validate-repo-hygiene.mjs"
+  },
+  "dependencies": {
+    "@fluentui/react-components": "^9.57.0",
+    "@fluentui/react-icons": "^2.0.247",
+    "@microsoft/teams-js": "^2.53.1",
+    "@vitejs/plugin-react": "^5.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.6.3",
+    "vite": "^8.2.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitalets/google-translate-api": "^9.2.1",
+    "eslint": "^9.15.0",
+    "typescript-eslint": "^8.15.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voltar/m365-rpp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/voltar/m365-rpp/issues"
+  },
+  "homepage": "https://github.com/voltar/m365-rpp#readme"
+}

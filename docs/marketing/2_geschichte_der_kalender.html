@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eine kurze Geschichte der Kalender – Folge 2</title>
+<style>
+  :root{
+    --ink:#2b2420; --soft:#5c5148; --paper:#f6efe2; --card:#fffdf8;
+    --accent:#9c5a2d; --accent2:#c9962f; --line:#e3d8c4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Iowan Old Style",Georgia,"Times New Roman",serif;
+    font-size:19px; line-height:1.7;
+  }
+  .wrap{max-width:780px; margin:0 auto; padding:0 22px 80px;}
+  header.hero{
+    position:relative; height:min(58vh,460px); overflow:hidden;
+    display:flex; align-items:flex-end; margin-bottom:38px;
+    border-bottom:5px solid var(--accent2);
+  }
+  header.hero img{position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; filter:saturate(1.05);}
+  header.hero .veil{position:absolute; inset:0;
+    background:linear-gradient(180deg,rgba(20,12,6,.15),rgba(20,12,6,.78));}
+  header.hero .htext{position:relative; color:#fdf6e6; max-width:780px;
+    margin:0 auto; width:100%; padding:0 22px 30px;}
+  .kicker{letter-spacing:.32em; text-transform:uppercase; font-size:13px;
+    color:var(--accent2); font-family:Georgia,serif;}
+  h1{font-size:clamp(30px,6vw,50px); line-height:1.08; margin:.15em 0 .1em;
+    font-weight:700;}
+  .sub{font-size:19px; color:#f0e4cf; font-style:italic; margin:0;}
+  h2{font-size:27px; color:var(--accent); margin:2.4em 0 .4em; line-height:1.2;}
+  h3{font-size:21px; color:var(--accent); margin:1.6em 0 .35em; line-height:1.25;}
+  p{margin:0 0 1.15em;}
+  .lead{font-size:21px;}
+  .lead::first-letter{font-size:3.4em; float:left; line-height:.8;
+    padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  figure{margin:2em 0;}
+  figure img{width:100%; border-radius:8px; display:block;
+    box-shadow:0 10px 30px rgba(60,40,20,.18);}
+  figcaption{font-size:14.5px; color:var(--soft); font-style:italic;
+    margin-top:.6em; text-align:center;}
+  .pull{border-left:4px solid var(--accent2); background:var(--card);
+    padding:14px 20px; margin:1.8em 0; font-style:italic; font-size:20px;
+    color:#4a3b2c; border-radius:0 8px 8px 0;}
+  .box{background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:16px 20px; margin:1.6em 0;}
+  .box b{color:var(--accent);}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:2em 0;}
+  .grid2 figure{margin:0;}
+  ul{margin:0 0 1.2em; padding-left:1.3em;}
+  li{margin-bottom:.4em;}
+  .series-nav{
+    display:flex; justify-content:space-between; align-items:center;
+    gap:12px; margin:2.5em 0 1em; padding:14px 18px;
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    font-size:15px; font-family:Georgia,serif;
+  }
+  .series-nav a{
+    color:var(--accent); text-decoration:none; font-weight:600;
+    white-space:nowrap;
+  }
+  .series-nav a:hover{text-decoration:underline;}
+  .series-nav .mid{color:var(--soft); letter-spacing:.08em; text-transform:uppercase;
+    font-size:12px; text-align:center;}
+  .series-nav .placeholder{visibility:hidden; pointer-events:none;}
+  footer{border-top:1px solid var(--line); margin-top:50px; padding-top:22px;
+    font-size:13.5px; color:var(--soft); font-family:Georgia,serif;}
+  footer a{color:var(--accent);}
+  footer h3{font-size:15px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--ink); border:none; margin:0 0 .6em; padding:0;}
+  hr{border:none; border-top:1px solid var(--line); margin:2.5em 0;}
+  @media(max-width:560px){
+    .grid2{grid-template-columns:1fr;}
+    body{font-size:18px;}
+    .series-nav{flex-direction:column; gap:8px;}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dendera%20zodiac%2C%20Louvre.jpg?width=1400" alt="Der Tierkreis von Dendera">
+  <div class="veil"></div>
+  <div class="htext">
+    <div class="kicker">Folge 2 · Eine Reise durch die Zeit</div>
+    <h1>Eine kurze Geschichte der Kalender</h1>
+    <p class="sub">Von Kerben im Knochen bis zum weltweiten Datum</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="series-nav">
+  <a href="1_kalenderwesen.html">← Zurück</a>
+  <span class="mid">Teil 2 von 3</span>
+  <a href="3_ressourcen_planen.html">Fortsetzung →</a>
+</nav>
+
+<p class="lead">Kalender sind vermutlich älter als die Schrift. Lange bevor Menschen Wörter aufschrieben, ritzten sie schon Zeit in Knochen. Objekte aus der Steinzeit tragen Reihen von Kerben, die viele Forscher als Zählung der Mondphasen deuten – der erste Versuch, den Himmel in Buchführung zu übersetzen.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dendera%20zodiac%2C%20Louvre.jpg?width=1200" alt="Der Tierkreis von Dendera">
+  <figcaption>Der „Tierkreis von Dendera“ – eine ägyptische Sternenkarte in Stein, heute im Louvre.</figcaption>
+</figure>
+
+<h2>Ägypten: Der Stern, der die Flut ankündigte</h2>
+<p>Die alten Ägypter waren Meister der Himmelsbeobachtung. Ihr Leben hing am Nil, der jedes Jahr über die Ufer trat. Sie bemerkten, dass diese Flut ziemlich genau dann einsetzte, wenn der helle Stern Sirius nach Wochen der Unsichtbarkeit erstmals wieder am Morgenhimmel erschien. So entstand einer der ersten <b>Sonnenkalender</b> mit 365 Tagen: zwölf Monate zu je 30 Tagen, plus fünf Festtage am Ende.</p>
+
+<h2>Rom: Ein Kalender im Chaos</h2>
+<p>Die Römer brachten die Zeitrechnung gründlich durcheinander. Ihr alter Mondkalender war so ungenau, dass Priester nach Belieben zusätzliche Tage einschoben – oft aus purer Machtpolitik, um Amtszeiten zu verlängern. Bis zur Mitte des ersten Jahrhunderts v.&nbsp;Chr. lag der Kalender um ganze drei Monate neben den Jahreszeiten.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fasti%20Antiates%20Maiores%20%2814786905184%29.jpg?width=1200" alt="Fasti Antiates Maiores">
+  <figcaption>Rekonstruktion der „Fasti Antiates Maiores“, des einzigen erhaltenen römischen Kalenders aus der Zeit vor Julius Caesar.</figcaption>
+</figure>
+
+<h2>Julius Caesar räumt auf</h2>
+<p>Es brauchte einen Diktator, um Ordnung zu schaffen. <b>Julius Caesar</b> holte sich ägyptischen Rat und verordnete 46 v.&nbsp;Chr. eine radikale Reform. Um den aufgelaufenen Fehler zu tilgen, musste dieses eine Jahr sagenhafte 445 Tage haben – das „Jahr der Verwirrung“. Danach galt der <b>julianische Kalender</b>: 365 Tage, alle vier Jahre ein Schalttag. Ihm zu Ehren trägt der Monat Juli bis heute Caesars Namen.</p>
+
+<div class="pull">Caesars Kalender war so gut, dass er über 1600 Jahre in Gebrauch blieb. Aber „fast richtig“ ist über die Jahrhunderte eben doch nicht richtig genug.</div>
+
+<div class="grid2">
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bust%20of%20Julius%20Caesar-Uffizi%20Gallery.jpg?width=700" alt="Julius Caesar">
+    <figcaption>Julius Caesar – Namensgeber des julianischen Kalenders.</figcaption>
+  </figure>
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pope%20Gregory%20XIII%20portrait.jpg?width=700" alt="Papst Gregor XIII.">
+    <figcaption>Papst Gregor XIII. – sein Name steckt im „gregorianischen“ Kalender.</figcaption>
+  </figure>
+</div>
+
+<h2>Das Mittelalter zählt die Monate</h2>
+<p>Im Mittelalter wurde der Kalender zum Kunstwerk. Prächtige Stundenbücher zeigten für jeden Monat die passende bäuerliche Arbeit – Aussaat, Ernte, Schweineschlachten – umrahmt von den Sternzeichen.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Les%20Tr%C3%A8s%20Riches%20Heures%20du%20duc%20de%20Berry%20Janvier.jpg?width=1000" alt="Très Riches Heures, Januar">
+  <figcaption>Der Monat Januar aus den „Très Riches Heures“ (um 1412–1416) – ein Höhepunkt mittelalterlicher Kalenderkunst.</figcaption>
+</figure>
+
+<h2>1582: Zehn Tage verschwinden</h2>
+<p>Der kleine Rechenfehler des julianischen Kalenders – knapp elf Minuten Überlänge pro Jahr – hatte sich bis ins 16. Jahrhundert auf zehn ganze Tage summiert. <b>Papst Gregor XIII.</b> zog 1582 die Reißleine: Auf Donnerstag, den 4. Oktober, folgte direkt Freitag, der 15. Oktober. Zehn Tage wurden gestrichen. Zugleich führte er die verfeinerte Schaltjahr-Regel ein, die noch heute gilt.</p>
+
+<h2>Wie die Welt zu einem gemeinsamen Datum fand</h2>
+<p>Und hier kommt der entscheidende Punkt: Dieser gregorianische Kalender wurde <em>nicht</em> über Nacht zum Weltstandard. Katholische Länder folgten rasch, protestantische und orthodoxe zögerten teils jahrhundertelang – manche Regionen wechselten erst im 20. Jahrhundert. Deshalb fand die russische „Oktoberrevolution“ nach heutigem Kalender im November statt.</p>
+
+<p>Dass wir heute weltweit dasselbe Datum benutzen, ist ein Kind der Neuzeit: Erst als Handel, Seefahrt, Eisenbahn, Telegraf und schließlich das Internet die Welt enger zusammenrücken ließen, wurde ein <em>gemeinsamer</em> Zeittakt zur praktischen Notwendigkeit. Internationale Verträge, Fahrpläne, Börsen und globale Kommunikation brauchen ein einheitliches „Wann“. So setzte sich der gregorianische Kalender als <b>globaler Verwaltungs- und Geschäftsstandard</b> durch – nicht weil er der einzig „richtige“ wäre, sondern weil sich die vernetzte Welt auf <em>einen</em> gemeinsamen Nenner einigen musste.</p>
+
+<p>Verschwunden sind die anderen Kalender deswegen nicht. Der islamische, jüdische, chinesische, hinduistische, buddhistische, persische oder äthiopische Kalender bestimmen bis heute Feiertage, Feste und religiöses Leben von Milliarden Menschen – oft parallel zum gregorianischen Alltagsdatum. Die Welt teilt sich also ein gemeinsames Geschäftsdatum und pflegt zugleich ihre kulturelle Vielfalt der Zeit. Ein seltener, schöner Kompromiss.</p>
+
+<nav class="series-nav">
+  <a href="1_kalenderwesen.html">← Zurück</a>
+  <span class="mid">Teil 2 von 3</span>
+  <a href="3_ressourcen_planen.html">Fortsetzung →</a>
+</nav>
+
+<footer>
+  <h3>Bildquellen</h3>
+  <p><b>Wikimedia Commons</b> (Public Domain / Creative Commons – Lizenz jeweils auf der Dateiseite prüfen):<br>
+    <a href="https://commons.wikimedia.org/wiki/File:Dendera_zodiac,_Louvre.jpg">Dendera</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Fasti_Antiates_Maiores_(14786905184).jpg">Römischer Kalender</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Bust_of_Julius_Caesar-Uffizi_Gallery.jpg">Julius Caesar</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Pope_Gregory_XIII_portrait.jpg">Gregor XIII.</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Les_Tr%C3%A8s_Riches_Heures_du_duc_de_Berry_Janvier.jpg">Très Riches Heures</a>
+  </p>
+</footer>
+</div>
+</body>
+</html>

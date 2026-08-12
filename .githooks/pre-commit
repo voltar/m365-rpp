@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo "Running repository hygiene validation..."
+npm run validate:repo-hygiene
+status=$?
+
+if [ "$status" -ne 0 ]; then
+  echo ""
+  echo "pre-commit blocked: repository hygiene validation failed."
+  exit "$status"
+fi
+
+exit 0

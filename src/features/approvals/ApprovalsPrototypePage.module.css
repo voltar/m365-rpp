@@ -1,0 +1,250 @@
+.page {
+  display: grid;
+  gap: var(--app-space-lg);
+}
+
+.timeline {
+  align-items: center;
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-sm);
+  padding: var(--app-space-md);
+}
+
+.timelineItem {
+  align-items: center;
+  color: var(--app-text-muted);
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 700;
+  gap: var(--app-space-xs);
+}
+
+.timelineItemActive {
+  color: var(--app-text);
+}
+
+.timelineDot {
+  align-items: center;
+  background: var(--app-bg-subtle);
+  border: 1px solid var(--app-border);
+  border-radius: 999px;
+  display: inline-flex;
+  height: 24px;
+  justify-content: center;
+  width: 24px;
+}
+
+.timelineItemActive .timelineDot {
+  background: var(--app-brand-bg);
+  border-color: var(--app-brand-bg);
+  color: var(--app-brand-text);
+}
+
+.grid {
+  align-items: start;
+  display: grid;
+  gap: var(--app-space-md);
+  grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.8fr);
+}
+
+.card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  box-shadow: var(--app-shadow-2);
+  display: grid;
+  gap: var(--app-space-md);
+  padding: var(--app-space-lg);
+}
+
+.primaryCard {
+  min-height: 520px;
+}
+
+.cardHeader {
+  display: grid;
+  gap: 4px;
+}
+
+.kicker {
+  color: var(--app-brand-bg);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  color: var(--app-text);
+  font-size: 18px;
+  margin: 0;
+}
+
+.cardDescription {
+  color: var(--app-text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.form,
+.stack {
+  display: grid;
+  gap: var(--app-space-md);
+}
+
+.field,
+.inlineSection {
+  display: grid;
+  gap: var(--app-space-xs);
+}
+
+.fieldGrid {
+  display: grid;
+  gap: var(--app-space-sm);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field span {
+  color: var(--app-text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text);
+  font: inherit;
+  min-height: 36px;
+  padding: 7px 9px;
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+.metric {
+  align-items: center;
+  background: color-mix(in srgb, var(--app-brand-bg) 5%, var(--app-surface));
+  border: 1px solid color-mix(in srgb, var(--app-brand-bg) 16%, var(--app-border));
+  border-radius: var(--app-radius-sm);
+  display: flex;
+  justify-content: space-between;
+  padding: var(--app-space-sm);
+}
+
+.metric span,
+.statusRow span,
+.approvalBox span {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.metric strong {
+  color: var(--app-text);
+  font-size: 24px;
+}
+
+.validation {
+  background: var(--app-warning-bg);
+  border: 1px solid color-mix(in srgb, var(--app-warning-text) 30%, var(--app-border));
+  border-radius: var(--app-radius-md);
+  color: var(--app-warning-text);
+  display: grid;
+  font-size: 13px;
+  gap: 4px;
+  padding: var(--app-space-sm);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-sm);
+  justify-content: flex-end;
+}
+
+.facts {
+  display: grid;
+  gap: var(--app-space-sm);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: 0;
+}
+
+.facts div {
+  border-top: 1px solid var(--app-border);
+  display: grid;
+  gap: 3px;
+  padding-top: var(--app-space-sm);
+}
+
+.facts dt {
+  color: var(--app-text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.facts dd {
+  color: var(--app-text);
+  font-size: 14px;
+  margin: 0;
+}
+
+.approvalBox,
+.statusPanel {
+  background: color-mix(in srgb, var(--app-brand-bg) 5%, var(--app-surface));
+  border: 1px solid color-mix(in srgb, var(--app-brand-bg) 16%, var(--app-border));
+  border-radius: var(--app-radius-md);
+  display: grid;
+  gap: var(--app-space-xs);
+  padding: var(--app-space-md);
+}
+
+.approvalBox strong {
+  color: var(--app-text);
+}
+
+.approvalBox p,
+.statusPanel p {
+  color: var(--app-text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.comment {
+  color: var(--app-text) !important;
+}
+
+.statusRow {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 980px) {
+  .grid,
+  .facts,
+  .fieldGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .primaryCard {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .actions {
+    justify-content: stretch;
+  }
+}

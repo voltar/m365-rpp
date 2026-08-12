@@ -1,0 +1,32 @@
+# EO-458: local PostgreSQL for the relational planning store (Planning:Provider=postgres).
+# Usage (repo root):
+#   docker compose -f docker-compose.postgres.yml up -d
+# Then point the host API at it, e.g. user-secrets:
+#   ConnectionStrings:DefaultConnection =
+#     Host=127.0.0.1;Port=5432;Database=rpp;Username=rpp;Password=rpp
+#   Planning:Provider = postgres
+#
+# Full stack (API container + this Postgres) is:
+#   docker compose -f docker-compose.api.yml up -d --build
+# (api compose includes this file.)
+
+services:
+  rpp-postgres:
+    image: postgres:16-alpine
+    container_name: rpp-postgres
+    environment:
+      POSTGRES_USER: rpp
+      POSTGRES_PASSWORD: rpp
+      POSTGRES_DB: rpp
+    ports:
+      - "5432:5432"
+    volumes:
+      - rpp-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U rpp -d rpp"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  rpp-postgres-data:

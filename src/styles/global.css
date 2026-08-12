@@ -1,0 +1,385 @@
+:root {
+  color: var(--colorNeutralForeground1);
+  background: var(--colorNeutralBackground2);
+  font-family: var(--fontFamilyBase);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+button {
+  font: inherit;
+}
+
+.startupUnavailable {
+  align-items: flex-start;
+  background: var(--colorNeutralBackground2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--app-space-md);
+  min-height: 100vh;
+  padding: var(--app-space-xl);
+}
+
+.appShell {
+  background: var(--app-bg);
+  color: var(--app-text);
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.appShellNoRail {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.appShellNoRail .workspaceShell {
+  grid-column: 1;
+}
+
+.appShellNoHeader {
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.appShellNoHeader .workspaceShell {
+  grid-row: 1;
+}
+
+.appHeader {
+  align-items: center;
+  background: var(--app-surface);
+  border-bottom: 1px solid var(--app-border);
+  display: flex;
+  gap: var(--app-space-lg);
+  grid-column: 1 / -1;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: var(--app-space-xs) var(--app-space-xl);
+}
+
+.brandCluster {
+  align-items: center;
+  display: flex;
+  gap: var(--app-space-sm);
+  min-width: 0;
+  width: 360px;
+}
+
+.appLogo {
+  background: linear-gradient(135deg, #464feb 0%, #6264a7 48%, #13a10e 100%);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(70, 79, 235, 0.24), inset 0 0 0 1px rgba(255, 255, 255, 0.32);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 3px;
+  height: 40px;
+  isolation: isolate;
+  padding: 5px;
+  position: relative;
+  width: 40px;
+}
+
+.appLogo::after {
+  background: radial-gradient(circle at 25% 18%, rgba(255, 255, 255, 0.9), transparent 28%), linear-gradient(135deg, rgba(255, 255, 255, 0.24), transparent 62%);
+  border-radius: inherit;
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 2;
+}
+
+.appLogoTile {
+  border-radius: 6px;
+  position: relative;
+  z-index: 1;
+}
+
+.appLogoTilePrimary {
+  align-items: center;
+  background: #ffffff;
+  color: #464feb;
+  display: flex;
+  font-size: 15px;
+  font-weight: 800;
+  grid-row: 1 / span 2;
+  justify-content: center;
+  letter-spacing: -0.04em;
+}
+
+.appLogoTilePresence {
+  background: #7f85f5;
+}
+
+.appLogoTilePlanning {
+  background: #92c353;
+}
+
+.appLogoOrbit {
+  border: 1.5px solid rgba(255, 255, 255, 0.72);
+  border-left-color: transparent;
+  border-radius: 999px;
+  height: 24px;
+  position: absolute;
+  right: -5px;
+  top: 8px;
+  transform: rotate(-22deg);
+  width: 24px;
+  z-index: 3;
+}
+
+.brandText {
+  min-width: 0;
+}
+
+.brandText h1 {
+  color: var(--app-text);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.brandText p {
+  color: var(--app-text-muted);
+  font-size: 13px;
+  line-height: 1.4;
+  margin: var(--app-space-xxs) 0 0;
+  overflow-wrap: anywhere;
+}
+
+.headerActions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-sm);
+  justify-content: flex-end;
+  flex: 0 0 auto;
+}
+
+.themeModePicker {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+}
+
+.themeModeOption {
+  align-items: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text);
+  cursor: pointer;
+  display: grid;
+  font-size: 12px;
+  gap: 2px;
+  justify-items: center;
+  min-height: 42px;
+  min-width: 44px;
+  padding: 4px 6px;
+}
+
+.themeModeOption svg {
+  font-size: 18px;
+}
+
+.themeModeOptionActive {
+  background: color-mix(in srgb, var(--app-brand-bg) 10%, var(--app-surface));
+  border-color: color-mix(in srgb, var(--app-brand-bg) 26%, var(--app-border));
+  color: var(--app-brand-bg);
+  font-weight: 700;
+}
+
+.teamsRail {
+  align-items: stretch;
+  background: var(--app-surface);
+  border-right: 1px solid var(--app-border);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  grid-column: 1;
+  grid-row: 2;
+  overflow-y: auto;
+  padding: var(--app-space-sm) 4px;
+}
+
+.teamsRailItem {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-left: 3px solid transparent;
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text-muted);
+  cursor: pointer;
+  display: grid;
+  font-size: 10px;
+  gap: 2px;
+  min-height: 54px;
+  padding: 6px 2px;
+  place-items: center;
+}
+
+.teamsRailItem svg {
+  font-size: 20px;
+}
+
+.teamsRailItemActive {
+  background: color-mix(in srgb, var(--app-brand-bg) 8%, var(--app-surface));
+  border-left-color: var(--app-brand-bg);
+  color: var(--app-brand-bg);
+  font-weight: 700;
+}
+
+.workspaceShell {
+  display: grid;
+  grid-column: 2;
+  grid-row: 2;
+  grid-template-rows: auto minmax(0, 1fr);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.topNavigation {
+  align-items: center;
+  background: var(--app-surface);
+  border-bottom: 1px solid var(--app-border);
+  display: flex;
+  gap: var(--app-space-xs);
+  min-width: 0;
+  overflow-x: auto;
+  padding: var(--app-space-sm) var(--app-space-xl);
+  scrollbar-width: thin;
+}
+
+/* EO-418: navigation row with the active host-team badge on the right. */
+.navigationRow {
+  align-items: center;
+  background: var(--app-surface);
+  border-bottom: 1px solid var(--app-border);
+  display: flex;
+  gap: var(--app-space-sm);
+  min-width: 0;
+}
+
+.navigationRow .topNavigation {
+  border-bottom: none;
+  flex: 1;
+}
+
+.activeTeamChip {
+  background: color-mix(in srgb, var(--app-brand-bg) 10%, var(--app-surface));
+  border: 1px solid color-mix(in srgb, var(--app-brand-bg) 30%, var(--app-border));
+  border-radius: 999px;
+  color: var(--app-text);
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: var(--app-space-xl);
+  max-width: 220px;
+  overflow: hidden;
+  padding: 3px 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.topNavigationItem {
+  flex: 0 0 auto;
+  min-height: 36px;
+}
+
+.appMain {
+  min-width: 0;
+  overflow: auto;
+  padding: var(--app-space-md) var(--app-space-lg) var(--app-space-lg);
+}
+
+.appFooter {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .appHeader {
+    align-items: stretch;
+    flex-direction: column;
+    gap: var(--app-space-sm);
+    padding: var(--app-space-sm) var(--app-space-md);
+  }
+
+  .brandCluster {
+    width: auto;
+  }
+
+  .headerActions {
+    justify-content: flex-start;
+  }
+
+  .appMain {
+    padding: var(--app-space-md);
+  }
+
+  .topNavigation {
+    padding: var(--app-space-xs) var(--app-space-md);
+  }
+}
+
+@media (max-width: 560px) {
+  .appShell {
+    grid-template-columns: 52px minmax(0, 1fr);
+  }
+
+  /* EO-412: the 52px column is the demo rail; without a rail (real Teams app)
+     the single content column must win over the rule above (same specificity,
+     later in file). Otherwise phones squeeze the whole app into 52px. */
+  .appShellNoRail {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .teamsRailItem {
+    min-height: 48px;
+  }
+
+  .teamsRailItem span {
+    display: none;
+  }
+
+  .appLogo {
+    height: 34px;
+    width: 34px;
+  }
+
+  .brandText h1 {
+    font-size: 16px;
+  }
+
+  .brandText p {
+    font-size: 12px;
+  }
+
+  .appMain {
+    padding: var(--app-space-sm);
+  }
+}
+
+/* EO-450 FR-450.8: standing help affordance at the trailing edge of the workspace tabs. */
+.helpTrigger {
+  flex: 0 0 auto;
+  margin-inline-end: var(--app-space-sm);
+}

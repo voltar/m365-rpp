@@ -1,0 +1,61 @@
+.errorBanner {
+  align-items: flex-start;
+  background: var(--app-danger-bg);
+  border: 1px solid color-mix(in srgb, var(--app-danger-text) 30%, var(--app-border));
+  border-radius: var(--app-radius-md);
+  color: var(--app-text);
+  display: flex;
+  gap: var(--app-space-md);
+  justify-content: space-between;
+  margin: var(--app-space-xl);
+  padding: var(--app-space-lg);
+}
+
+.errorBanner h2,
+.errorDialog h2 {
+  color: var(--app-danger-text);
+  font-size: 18px;
+  line-height: 1.25;
+  margin: 0 0 var(--app-space-xs);
+}
+
+.errorBanner p,
+.errorDialog p {
+  color: var(--app-text);
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.reference {
+  margin-top: var(--app-space-sm) !important;
+}
+
+.dialogBackdrop {
+  align-items: center;
+  background: color-mix(in srgb, var(--app-text) 24%, transparent);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: var(--app-space-xl);
+  position: fixed;
+  z-index: 20;
+}
+
+.errorDialog {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  box-shadow: var(--app-shadow-2);
+  display: grid;
+  gap: var(--app-space-md);
+  max-width: 460px;
+  padding: var(--app-space-xl);
+}
+
+@media (max-width: 680px) {
+  .errorBanner {
+    flex-direction: column;
+    margin: var(--app-space-md);
+  }
+}

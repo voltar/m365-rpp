@@ -1,0 +1,95 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.27/MicrosoftTeams.schema.json",
+  "version": "4.0.6",
+  "manifestVersion": "1.27",
+  "id": "00000000-0000-0000-0000-000000000012",
+  "name": {
+    "short": "RPP Local",
+    "full": "RPP Local (Dev Tunnel)"
+  },
+  "developer": {
+    "name": "Voltar",
+    "websiteUrl": "https://rpp-api.example.com",
+    "privacyUrl": "https://example.com/privacy",
+    "termsOfUseUrl": "https://example.com/terms"
+  },
+  "description": {
+    "short": "Resources and Presence Planning M365 Team App - Tab based",
+    "full": "RPP for Resources, Presence and Capacity planning as a slim M365 Team App"
+  },
+  "icons": {
+    "outline": "outline.png",
+    "color": "color.png"
+  },
+  "accentColor": "#6264A7",
+  "staticTabs": [
+    {
+      "entityId": "rpp-planning",
+      "name": "RPP",
+      "contentUrl": "https://your-tunnel-id-5004.eun1.devtunnels.ms",
+      "websiteUrl": "https://your-tunnel-id-5004.eun1.devtunnels.ms",
+      "scopes": [
+        "personal",
+        "team"
+      ]
+    }
+  ],
+  "validDomains": [
+    "your-tunnel-id-5004.eun1.devtunnels.ms"
+  ],
+  "webApplicationInfo": {
+    "id": "00000000-0000-0000-0000-000000000002",
+    "resource": "api://your-tunnel-id-5004.eun1.devtunnels.ms/00000000-0000-0000-0000-000000000002"
+  },
+  "localizationInfo": {
+    "defaultLanguageTag": "en-us",
+    "additionalLanguages": [
+      {
+        "languageTag": "de-de",
+        "file": "de-de.json"
+      },
+      {
+        "languageTag": "de-ch",
+        "file": "de-ch.json"
+      },
+      {
+        "languageTag": "zh-cn",
+        "file": "zh-cn.json"
+      },
+      {
+        "languageTag": "es-es",
+        "file": "es-es.json"
+      },
+      {
+        "languageTag": "fr-fr",
+        "file": "fr-fr.json"
+      },
+      {
+        "languageTag": "it-it",
+        "file": "it-it.json"
+      },
+      {
+        "languageTag": "pt-pt",
+        "file": "pt-pt.json"
+      },
+      {
+        "languageTag": "ru-ru",
+        "file": "ru-ru.json"
+      }
+    ]
+  },
+  "showLoadingIndicator": true,
+  "isFullScreen": true,
+  "configurableProperties": [
+    "name",
+    "shortDescription",
+    "longDescription",
+    "smallImageUrl",
+    "largeImageUrl",
+    "accentColor",
+    "privacyUrl",
+    "termsOfUseUrl"
+  ],
+  "publisherDocsUrl": "https://example.com/docs",
+  "supportsChannelFeatures": "tier1"
+}

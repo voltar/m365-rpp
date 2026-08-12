@@ -1,0 +1,190 @@
+.event {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: var(--app-radius-sm);
+  box-shadow: var(--app-shadow-2);
+  color: var(--app-text);
+  cursor: pointer;
+  display: flex;
+  font-size: 11px;
+  font-weight: 600;
+  gap: 5px;
+  height: 20px;
+  min-width: 24px;
+  overflow: hidden;
+  padding: 0 7px;
+  position: relative;
+  text-align: left;
+  z-index: 1;
+  /* EO-412: allow native touch panning of the timeline; editing is mouse/pen only. */
+  touch-action: pan-x pan-y;
+  transition: box-shadow 120ms ease, transform 120ms ease;
+}
+
+.event:hover {
+  box-shadow: var(--app-shadow-4);
+}
+
+.event svg {
+  flex: 0 0 auto;
+}
+
+.interactive {
+  cursor: grab;
+}
+
+.interactive:active,
+.editing {
+  cursor: grabbing;
+}
+
+.editing {
+  box-shadow: var(--app-shadow-4);
+  outline: 2px solid color-mix(in srgb, var(--app-brand-bg) 50%, transparent);
+  z-index: 5;
+}
+
+.label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.preview {
+  background: color-mix(in srgb, var(--app-surface) 82%, transparent);
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text);
+  flex: 0 0 auto;
+  font-size: 10px;
+  padding: 1px 4px;
+}
+
+.statusDot {
+  background: color-mix(in srgb, var(--app-surface) 78%, transparent);
+  border-radius: 999px;
+  flex: 0 0 auto;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 5px;
+}
+
+.resizeHandle {
+  bottom: 0;
+  cursor: ew-resize;
+  position: absolute;
+  top: 0;
+  width: 8px;
+}
+
+.resizeStart {
+  left: 0;
+}
+
+.resizeEnd {
+  right: 0;
+}
+
+.interactive:hover .resizeHandle,
+.editing .resizeHandle {
+  background: color-mix(in srgb, var(--app-text) 24%, transparent);
+}
+
+.vacation {
+  background: var(--app-event-vacation-bg);
+  border-color: var(--app-event-vacation-border);
+  color: var(--app-event-vacation-text);
+}
+
+.approvalDraft {
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, currentColor 13%, transparent) 0,
+    color-mix(in srgb, currentColor 13%, transparent) 4px,
+    transparent 4px,
+    transparent 9px
+  );
+}
+
+.approvalPendingApproval {
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--app-warning-text) 24%, transparent) 0,
+    color-mix(in srgb, var(--app-warning-text) 24%, transparent) 5px,
+    transparent 5px,
+    transparent 10px
+  );
+  border-style: dashed;
+}
+
+.approvalApproved {
+  border-style: solid;
+}
+
+.approvalRejected {
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--app-danger-text) 24%, transparent) 0,
+    color-mix(in srgb, var(--app-danger-text) 24%, transparent) 5px,
+    transparent 5px,
+    transparent 10px
+  );
+  border-color: color-mix(in srgb, var(--app-danger-text) 48%, currentColor);
+  border-style: dashed;
+  opacity: 0.78;
+}
+
+.compensation {
+  background: var(--app-event-compensation-bg);
+  border-color: var(--app-event-compensation-border);
+  color: var(--app-event-compensation-text);
+}
+
+.education,
+.unpaidLeave,
+.otherAbsence {
+  background: var(--app-event-other-absence-bg);
+  border-color: var(--app-event-other-absence-border);
+  color: var(--app-event-other-absence-text);
+}
+
+.military {
+  background: var(--app-event-military-bg);
+  border-color: var(--app-event-military-border);
+  color: var(--app-event-military-text);
+}
+
+.homeOffice {
+  background: var(--app-event-home-office-bg);
+  border-color: var(--app-event-home-office-border);
+  color: var(--app-event-home-office-text);
+}
+
+.training {
+  background: var(--app-event-training-bg);
+  border-color: var(--app-event-training-border);
+  color: var(--app-event-training-text);
+}
+
+.project {
+  background: var(--app-event-project-bg);
+  border-color: var(--app-event-project-border);
+  color: var(--app-event-project-text);
+}
+
+.maintenance {
+  background: var(--app-event-maintenance-bg);
+  border-color: var(--app-event-maintenance-border);
+  color: var(--app-event-maintenance-text);
+}
+
+.onCall {
+  background: var(--app-event-on-call-bg);
+  border-color: var(--app-event-on-call-border);
+  color: var(--app-event-on-call-text);
+}
+
+.standby {
+  background: var(--app-event-standby-bg);
+  border-color: var(--app-event-standby-border);
+  color: var(--app-event-standby-text);
+}

@@ -1,0 +1,28 @@
+# frontend-requirements.txt
+# RPP Frontend (Vite + React + Fluent UI + Teams)
+# Entspricht package.json
+
+# === dependencies ===
+@fluentui/react-components ^9.57.0
+@fluentui/react-icons ^2.0.247
+@microsoft/teams-js ^2.53.1
+@vitejs/plugin-react ^4.3.4
+react ^18.3.1
+react-dom ^18.3.1
+typescript ^5.6.3
+vite ^5.4.11
+
+# === devDependencies ===
+@types/react ^18.3.12
+@types/react-dom ^18.3.1
+@vitalets/google-translate-api ^9.2.1
+eslint ^9.15.0
+typescript-eslint ^8.15.0
+
+# --------------------------------------------------
+# Installation (im Frontend-Projektordner):
+#
+#   npm install
+#
+# Empfohlene Node.js Version: 22 LTS (x64)
+# --------------------------------------------------

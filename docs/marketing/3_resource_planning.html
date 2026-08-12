@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resource Planning – Part 3</title>
+<style>
+  :root{
+    --ink:#2b2420; --soft:#5c5148; --paper:#f6efe2; --card:#fffdf8;
+    --accent:#9c5a2d; --accent2:#c9962f; --line:#e3d8c4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Iowan Old Style",Georgia,"Times New Roman",serif;
+    font-size:19px; line-height:1.7;
+  }
+  .wrap{max-width:780px; margin:0 auto; padding:0 22px 80px;}
+  header.hero{
+    position:relative; height:min(58vh,460px); overflow:hidden;
+    display:flex; align-items:flex-end; margin-bottom:38px;
+    border-bottom:5px solid var(--accent2);
+  }
+  header.hero img{position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; filter:saturate(1.05);}
+  header.hero .veil{position:absolute; inset:0;
+    background:linear-gradient(180deg,rgba(20,12,6,.15),rgba(20,12,6,.78));}
+  header.hero .htext{position:relative; color:#fdf6e6; max-width:780px;
+    margin:0 auto; width:100%; padding:0 22px 30px;}
+  .kicker{letter-spacing:.32em; text-transform:uppercase; font-size:13px;
+    color:var(--accent2); font-family:Georgia,serif;}
+  h1{font-size:clamp(30px,6vw,50px); line-height:1.08; margin:.15em 0 .1em;
+    font-weight:700;}
+  .sub{font-size:19px; color:#f0e4cf; font-style:italic; margin:0;}
+  h2{font-size:27px; color:var(--accent); margin:2.4em 0 .4em; line-height:1.2;}
+  h3{font-size:21px; color:var(--accent); margin:1.6em 0 .35em; line-height:1.25;}
+  p{margin:0 0 1.15em;}
+  .lead{font-size:21px;}
+  .lead::first-letter{font-size:3.4em; float:left; line-height:.8;
+    padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  figure{margin:2em 0;}
+  figure img{width:100%; border-radius:8px; display:block;
+    box-shadow:0 10px 30px rgba(60,40,20,.18);}
+  figcaption{font-size:14.5px; color:var(--soft); font-style:italic;
+    margin-top:.6em; text-align:center;}
+  .pull{border-left:4px solid var(--accent2); background:var(--card);
+    padding:14px 20px; margin:1.8em 0; font-style:italic; font-size:20px;
+    color:#4a3b2c; border-radius:0 8px 8px 0;}
+  .box{background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:16px 20px; margin:1.6em 0;}
+  .box b{color:var(--accent);}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:2em 0;}
+  .grid2 figure{margin:0;}
+  ul{margin:0 0 1.2em; padding-left:1.3em;}
+  li{margin-bottom:.4em;}
+  .series-nav{
+    display:flex; justify-content:space-between; align-items:center;
+    gap:12px; margin:2.5em 0 1em; padding:14px 18px;
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    font-size:15px; font-family:Georgia,serif;
+  }
+  .series-nav a{
+    color:var(--accent); text-decoration:none; font-weight:600;
+    white-space:nowrap;
+  }
+  .series-nav a:hover{text-decoration:underline;}
+  .series-nav .mid{color:var(--soft); letter-spacing:.08em; text-transform:uppercase;
+    font-size:12px; text-align:center;}
+  .series-nav .placeholder{visibility:hidden; pointer-events:none;}
+  footer{border-top:1px solid var(--line); margin-top:50px; padding-top:22px;
+    font-size:13.5px; color:var(--soft); font-family:Georgia,serif;}
+  footer a{color:var(--accent);}
+  footer h3{font-size:15px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--ink); border:none; margin:0 0 .6em; padding:0;}
+  hr{border:none; border-top:1px solid var(--line); margin:2.5em 0;}
+  @media(max-width:560px){
+    .grid2{grid-template-columns:1fr;}
+    body{font-size:18px;}
+    .series-nav{flex-direction:column; gap:8px;}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1400&q=80&auto=format&fit=crop" alt="Team planning together at a whiteboard">
+  <div class="veil"></div>
+  <div class="htext">
+    <div class="kicker">Part 3 · From calendar to plan</div>
+    <h1>Resource Planning</h1>
+    <p class="sub">How to align time, people and means wisely</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="series-nav">
+  <a href="2_history_of_calendars.html">← Back</a>
+  <span class="mid">Part 3 of 3</span>
+  <span class="placeholder">Continue →</span>
+</nav>
+
+<p class="lead">A calendar tells us <em>when</em> something happens. But as soon as several people want to achieve something together — a project, a move, the family holiday, or simply everyday life — the date alone is no longer enough. Then it gets interesting: <b>Who</b> does <b>what</b>, <b>with what</b> and <b>by when</b>?</p>
+
+<p>That is exactly what resource planning is. It is the natural continuation of the calendar: where the calendar orders time, planning orders everything that is limited within that time.</p>
+
+<h2>What you are actually planning</h2>
+<p>It comes down to three everyday things:</p>
+<ul>
+  <li><b>People</b> and their time</li>
+  <li><b>Deadlines</b> and appointments</li>
+  <li><b>The means</b> you need</li>
+</ul>
+<p>Means can look very different: in a household the washing machine, the car or space in the fridge. In a workshop the machines and the materials. In a research institute the measuring instruments, the labs and the limited time on certain apparatus. In IT the servers, the licences, developers’ time, or simply the attention of people who are already pulled in several directions at once.</p>
+<p>Planning means nothing more than distributing these things so that in the end no one is permanently overloaded and the important work still gets finished on time.</p>
+
+<figure>
+  <img src="https://images.unsplash.com/photo-1435527173128-983b87201f4d?w=1200&q=80&auto=format&fit=crop" alt="Open monthly planner">
+  <figcaption>The monthly planner — or the laundry-room calendar: the simplest and oldest form of resource planning.</figcaption>
+</figure>
+
+<h2>The laundry-room calendar</h2>
+<p>Long before there were smart apps and colourful boards, many households already had the laundry-room calendar. A plain wall calendar next to the washing machine or on the fridge. Written in pencil: who does the laundry when, when visitors are coming, who has the car on Saturday, when the children’s birthday is, and that the bulky waste goes out on the 15th.</p>
+<p>That was planning in its purest form. At a glance you could see whether two important things had landed in the same week, whether someone was supposed to be in three places at once, and whether there was still room for something new. And because it hung where everyone could see it, no one could say: “I didn’t know.”</p>
+
+<div class="pull">That is the core of good planning: making things visible before they become a problem. Whether on the laundry-room door, the lab wall or the shared team calendar — the principle stays the same.</div>
+
+<h2>Why things often go wrong without an overview</h2>
+<p>Without some form of shared overview the same pattern appears surprisingly often: two important things fall into the same week. The same person is expected to be in several places at once. In the end time, money, equipment or nerves are used up before the real work is done.</p>
+<p>A simple plan — even if it is only the calendar on the laundry-room door — forces you to see these conflicts early and decide: What takes priority? What can wait? Do we need help? Or do we have to drop something?</p>
+
+<h2>A few simple rules that almost always help</h2>
+<div class="box">
+  <p><b>Leave buffers.</b> No plan survives reality if every minute is booked.</p>
+  <p><b>Set priorities.</b> If everything is equally important, nothing is.</p>
+  <p><b>Do not load people and equipment to the limit.</b> Stay realistic. Something unexpected always happens — whether someone falls ill, a measuring instrument fails or a server goes down.</p>
+  <p style="margin-bottom:0"><b>Check and adjust regularly.</b> A plan you never look at again is worthless. Short and often is far better than perfect once and then forgotten.</p>
+</div>
+
+<p>And one more decisive point: a plan alone changes nothing. Only when someone takes it in hand and makes sure it is actually lived does the scrap of paper on the wall or the entry in the calendar turn into real order.</p>
+
+<figure>
+  <img src="https://images.unsplash.com/photo-1577394732330-38cef75bc388?w=1200&q=80&auto=format&fit=crop" alt="Marking a calendar">
+  <figcaption>In the end it is not the prettiest plan that counts, but the one everyone understands and actually uses.</figcaption>
+</figure>
+
+<p>Sometimes a calendar on the laundry-room door is enough. Sometimes it hangs in the lab or lives in a shared digital calendar. The principle remains the same.</p>
+
+<p>So the circle closes: the calendar taught people how to order time. Planning takes one step further and orders everything we want to do within that time. Both follow the same wish — to make a little reliable order out of the daily mess. And both work best when they stay simple enough that people actually keep them up.</p>
+
+<hr>
+
+<h2>In Closing</h2>
+
+<h3>Calendar really means “to call out”</h3>
+<p>At the beginning stands a call. Latin <em>calare</em> means “to call out” or “to proclaim” — and that is exactly what a priest did: he announced the new crescent moon and with it the beginning of the month. From that call came our word <em>calendar</em> (related to the English <em>to call</em>).</p>
+
+<p>And a call wants to be heard. When someone says “Now we begin,” the others fall into step — same month, same beat, same feast days. At its core a calendar does little more than this: it brings many people onto the same rhythm.</p>
+
+<p>The fact that this was once the business of priests gives the whole matter a solemn undertone. Interestingly, the word “holiday” (and German <em>Ferien</em>) belongs to the same family as Latin <em>fēstus</em> (“festive,” cf. “feast”) and <em>fānum</em> (“sacred place, temple”). Underlying them is the Indo-European root <em>dhēs-</em>, which denotes religious and cultic concepts. A holiday calendar — a solemn call!</p>
+
+<h3>Everyone looked up</h3>
+<p>Whatever the word — “proclamation,” “day-counting,” “moon-reckoning” or “setting right” — in the end everyone did the same thing: they looked up and took notes. The sun rose and set, the moon grew full and then thin again, the seasons returned reliably. That was the pattern every calendar followed.</p>
+
+<p>A calendar is therefore nothing mysterious. It is the transcript of a pattern that was already there. The Egyptians read it from the star Sirius, the Babylonians from the Moon, farmers everywhere from sowing and harvest. No one invented this order — people simply noticed it and transferred it into handy boxes.</p>
+
+<p>The practical point: different cultures gave the matter different names and different starting points, yet all of them were spelling the same sky. A Chinese farmer, a Roman priest and a Maya astronomer would have argued about many things — about the course of the Sun and Moon they would have agreed surprisingly quickly.</p>
+
+<p>In short: the sky set the beat, and humanity wrote it down — each culture in its own hand.</p>
+
+<div style="margin:3em 0 2.5em; text-align:center; padding:28px 24px; background:var(--card); border:1px solid var(--line); border-radius:12px; box-shadow:0 8px 24px rgba(60,40,20,.08);">
+  <p style="margin:0; font-size:22px; line-height:1.55; color:var(--accent); font-style:italic; letter-spacing:.01em;">
+    No perfect plan can ever quite<br>
+    Replace the luck of working right.
+  </p>
+</div>
+
+<nav class="series-nav">
+  <a href="2_history_of_calendars.html">← Back</a>
+  <span class="mid">Part 3 of 3</span>
+  <span class="placeholder">Continue →</span>
+</nav>
+
+<footer>
+  <h3>Image sources</h3>
+  <p><b>Unsplash</b> (Unsplash Licence, free to use): Team at whiteboard, monthly planner and calendar marking.</p>
+</footer>
+</div>
+</body>
+</html>

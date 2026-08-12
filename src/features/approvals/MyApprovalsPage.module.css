@@ -1,0 +1,99 @@
+.page {
+  display: grid;
+  gap: var(--app-space-md);
+}
+
+.card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  box-shadow: var(--app-shadow-2);
+  display: grid;
+  gap: var(--app-space-md);
+  padding: var(--app-space-md) var(--app-space-lg);
+}
+
+.header {
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-md);
+  justify-content: space-between;
+}
+
+.header h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header p {
+  color: var(--app-text-muted);
+  font-size: 13px;
+  margin: 4px 0 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-sm);
+}
+
+.stateText {
+  color: var(--app-text-muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.hint {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.m365Cell {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.graphId {
+  color: var(--app-text-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+}
+
+.tableWrap {
+  overflow-x: auto;
+}
+
+.table {
+  border-collapse: collapse;
+  min-width: 560px;
+  width: 100%;
+}
+
+.table th {
+  border-bottom: 1px solid var(--app-border);
+  color: var(--app-text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: var(--app-space-xs) var(--app-space-sm);
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.table td {
+  border-bottom: 1px solid var(--app-border);
+  font-size: 13px;
+  padding: var(--app-space-sm);
+}
+
+/* EO-421: request targeted by an Outlook event deep link. */
+.highlightedRow {
+  background: color-mix(in srgb, var(--colorBrandBackground2, #ebebfa) 70%, transparent);
+  outline: 2px solid var(--colorBrandStroke1, #5b5fc7);
+  outline-offset: -2px;
+}

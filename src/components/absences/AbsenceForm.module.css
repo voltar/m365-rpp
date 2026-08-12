@@ -1,0 +1,242 @@
+.form {
+  display: grid;
+  gap: 7px;
+}
+
+.fieldHint {
+  color: var(--app-text-muted);
+  font-size: 11px;
+}
+
+.entitlementCompact {
+  grid-template-columns: 1fr 1fr;
+}
+
+.resourceContext {
+  background: color-mix(in srgb, var(--app-brand-bg) 6%, var(--app-surface));
+  border: 1px solid color-mix(in srgb, var(--app-brand-bg) 18%, var(--app-border));
+  border-radius: var(--app-radius-md);
+  color: var(--app-text-muted);
+  display: grid;
+  gap: 2px;
+  padding: 9px 10px;
+}
+
+.resourceName {
+  color: var(--app-text);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.statusBadge {
+  align-items: center;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+}
+
+.statusBadge span {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.statusBadge strong {
+  font-size: 13px;
+}
+
+.draft {
+  background: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--app-surface) 90%, var(--app-border)) 0,
+    color-mix(in srgb, var(--app-surface) 90%, var(--app-border)) 6px,
+    var(--app-surface) 6px,
+    var(--app-surface) 12px
+  );
+}
+
+.pendingApproval {
+  background: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--app-warning-bg) 74%, var(--app-surface)) 0,
+    color-mix(in srgb, var(--app-warning-bg) 74%, var(--app-surface)) 6px,
+    var(--app-surface) 6px,
+    var(--app-surface) 12px
+  );
+  border-color: color-mix(in srgb, var(--app-warning-text) 35%, var(--app-border));
+  color: var(--app-warning-text);
+}
+
+.approved {
+  background: var(--app-success-bg);
+  border-color: color-mix(in srgb, var(--app-success-text) 35%, var(--app-border));
+  color: var(--app-success-text);
+}
+
+.rejected {
+  background: var(--app-danger-bg);
+  border-color: color-mix(in srgb, var(--app-danger-text) 35%, var(--app-border));
+  color: var(--app-danger-text);
+}
+
+.field,
+.fieldGrid {
+  display: grid;
+  gap: 6px;
+}
+
+.fieldGrid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.field span {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  color: var(--app-text);
+  font: inherit;
+  min-height: 32px;
+  min-width: 0;
+  padding: 5px 9px;
+  width: 100%;
+}
+
+.field textarea {
+  min-height: 48px;
+  resize: vertical;
+}
+
+.metrics {
+  align-items: center;
+  background: var(--app-bg-subtle);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 10px;
+}
+
+.metrics span {
+  color: var(--app-text);
+  font-size: 13px;
+}
+
+.metrics strong {
+  color: var(--app-text);
+}
+
+.syncSection {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  display: grid;
+  gap: 3px;
+  padding: 6px 10px;
+}
+
+.outlookSyncRow {
+  align-items: center;
+  display: flex;
+  gap: var(--app-space-sm);
+}
+
+.outlookIcon {
+  color: var(--app-brand-bg);
+  flex: 0 0 auto;
+  font-size: 20px;
+}
+
+.sectionTitle {
+  color: var(--app-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.entitlementCard {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  display: grid;
+  gap: 3px;
+  padding: 6px 10px;
+}
+
+.entitlementCard h3 {
+  color: var(--app-text);
+  font-size: 13px;
+  margin: 0;
+}
+
+.entitlementCard dl {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+}
+
+.entitlementCard div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.entitlementCard dt {
+  color: var(--app-text);
+  font-size: 13px;
+}
+
+.entitlementCard dd {
+  color: var(--app-text);
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.validation {
+  background: var(--app-danger-bg);
+  border: 1px solid color-mix(in srgb, var(--app-danger-text) 30%, var(--app-border));
+  border-radius: var(--app-radius-md);
+  color: var(--app-danger-text);
+  display: grid;
+  font-size: 13px;
+  gap: var(--app-space-xs);
+  padding: 8px 10px;
+}
+
+.actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 520px) {
+  .fieldGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+}
+
+/* EO-412: comfortable touch targets on coarse-pointer devices. */
+@media (pointer: coarse) {
+  .field input,
+  .field select {
+    min-height: 40px;
+  }
+}

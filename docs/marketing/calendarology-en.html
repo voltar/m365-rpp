@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time, Calendars and Planning</title>
+<style>
+  :root{
+    --ink:#2b2420; --soft:#5c5148; --paper:#f6efe2; --card:#fffdf8;
+    --accent:#9c5a2d; --accent2:#c9962f; --line:#e3d8c4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Iowan Old Style",Georgia,"Times New Roman",serif;
+    font-size:19px; line-height:1.7;
+  }
+  .wrap{max-width:780px; margin:0 auto; padding:0 22px 80px;}
+  header.hero{
+    position:relative; height:min(58vh,460px); overflow:hidden;
+    display:flex; align-items:flex-end; margin-bottom:38px;
+    border-bottom:5px solid var(--accent2);
+  }
+  header.hero img{position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; filter:saturate(1.05);}
+  header.hero .veil{position:absolute; inset:0;
+    background:linear-gradient(180deg,rgba(20,12,6,.15),rgba(20,12,6,.78));}
+  header.hero .htext{position:relative; color:#fdf6e6; max-width:780px;
+    margin:0 auto; width:100%; padding:0 22px 30px;}
+  .kicker{letter-spacing:.32em; text-transform:uppercase; font-size:13px;
+    color:var(--accent2); font-family:Georgia,serif;}
+  h1{font-size:clamp(30px,6vw,50px); line-height:1.08; margin:.15em 0 .1em;
+    font-weight:700;}
+  .sub{font-size:19px; color:#f0e4cf; font-style:italic; margin:0;}
+  h2{font-size:27px; color:var(--accent); margin:2.4em 0 .4em; line-height:1.2;
+    border-top:1px solid var(--line); padding-top:1.4em;}
+  h2:first-of-type{border-top:none; padding-top:0;}
+  h3{font-size:21px; color:var(--accent); margin:1.6em 0 .35em; line-height:1.25;}
+  p{margin:0 0 1.15em;}
+  .lead{font-size:21px;}
+  .lead::first-letter{font-size:3.4em; float:left; line-height:.8;
+    padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  figure{margin:2em 0;}
+  figure img{width:100%; border-radius:8px; display:block;
+    box-shadow:0 10px 30px rgba(60,40,20,.18);}
+  figcaption{font-size:14.5px; color:var(--soft); font-style:italic;
+    margin-top:.6em; text-align:center;}
+  .pull{border-left:4px solid var(--accent2); background:var(--card);
+    padding:14px 20px; margin:1.8em 0; font-style:italic; font-size:20px;
+    color:#4a3b2c; border-radius:0 8px 8px 0;}
+  .box{background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:16px 20px; margin:1.6em 0;}
+  .box b{color:var(--accent);}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:2em 0;}
+  .grid2 figure{margin:0;}
+  .teil{background:var(--card); border:1px solid var(--line);
+    border-radius:12px; padding:8px 22px 18px; margin:2.5em 0 1.5em;
+    box-shadow:0 6px 20px rgba(60,40,20,.06);}
+  .teil-nr{font-size:13px; letter-spacing:.28em; text-transform:uppercase;
+    color:var(--accent2); margin:1.2em 0 0;}
+  ul{margin:0 0 1.2em; padding-left:1.3em;}
+  li{margin-bottom:.4em;}
+  footer{border-top:1px solid var(--line); margin-top:50px; padding-top:22px;
+    font-size:13.5px; color:var(--soft); font-family:Georgia,serif;}
+  footer a{color:var(--accent);}
+  footer h3{font-size:15px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--ink); border:none; margin:0 0 .6em; padding:0;}
+  hr{border:none; border-top:1px solid var(--line); margin:2.5em 0;}
+  @media(max-width:560px){
+    .grid2{grid-template-columns:1fr;}
+    body{font-size:18px;}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monolito%20de%20la%20Piedra%20del%20Sol.jpg?width=1400" alt="Aztec Sun Stone">
+  <div class="veil"></div>
+  <div class="htext">
+    <div class="kicker">Three essays · Time · Calendars · Planning</div>
+    <h1>Time, Calendars and Planning</h1>
+    <p class="sub">Engaging, clear, and illustrated</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<p class="lead">The term “calendarology” can loosely describe the study of calendars: how they arise, why different cultures build them differently, what role they play in religion, politics and everyday life, and how they help people find shared rhythms. Behind every calendar lies not only mathematics but also tradition, power and social order. In this sense a calendar is more than a timekeeper — it is a cultural technique with which people structure their shared future.</p>
+
+<!-- ========== PART 1 ========== -->
+<div class="teil">
+  <p class="teil-nr">Part 1</p>
+  <h2 style="border:none;padding-top:0;margin-top:.3em">The Nature of Calendars</h2>
+  <p style="font-style:italic;color:var(--soft);margin-top:-.3em">How people ordered time with the sun, the moon and a little mathematics</p>
+</div>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monolito%20de%20la%20Piedra%20del%20Sol.jpg?width=1200" alt="Aztec Sun Stone">
+  <figcaption>The Aztec “Sun Stone” — a symbol of how many cultures developed their own ways of reckoning time.</figcaption>
+</figure>
+
+<p>Imagine having to promise someone a meeting “in eighty sunrises” — and not being allowed to lose count. That is exactly the problem humanity faced for tens of thousands of years. A calendar is, at heart, an agreed solution: a set of rules that cuts the endless flow of time into manageable portions — days, weeks, months, years.</p>
+
+<p>Importantly, there is no single “the” calendar. Over the millennia, very different cultures devised very different systems — the Egyptian, Babylonian, Jewish, Islamic, Chinese, Indian, Maya calendars and many more. Each answers the same question in its own way. The fact that most of the world today uses the same calendar in everyday life is a very recent development — more on that at the end of Part&nbsp;2.</p>
+
+<h3>Where the word “calendar” comes from</h3>
+<p>The word takes us straight to ancient Rome. It comes from Latin <b>calendarium</b>, the “account book” of a moneylender. At its root are the <b>Kalendae</b> (also <em>Calendae</em>) — the first day of every Roman month, when interest and debts traditionally fell due. The Kalendae in turn are linked to the verb <b>calare</b>, “to call out” or “to proclaim”: at the beginning of the month it was publicly <em>announced</em> when the new moon days would fall. From “proclaiming the start of the month” came the “account book,” and from that eventually our word calendar.</p>
+
+<h3>Three celestial clocks that refuse to agree</h3>
+<p>The first clock is the <b>Sun</b>. One rotation of the Earth on its axis gives us the <em>day</em> — the basic unit no one disputes. When the sun stands highest, it is noon; that could already be read thousands of years ago with a simple shadow stick.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ancient-egyptian-sundial.jpg?width=1000" alt="Ancient Egyptian sundial">
+  <figcaption>One of the oldest known sundials from ancient Egypt — humanity’s first “pointer clock.”</figcaption>
+</figure>
+
+<p>The second clock is the <b>Moon</b>. It waxes and wanes in a reliable rhythm of about 29½ days — from new moon to new moon. These lunar phases are so striking that almost everywhere in the world they inspired the invention of the <em>month</em>. “Month” and “moon” are not related by chance.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Moon%20phases%20en.jpg?width=1200" alt="Phases of the Moon">
+  <figcaption>The Moon passes through its phases in about 29.5 days — the natural timekeeper for the month.</figcaption>
+</figure>
+
+<p>The third clock is the Sun again, but on the large scale: one full orbit of the Earth around the Sun produces the <b>year</b> with its seasons. For farmers it was a matter of survival to know when to sow and when to harvest.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Seasons.svg?width=1100" alt="Earth orbiting the Sun">
+  <figcaption>Because the Earth’s axis is tilted, the four seasons arise on its path around the Sun.</figcaption>
+</figure>
+
+<div class="pull">The whole drama of calendar-making can be summed up in one sentence: the year does not last exactly 365 days, and the month does not fit cleanly into the year.</div>
+
+<h3>The flaw in the system</h3>
+<p>Here the trouble begins. A solar year does not last 365 days but about <b>365.2422 days</b> — almost a quarter of a day longer. And twelve lunar months add up to only about 354 days, eleven days <em>too few</em> for a full year. The three celestial clocks inevitably drift apart. Anyone who does nothing will see their calendar slowly wander through the seasons.</p>
+
+<p>Every culture had to decide which clock to favour — and that is precisely the reason for the variety of calendars. <b>Pure lunar calendars</b> (like the Islamic one) follow the Moon faithfully and let their festivals drift through the seasons. <b>Solar calendars</b> (like the one in common use today) follow the year and let the months keep only a rough connection to the Moon. <b>Lunisolar calendars</b> (like the Jewish or Chinese ones) try to bridge the gap and occasionally insert a whole intercalary month to reconcile both clocks.</p>
+
+<h3>The elegant trick: the leap day</h3>
+<p>A widespread solution to the awkward quarter-day is elegantly simple. Instead of being a few hours off every year, one collects four quarter-days and adds them as a whole day: the <b>29th of February</b>. That is why almost every fourth year has an extra day.</p>
+
+<div class="box">
+  <p style="margin:0"><b>The leap-year rule in three lines:</b> A year is a leap year if it is divisible by 4 — <b>except</b> when it is divisible by 100, <b>unless</b> it is also divisible by 400. That is why 2000 was a leap year, but 1900 was not. This fine-tuning is so accurate that it is only one day off after more than 3,000 years.</p>
+</div>
+
+<h3>And where does the week come from?</h3>
+<p>The week is the odd one out: it has <em>no</em> astronomical cause. Seven days cannot be derived from either the Moon or the Sun. It most likely comes from Babylon, where people revered the seven “wandering stars” visible to the naked eye — the Sun, the Moon and the five classical planets. Their names still live on in our days of the week. The week is therefore the purely human chapter in a story otherwise dictated by the heavens.</p>
+
+<p>In the end a calendar is a small masterpiece of compromise: an age-old peace treaty between the Sun, the Moon and the human desire for order.</p>
+
+<!-- ========== PART 2 ========== -->
+<div class="teil">
+  <p class="teil-nr">Part 2</p>
+  <h2 style="border:none;padding-top:0;margin-top:.3em">A Short History of Calendars</h2>
+  <p style="font-style:italic;color:var(--soft);margin-top:-.3em">From notches in bone to a worldwide date</p>
+</div>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dendera%20zodiac%2C%20Louvre.jpg?width=1200" alt="The Dendera Zodiac">
+  <figcaption>The “Dendera Zodiac” — an Egyptian star map in stone, now in the Louvre.</figcaption>
+</figure>
+
+<p>Calendars are probably older than writing. Long before people wrote down words, they were already carving time into bone. Stone Age objects carry rows of notches that many researchers interpret as counts of lunar phases — the first attempt to translate the sky into bookkeeping.</p>
+
+<h3>Egypt: The star that announced the flood</h3>
+<p>The ancient Egyptians were masters of sky-watching. Their lives depended on the Nile, which overflowed its banks every year. They noticed that this flood began at almost exactly the moment when the bright star Sirius, after weeks of invisibility, first reappeared in the morning sky. From this observation came one of the first practical <b>solar calendars</b> of 365 days: twelve months of 30 days each, plus five feast days at the end.</p>
+
+<h3>Rome: A calendar in chaos</h3>
+<p>The Romans, by contrast, thoroughly scrambled the reckoning of time. Their old lunar calendar was so inaccurate that priests inserted extra days at will — often for pure political reasons, to lengthen or shorten terms of office. By the middle of the first century BCE the calendar was a full three months out of step with the seasons.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Fasti%20Antiates%20Maiores%20%2814786905184%29.jpg?width=1200" alt="Fasti Antiates Maiores">
+  <figcaption>Reconstruction of the “Fasti Antiates Maiores,” the only surviving Roman calendar from the period before Julius Caesar.</figcaption>
+</figure>
+
+<h3>Julius Caesar clears things up</h3>
+<p>It took a dictator to restore order. <b>Julius Caesar</b> sought Egyptian advice and ordered a radical reform in 46&nbsp;BCE. To wipe out the accumulated error, that single year had to last a remarkable 445 days — the “Year of Confusion.” After that the <b>Julian calendar</b> applied: 365 days, with a leap day every four years. In his honour the month of July still bears Caesar’s name.</p>
+
+<div class="pull">Caesar’s calendar was so good that it remained in use for more than 1,600 years. But “almost right” is, over the centuries, still not right enough.</div>
+
+<div class="grid2">
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bust%20of%20Julius%20Caesar-Uffizi%20Gallery.jpg?width=700" alt="Julius Caesar">
+    <figcaption>Julius Caesar — namesake of the Julian calendar.</figcaption>
+  </figure>
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pope%20Gregory%20XIII%20portrait.jpg?width=700" alt="Pope Gregory XIII">
+    <figcaption>Pope Gregory XIII — his name lives on in the “Gregorian” calendar.</figcaption>
+  </figure>
+</div>
+
+<h3>The Middle Ages turn the calendar into art</h3>
+<p>In the Middle Ages the calendar became a work of art. Splendid books of hours showed, for each month, the matching rural labour — sowing, harvesting, slaughtering pigs — framed by the signs of the zodiac.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Les%20Tr%C3%A8s%20Riches%20Heures%20du%20duc%20de%20Berry%20Janvier.jpg?width=1000" alt="Très Riches Heures, January">
+  <figcaption>The month of January from the “Très Riches Heures” (c. 1412–1416) — a high point of medieval calendar art.</figcaption>
+</figure>
+
+<h3>1582: Ten days disappear</h3>
+<p>The small calculation error in the Julian calendar — roughly eleven minutes of excess length per year — had added up to a full ten days by the 16th century. <b>Pope Gregory XIII</b> drew the line in 1582: Thursday 4 October was followed directly by Friday 15 October. Ten days were simply struck out. At the same time he introduced the refined leap-year rule that still applies today.</p>
+
+<h3>How the world arrived at a shared date</h3>
+<p>And here comes the crucial point: this Gregorian calendar did <em>not</em> become the world standard overnight. Catholic countries followed quickly; Protestant and Orthodox ones hesitated for centuries in some cases — some regions switched only in the 20th century. That is why the Russian “October Revolution” took place in November according to today’s calendar.</p>
+
+<p>The fact that we use the same date worldwide today is a child of the modern age. Only when trade, seafaring, railways, the telegraph and finally the internet drew the world more tightly together did a <em>shared</em> beat of time become a practical necessity. International treaties, timetables, stock exchanges and global communication need a uniform “when.” So the Gregorian calendar established itself as the <b>global administrative and business standard</b> — not because it is the only “correct” one, but because the networked world had to agree on <em>one</em> common denominator.</p>
+
+<p>The other calendars have not disappeared because of this. The Islamic, Jewish, Chinese, Hindu, Buddhist, Persian or Ethiopian calendars still determine festivals, holidays and religious life for billions of people — often running parallel to the Gregorian everyday date. The world thus shares a common business date while continuing to cultivate its cultural diversity of time. A rare and rather beautiful compromise.</p>
+
+<!-- ========== PART 3 ========== -->
+<div class="teil">
+  <p class="teil-nr">Part 3</p>
+  <h2 style="border:none;padding-top:0;margin-top:.3em">Resource Planning</h2>
+  <p style="font-style:italic;color:var(--soft);margin-top:-.3em">How to align time, people and means wisely</p>
+</div>
+
+<figure>
+  <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&q=80&auto=format&fit=crop" alt="Team planning together at a whiteboard">
+  <figcaption>Planning is teamwork: making visible who does what by when.</figcaption>
+</figure>
+
+<p>A calendar tells us <em>when</em> something happens. But as soon as several people want to achieve something together — a project, a move, the family holiday, or simply everyday life — the date alone is no longer enough. Then it gets interesting: <b>Who</b> does <b>what</b>, <b>with what</b> and <b>by when</b>?</p>
+
+<p>That is exactly what resource planning is. It is the natural continuation of the calendar: where the calendar orders time, planning orders everything that is limited within that time.</p>
+
+<h3>What you are actually planning</h3>
+<p>It comes down to three everyday things:</p>
+<ul>
+  <li><b>People</b> and their time</li>
+  <li><b>Deadlines</b> and appointments</li>
+  <li><b>The means</b> you need</li>
+</ul>
+<p>Means can look very different: in a household the washing machine, the car or space in the fridge. In a workshop the machines and the materials. In a research institute the measuring instruments, the labs and the limited time on certain apparatus. In IT the servers, the licences, developers’ time, or simply the attention of people who are already pulled in several directions at once.</p>
+<p>Planning means nothing more than distributing these things so that in the end no one is permanently overloaded and the important work still gets finished on time.</p>
+
+<figure>
+  <img src="https://images.unsplash.com/photo-1435527173128-983b87201f4d?w=1200&q=80&auto=format&fit=crop" alt="Open monthly planner">
+  <figcaption>The monthly planner — or the laundry-room calendar: the simplest and oldest form of resource planning.</figcaption>
+</figure>
+
+<h3>The laundry-room calendar</h3>
+<p>Long before there were smart apps and colourful boards, many households already had the laundry-room calendar. A plain wall calendar next to the washing machine or on the fridge. Written in pencil: who does the laundry when, when visitors are coming, who has the car on Saturday, when the children’s birthday is, and that the bulky waste goes out on the 15th.</p>
+<p>That was planning in its purest form. At a glance you could see whether two important things had landed in the same week, whether someone was supposed to be in three places at once, and whether there was still room for something new. And because it hung where everyone could see it, no one could say: “I didn’t know.”</p>
+
+<div class="pull">That is the core of good planning: making things visible before they become a problem. Whether on the laundry-room door, the lab wall or the shared team calendar — the principle stays the same.</div>
+
+<h3>Why things often go wrong without an overview</h3>
+<p>Without some form of shared overview the same pattern appears surprisingly often: two important things fall into the same week. The same person is expected to be in several places at once. In the end time, money, equipment or nerves are used up before the real work is done.</p>
+<p>A simple plan — even if it is only the calendar on the laundry-room door — forces you to see these conflicts early and decide: What takes priority? What can wait? Do we need help? Or do we have to drop something?</p>
+
+<h3>A few simple rules that almost always help</h3>
+<div class="box">
+  <p><b>Leave buffers.</b> No plan survives reality if every minute is booked.</p>
+  <p><b>Set priorities.</b> If everything is equally important, nothing is.</p>
+  <p><b>Do not load people and equipment to the limit.</b> Stay realistic. Something unexpected always happens — whether someone falls ill, a measuring instrument fails or a server goes down.</p>
+  <p style="margin-bottom:0"><b>Check and adjust regularly.</b> A plan you never look at again is worthless. Short and often is far better than perfect once and then forgotten.</p>
+</div>
+
+<p>And one more decisive point: a plan alone changes nothing. Only when someone takes it in hand and makes sure it is actually lived does the scrap of paper on the wall or the entry in the calendar turn into real order.</p>
+
+<figure>
+  <img src="https://images.unsplash.com/photo-1577394732330-38cef75bc388?w=1200&q=80&auto=format&fit=crop" alt="Marking a calendar">
+  <figcaption>In the end it is not the prettiest plan that counts, but the one everyone understands and actually uses.</figcaption>
+</figure>
+
+<p>Sometimes a calendar on the laundry-room door is enough. Sometimes it hangs in the lab or lives in a shared digital calendar. The principle remains the same.</p>
+
+<p>So the circle closes: the calendar taught people how to order time. Planning takes one step further and orders everything we want to do within that time. Both follow the same wish — to make a little reliable order out of the daily mess. And both work best when they stay simple enough that people actually keep them up.</p>
+
+<hr>
+
+<!-- ========== CLOSING ========== -->
+<h2>In Closing</h2>
+
+<h3>Calendar really means “to call out”</h3>
+<p>At the beginning stands a call. Latin <em>calare</em> means “to call out” or “to proclaim” — and that is exactly what a priest did: he announced the new crescent moon and with it the beginning of the month. From that call came our word <em>calendar</em> (related to the English <em>to call</em>).</p>
+
+<p>And a call wants to be heard. When someone says “Now we begin,” the others fall into step — same month, same beat, same feast days. At its core a calendar does little more than this: it brings many people onto the same rhythm.</p>
+
+<p>The fact that this was once the business of priests gives the whole matter a solemn undertone. Interestingly, the word “holiday” (and German <em>Ferien</em>) belongs to the same family as Latin <em>fēstus</em> (“festive,” cf. “feast”) and <em>fānum</em> (“sacred place, temple”). Underlying them is the Indo-European root <em>dhēs-</em>, which denotes religious and cultic concepts. A holiday calendar — a solemn call!</p>
+
+<h3>Everyone looked up</h3>
+<p>Whatever the word — “proclamation,” “day-counting,” “moon-reckoning” or “setting right” — in the end everyone did the same thing: they looked up and took notes. The sun rose and set, the moon grew full and then thin again, the seasons returned reliably. That was the pattern every calendar followed.</p>
+
+<p>A calendar is therefore nothing mysterious. It is the transcript of a pattern that was already there. The Egyptians read it from the star Sirius, the Babylonians from the Moon, farmers everywhere from sowing and harvest. No one invented this order — people simply noticed it and transferred it into handy boxes.</p>
+
+<p>The practical point: different cultures gave the matter different names and different starting points, yet all of them were spelling the same sky. A Chinese farmer, a Roman priest and a Maya astronomer would have argued about many things — about the course of the Sun and Moon they would have agreed surprisingly quickly.</p>
+
+<p>In short: the sky set the beat, and humanity wrote it down — each culture in its own hand.</p>
+
+<div style="margin:3em 0 2.5em; text-align:center; padding:28px 24px; background:var(--card); border:1px solid var(--line); border-radius:12px; box-shadow:0 8px 24px rgba(60,40,20,.08);">
+  <p style="margin:0; font-size:22px; line-height:1.55; color:var(--accent); font-style:italic; letter-spacing:.01em;">
+    No perfect plan can ever quite<br>
+    Replace the luck of working right.
+  </p>
+</div>
+
+<footer>
+  <h3>Image sources</h3>
+  <p><b>Wikimedia Commons</b> (Public Domain / Creative Commons — please check the licence on each file page):<br>
+    <a href="https://commons.wikimedia.org/wiki/File:Monolito_de_la_Piedra_del_Sol.jpg">Sun Stone</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Ancient-egyptian-sundial.jpg">Sundial</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Moon_phases_en.jpg">Moon phases</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Seasons.svg">Seasons</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Dendera_zodiac,_Louvre.jpg">Dendera</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Fasti_Antiates_Maiores_(14786905184).jpg">Roman calendar</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Bust_of_Julius_Caesar-Uffizi_Gallery.jpg">Julius Caesar</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Pope_Gregory_XIII_portrait.jpg">Gregory XIII</a> ·
+    <a href="https://commons.wikimedia.org/wiki/File:Les_Tr%C3%A8s_Riches_Heures_du_duc_de_Berry_Janvier.jpg">Très Riches Heures</a>
+  </p>
+  <p><b>Unsplash</b> (Unsplash Licence, free to use): Team at whiteboard, monthly planner, Kanban board, project planning and calendar marking.</p>
+</footer>
+</div>
+</body>
+</html>

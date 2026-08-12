@@ -1,0 +1,39 @@
+# Local RPP Web API container (+ PostgreSQL for the relational planning store).
+#
+# Usage (repo root):
+#   docker compose -f docker-compose.api.yml up -d --build
+#   curl -i http://localhost:5004/health
+#   docker compose -f docker-compose.api.yml down
+#
+# Defaults target EO-458 PostgreSQL (Planning:Provider=postgres) on the
+# compose network. Override for SQL Server or an external engine:
+#   set RPP_PLANNING_PROVIDER=sql
+#   set RPP_DEFAULT_CONNECTION=Server=...;Database=...;...
+#
+# Postgres alone (API via `dotnet run` on the host) stays in:
+#   docker compose -f docker-compose.postgres.yml up -d
+
+include:
+  - path: docker-compose.postgres.yml
+
+services:
+  rpp-webapi:
+    build:
+      context: .
+      dockerfile: RppWebApi/Dockerfile
+    container_name: rpp-webapi
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:8080
+      # Keep auth optional for local container tests unless overridden.
+      ApiSettings__RequireAuthentication: "false"
+      # ADR-007 / EO-458: relational engine selection (sql | postgres | mock | sharepoint).
+      Planning__Provider: ${RPP_PLANNING_PROVIDER:-postgres}
+      # Default reaches the compose Postgres service by DNS name on the compose network.
+      ConnectionStrings__DefaultConnection: ${RPP_DEFAULT_CONNECTION:-Host=rpp-postgres;Port=5432;Database=rpp;Username=rpp;Password=rpp}
+    ports:
+      - "5004:8080"
+    depends_on:
+      rpp-postgres:
+        condition: service_healthy
+    restart: unless-stopped

@@ -1,0 +1,20 @@
+.picker {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.message {
+  color: var(--app-text-muted);
+  margin: 0;
+  text-align: center;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}

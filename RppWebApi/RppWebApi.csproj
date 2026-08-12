@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>RppWebApi</RootNamespace>
+    <!-- EO-427 FR-427.4: the assembly version is derived from release.json at the repository root,
+         the single place the release label is written by hand. A hardcoded <Version> here is what
+         let /health report 1.0.0 for months without anyone noticing. -->
+    <ReleaseManifestPath>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)../release.json'))</ReleaseManifestPath>
+    <Version Condition="Exists('$(ReleaseManifestPath)')">$([System.Text.RegularExpressions.Regex]::Match($([System.IO.File]::ReadAllText('$(ReleaseManifestPath)')), '(?&lt;="version"\s*:\s*")\d+\.\d+\.\d+').Value)</Version>
+    <Authors>Voltar</Authors>
+    <Company>Voltar</Company>
+    <UserSecretsId>a3799113-03fe-41f5-94a1-338b753b650a</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Never ship the local-development overrides: appsettings.Development.json carries
+         ApiSettings:RequireAuthentication=false, which bypasses every [Authorize] check
+         (EO-405). Keeps working for `dotnet run`; only the publish output drops it. -->
+    <Content Update="appsettings.Development.json" CopyToPublishDirectory="Never" />
+    <!-- A stray publish folder inside the project directory gets globbed as content and
+         lands nested inside the deploy zip. Deploy output belongs in the repo-root publish/. -->
+    <Content Remove="publish/**" />
+    <None Remove="publish/**" />
+  </ItemGroup>
+
+  <!-- Fail loudly rather than silently falling back to 1.0.0 when the manifest is missing or its
+       version cannot be read. A wrong version in /health is a diagnosis dead end. -->
+  <Target Name="AssertReleaseVersionResolved" BeforeTargets="BeforeBuild">
+    <Error Condition="'$(Version)' == '' or '$(Version)' == '1.0.0'" Text="Could not derive the assembly version from $(ReleaseManifestPath). Ensure release.json exists at the repository root and carries a &quot;version&quot; of the form major.minor.patch (EO-427 FR-427.4)." />
+  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.29" />
+    <PackageReference Include="Microsoft.Graph" Version="6.5.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.11" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
+    <PackageReference Include="Microsoft.Identity.Web" Version="4.14.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.11" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Cronos" Version="0.9.0" />
+  </ItemGroup>
+
+</Project>

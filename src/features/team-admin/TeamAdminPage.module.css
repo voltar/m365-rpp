@@ -1,0 +1,643 @@
+.page {
+  display: grid;
+  gap: var(--app-space-lg);
+}
+
+.grid {
+  display: grid;
+  gap: var(--app-space-md);
+  grid-template-columns: minmax(260px, 0.8fr) minmax(320px, 1fr) minmax(320px, 1fr);
+}
+
+.card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  box-shadow: var(--app-shadow-2);
+  display: grid;
+  gap: var(--app-space-md);
+  padding: var(--app-space-lg);
+}
+
+.teamSelectionCard {
+  border-color: color-mix(in srgb, var(--app-brand-bg) 34%, var(--app-border));
+  box-shadow: var(--app-shadow-4);
+}
+
+.activeTeamSummary {
+  background: color-mix(in srgb, var(--app-brand-bg) 8%, var(--app-surface));
+  border: 1px solid color-mix(in srgb, var(--app-brand-bg) 20%, var(--app-border));
+  border-left: 4px solid var(--app-brand-bg);
+  border-radius: var(--app-radius-md);
+  display: grid;
+  gap: 3px;
+  padding: var(--app-space-sm) var(--app-space-md);
+}
+
+.activeTeamSummary span {
+  color: var(--app-brand-bg);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.activeTeamSummary strong {
+  color: var(--app-text);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.activeTeamSummary small {
+  color: var(--app-text-muted);
+  font-size: 12px;
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.cardHeader {
+  display: grid;
+  gap: 3px;
+}
+
+.cardTitle {
+  color: var(--app-text);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cardDescription {
+  color: var(--app-text-muted);
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.fieldList {
+  display: grid;
+  gap: var(--app-space-sm);
+}
+
+.fieldRow {
+  align-items: center;
+  display: grid;
+  gap: var(--app-space-sm);
+  grid-template-columns: minmax(130px, 0.45fr) minmax(0, 1fr);
+}
+
+.label {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.value {
+  color: var(--app-text);
+  font-size: 14px;
+}
+
+.field {
+  display: grid;
+  gap: var(--app-space-xs);
+}
+
+.field span {
+  color: var(--app-text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.field input,
+.field select {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text);
+  font: inherit;
+  min-height: 36px;
+  padding: 7px 9px;
+}
+
+.tableControl {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text);
+  font: inherit;
+  min-height: 32px;
+  min-width: 190px;
+  padding: 5px 8px;
+  width: 100%;
+}
+
+.checkboxRow {
+  align-items: center;
+  color: var(--app-text);
+  display: flex;
+  gap: var(--app-space-sm);
+  font-size: 14px;
+}
+
+.checkboxRow input {
+  accent-color: var(--app-brand-bg);
+  height: 16px;
+  width: 16px;
+}
+
+.entryTypeAddRow {
+  align-items: end;
+  display: grid;
+  gap: var(--app-space-sm);
+  grid-template-columns: minmax(220px, 1fr) auto;
+}
+
+.entryTypeGrid {
+  display: grid;
+  gap: 0;
+  grid-template-columns: minmax(220px, 1fr) repeat(3, minmax(120px, 0.45fr)) minmax(72px, 0.2fr);
+  overflow-x: auto;
+}
+
+.entryTypeHeader,
+.entryTypeRow {
+  border-bottom: 1px solid var(--app-border);
+}
+
+.entryTypeHeader {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0;
+}
+
+.entryTypeRow {
+  display: contents;
+}
+
+.entryTypeRow > * {
+  border-bottom: 1px solid var(--app-border);
+  min-height: 38px;
+  padding: var(--app-space-xs) var(--app-space-sm);
+}
+
+.entryTypeName {
+  align-items: center;
+  color: var(--app-text);
+  display: flex;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.entryTypeName input,
+.entryTypeName select {
+  background: var(--app-surface);
+  border: 1px solid transparent;
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text);
+  font: inherit;
+  min-height: 30px;
+  padding: 5px 7px;
+  width: 100%;
+}
+
+.entryTypeName input:hover,
+.entryTypeName select:hover {
+  border-color: var(--app-border);
+}
+
+.entryTypeName input:focus,
+.entryTypeName select:focus {
+  border-color: var(--app-brand-bg);
+  outline: 0;
+}
+
+.compactCheckbox {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.compactCheckbox input {
+  accent-color: var(--app-brand-bg);
+  height: 16px;
+  width: 16px;
+}
+
+.sortHeader {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  color: var(--app-text-muted);
+  cursor: pointer;
+  display: inline-flex;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  gap: 4px;
+  min-height: 34px;
+  padding: var(--app-space-xs) var(--app-space-sm);
+  text-align: left;
+  width: 100%;
+}
+
+.sortHeader:hover {
+  background: color-mix(in srgb, var(--app-text-muted) 8%, transparent);
+  color: var(--app-text);
+}
+
+.sortHeader svg {
+  color: var(--app-text-muted);
+  flex: none;
+  font-size: 14px;
+  margin-left: auto;
+}
+
+.multiTeamPicker {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  max-width: 280px;
+  min-height: 32px;
+  padding: 4px;
+}
+
+.teamPickerOption {
+  align-items: center;
+  background: color-mix(in srgb, var(--app-text-muted) 7%, var(--app-surface));
+  border: 1px solid var(--app-border);
+  border-radius: 4px;
+  color: var(--app-text);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 11px;
+  gap: 5px;
+  min-height: 24px;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+.teamPickerOption:hover {
+  border-color: color-mix(in srgb, var(--app-brand-bg) 32%, var(--app-border));
+}
+
+.teamPickerOption:has(input:checked) {
+  background: color-mix(in srgb, var(--app-brand-bg) 10%, var(--app-surface));
+  border-color: color-mix(in srgb, var(--app-brand-bg) 38%, var(--app-border));
+  color: var(--app-text);
+  font-weight: 600;
+}
+
+.teamPickerOption:has(input:disabled) {
+  cursor: not-allowed;
+  opacity: 0.48;
+}
+
+.teamPickerOption input {
+  accent-color: var(--app-brand-bg);
+  height: 12px;
+  margin: 0;
+  width: 12px;
+}
+
+.entryTypeActions {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.teamAddRow {
+  align-items: end;
+  display: grid;
+  gap: var(--app-space-sm);
+  grid-template-columns: minmax(220px, 1fr) minmax(160px, 0.5fr) auto;
+}
+
+.memberAddRow {
+  align-items: end;
+  display: grid;
+  gap: var(--app-space-sm);
+  grid-template-columns: minmax(260px, 0.45fr) auto;
+  justify-content: start;
+}
+
+.secondaryAction {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  min-height: 36px;
+  padding: 7px 12px;
+}
+
+.secondaryAction:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--app-brand-bg) 8%, var(--app-surface));
+  border-color: color-mix(in srgb, var(--app-brand-bg) 24%, var(--app-border));
+}
+
+.secondaryAction:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.dangerAction {
+  color: var(--colorPaletteRedForeground1, #b10e1e);
+}
+
+.dangerAction:hover:not(:disabled) {
+  color: var(--colorPaletteRedForeground1, #b10e1e);
+  background: color-mix(in srgb, var(--colorPaletteRedBackground1, #fde7e9) 70%, transparent);
+}
+
+.memberActionsHeader,
+.memberActionsCell {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  width: 52px;
+  min-width: 52px;
+  max-width: 52px;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-align: center;
+  background: var(--app-surface);
+}
+
+.memberActionsHeader {
+  z-index: 2;
+}
+
+.teamManagementGrid {
+  display: grid;
+  gap: 0;
+  /* EO-423/EO-424: compact color trigger column */
+  grid-template-columns: minmax(120px, 0.35fr) minmax(180px, 1fr) minmax(130px, 0.5fr) minmax(64px, 0.2fr) minmax(84px, 0.22fr) minmax(120px, 0.35fr) minmax(72px, 0.2fr);
+  overflow-x: auto;
+}
+
+/* EO-423/EO-424: compact color trigger + popover picker */
+.teamColorCell {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+  padding: var(--app-space-xs);
+}
+
+.teamColorCompactButton {
+  align-items: center;
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  height: 28px;
+  justify-content: center;
+  padding: 0;
+  width: 28px;
+}
+
+.teamColorCompactButton:hover {
+  border-color: var(--app-border-strong);
+}
+
+.teamColorCompactSwatch {
+  border: 1px solid var(--app-border-strong);
+  border-radius: 4px;
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+}
+
+.teamColorPopover {
+  display: grid;
+  gap: var(--app-space-sm);
+  min-width: 236px;
+}
+
+.teamColorPopoverHeader {
+  align-items: center;
+  color: var(--app-text-muted);
+  display: flex;
+  font-size: 12px;
+  font-weight: 700;
+  justify-content: space-between;
+}
+
+.teamColorPopoverPreview {
+  border: 1px solid var(--app-border-strong);
+  border-radius: 4px;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+}
+
+.teamColorFreeRow {
+  align-items: center;
+  display: grid;
+  gap: var(--app-space-xs);
+  grid-template-columns: minmax(100px, 1fr) auto;
+}
+
+.teamColorHexInput {
+  width: 100%;
+}
+
+.teamColorRecentRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.teamColorRecentButton {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  cursor: pointer;
+  display: inline-flex;
+  height: 26px;
+  justify-content: center;
+  padding: 0;
+  width: 26px;
+}
+
+.teamColorRecentButton:hover {
+  border-color: var(--app-border-strong);
+}
+
+.teamColorRecentSwatch {
+  border: 1px solid var(--app-border-strong);
+  border-radius: 4px;
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+}
+
+.teamColorNativePicker {
+  background: transparent;
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  cursor: pointer;
+  height: 30px;
+  padding: 2px;
+  width: 40px;
+}
+
+.teamColorSwatchAuto {
+  align-items: center;
+  display: flex;
+  font-size: 10px;
+  font-weight: 700;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.schoolHolidaySyncRow {
+  align-items: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-md);
+}
+
+.schoolHolidaySyncRow .field {
+  min-width: 180px;
+}
+
+.teamOrderCell {
+  align-items: center;
+  color: var(--app-text-muted);
+  display: flex;
+  font-size: 13px;
+  gap: var(--app-space-xs);
+}
+
+.dragHandle {
+  align-items: center;
+  background: transparent;
+  border: 0;
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text-muted);
+  cursor: grab;
+  display: inline-flex;
+  height: 28px;
+  justify-content: center;
+  padding: 0;
+  width: 28px;
+}
+
+.dragHandle:hover {
+  background: color-mix(in srgb, var(--app-text-muted) 10%, transparent);
+  color: var(--app-text);
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}
+
+.teamDropTarget {
+  box-shadow: inset 3px 0 0 var(--app-brand-bg);
+}
+
+.teamCell {
+  align-items: center;
+  color: var(--app-text);
+  display: flex;
+  font-size: 13px;
+}
+
+.tableScroller {
+  overflow-x: auto;
+}
+
+.table {
+  border-collapse: collapse;
+  min-width: 1380px;
+  width: 100%;
+}
+
+.table th,
+.table td {
+  border-bottom: 1px solid var(--app-border);
+  color: var(--app-text);
+  font-size: 13px;
+  padding: var(--app-space-sm);
+  text-align: left;
+  vertical-align: top;
+}
+
+.table th {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-sm);
+  justify-content: flex-end;
+}
+
+.toast {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border-strong);
+  border-radius: var(--app-radius-md);
+  box-shadow: var(--app-shadow-4);
+  color: var(--app-text);
+  justify-self: end;
+  padding: var(--app-space-sm) var(--app-space-md);
+}
+
+.autoSaveStatus {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  justify-self: end;
+}
+
+.error {
+  background: var(--app-danger-bg);
+  border: 1px solid color-mix(in srgb, var(--app-danger-text) 30%, var(--app-border));
+  border-radius: var(--app-radius-md);
+  color: var(--app-danger-text);
+  padding: var(--app-space-sm) var(--app-space-md);
+}
+
+@media (max-width: 1180px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fieldRow {
+    align-items: start;
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    justify-content: stretch;
+  }
+
+  .entryTypeAddRow {
+    grid-template-columns: 1fr;
+  }
+
+  .teamAddRow {
+    grid-template-columns: 1fr;
+  }
+}

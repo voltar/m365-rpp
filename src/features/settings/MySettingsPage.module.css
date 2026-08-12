@@ -1,0 +1,140 @@
+.page {
+  display: grid;
+  gap: var(--app-space-lg);
+}
+
+.grid {
+  display: grid;
+  gap: var(--app-space-md);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  box-shadow: var(--app-shadow-2);
+  display: grid;
+  gap: var(--app-space-md);
+  padding: var(--app-space-lg);
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.cardHeader {
+  display: grid;
+  gap: 3px;
+}
+
+.cardTitle {
+  color: var(--app-text);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cardDescription {
+  color: var(--app-text-muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.fieldList {
+  display: grid;
+  gap: var(--app-space-sm);
+}
+
+.fieldRow {
+  align-items: center;
+  display: grid;
+  gap: var(--app-space-sm);
+  grid-template-columns: minmax(140px, 0.4fr) minmax(0, 1fr);
+}
+
+.label {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.value {
+  color: var(--app-text);
+  font-size: 14px;
+}
+
+.muted {
+  color: var(--app-text-muted);
+}
+
+.field {
+  display: grid;
+  gap: var(--app-space-xs);
+}
+
+.field span {
+  color: var(--app-text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.field select {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text);
+  font: inherit;
+  min-height: 36px;
+  padding: 7px 9px;
+}
+
+.managed {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.warning {
+  background: var(--app-warning-bg);
+  border: 1px solid color-mix(in srgb, var(--app-warning-text) 30%, var(--app-border));
+  border-radius: var(--app-radius-md);
+  color: var(--app-warning-text);
+  font-size: 13px;
+  padding: var(--app-space-sm);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-sm);
+  justify-content: flex-end;
+}
+
+.toast {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border-strong);
+  border-radius: var(--app-radius-md);
+  box-shadow: var(--app-shadow-4);
+  color: var(--app-text);
+  justify-self: end;
+  padding: var(--app-space-sm) var(--app-space-md);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .fieldRow {
+    align-items: start;
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    justify-content: stretch;
+  }
+}

@@ -1,0 +1,21 @@
+.status {
+  align-items: center;
+  background: var(--app-bg-subtle);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  color: var(--app-text);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-sm);
+  margin: var(--app-space-md);
+  padding: var(--app-space-md);
+}
+
+.status strong {
+  font-weight: 700;
+}
+
+.status span {
+  color: var(--app-text-muted);
+  font-size: 13px;
+}

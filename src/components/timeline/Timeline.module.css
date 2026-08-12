@@ -1,0 +1,584 @@
+.frame {
+  --timeline-day-column: 36px;
+  --timeline-resource-column: 280px;
+
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  box-shadow: var(--app-shadow-2);
+  display: grid;
+  gap: 0;
+  overflow: hidden;
+}
+
+.toolbar {
+  align-items: center;
+  border-bottom: 1px solid var(--app-border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-sm);
+  justify-content: space-between;
+  padding: var(--app-space-sm) var(--app-space-md);
+}
+
+.toolbarText {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.toolbarTitle {
+  color: var(--app-text);
+  font-size: 16px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.submitNotice {
+  align-items: center;
+  border-bottom: 1px solid var(--app-border);
+  display: flex;
+  font-size: 13px;
+  gap: var(--app-space-sm);
+  justify-content: space-between;
+  padding: var(--app-space-sm) var(--app-space-md);
+}
+
+.submitNoticeSuccess {
+  background: rgba(19, 161, 14, 0.12);
+}
+
+.submitNoticeError {
+  background: rgba(196, 49, 75, 0.12);
+}
+
+.submitNotice button {
+  background: none;
+  border: none;
+  color: var(--app-text-muted);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+  padding: 0 var(--app-space-xs);
+}
+
+/* EO-421: compact controls inline in the title row — no separate control bar. */
+.toolbarControls {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-xs);
+}
+
+/* EO-422R: calendar month label inline in the toolbar (Outlook: Heute ∧ ∨ Monat). */
+.toolbarMonthLabel {
+  color: var(--app-text);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 var(--app-space-xs);
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* EO-412: comfortable touch targets on coarse-pointer devices. */
+@media (pointer: coarse) {
+  .toolbarControls select,
+  .filterBar input {
+    min-height: 40px;
+  }
+}
+
+.toolbarControls select,
+.filterBar input {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text);
+  font: inherit;
+  min-height: 32px;
+  padding: 5px 8px;
+}
+
+.filterBar {
+  border-bottom: 1px solid var(--app-border);
+  padding: var(--app-space-sm) var(--app-space-md);
+}
+
+.filterBar input {
+  max-width: 420px;
+  width: 100%;
+}
+
+.legend {
+  align-items: center;
+  border-top: 1px solid var(--app-border);
+  color: var(--app-text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  gap: var(--app-space-xs);
+  justify-content: flex-end;
+  padding: 4px var(--app-space-md);
+}
+
+.legend span {
+  align-items: center;
+  display: inline-flex;
+  gap: 5px;
+}
+
+.legend i {
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+}
+
+.legendSg {
+  background: color-mix(in srgb, var(--colorPaletteBlueBackground2) 60%, transparent);
+  color: var(--colorPaletteBlueForeground2);
+}
+
+.legendDubendorf {
+  background: color-mix(in srgb, var(--colorPaletteGreenBackground2) 60%, transparent);
+  color: var(--colorPaletteGreenForeground2);
+}
+
+.legendHoliday {
+  background: color-mix(in srgb, var(--colorPaletteMarigoldBackground2) 60%, transparent);
+  color: var(--colorPaletteMarigoldForeground2);
+}
+
+.legendHoliday2 {
+  background: color-mix(in srgb, var(--colorPaletteCranberryBackground2) 56%, transparent);
+  color: var(--colorPaletteCranberryForeground2);
+}
+
+.legendHoliday3 {
+  background: color-mix(in srgb, var(--colorPaletteDarkOrangeBackground2) 56%, transparent);
+  color: var(--colorPaletteDarkOrangeForeground2);
+}
+
+.legendSchool3 {
+  background: color-mix(in srgb, var(--colorPaletteCornflowerBackground2) 58%, transparent);
+  color: var(--colorPaletteCornflowerForeground2);
+}
+
+/* EO-423: team color swatches in the by-team legend */
+.legendTeamColor {
+  border-radius: 2px;
+  display: inline-block;
+  height: 12px;
+  width: 12px;
+}
+
+.toolbarMeta {
+  color: var(--app-text-muted);
+  font-size: 12px;
+}
+
+.viewport {
+  /* EO-421: the freed control-bar row goes to the viewport. */
+  max-height: min(880px, calc(100vh - 240px));
+  max-height: min(880px, calc(100dvh - 240px));
+  min-height: clamp(420px, calc(100vh - 285px), 700px);
+  min-height: clamp(420px, calc(100dvh - 285px), 700px);
+  overflow: auto;
+  position: relative;
+  /* No standard scrollbar-width here: it would override the ::-webkit-scrollbar
+     rules below in current Chromium/WebView2 and re-show the native horizontal
+     bar next to the sticky synchronized one (EO-421 double-scrollbar fix). */
+}
+
+/* The sticky synchronized scrollbar is the horizontal scroll affordance; hide the
+   native horizontal bar so only one is visible (Chromium/WebView2 — Teams host). */
+.viewport::-webkit-scrollbar {
+  height: 0;
+  width: 10px;
+}
+
+.viewport::-webkit-scrollbar-thumb {
+  background: var(--app-border);
+  border-radius: 5px;
+}
+
+.viewport::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.stickyHorizontalScrollbar {
+  background: color-mix(in srgb, var(--app-surface) 92%, transparent);
+  border-top: 1px solid var(--app-border);
+  bottom: 0;
+  height: 16px;
+  left: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: sticky;
+  right: 0;
+  scrollbar-width: thin;
+  z-index: 8;
+}
+
+.stickyHorizontalScrollbar::-webkit-scrollbar {
+  height: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-auto-rows: 68px;
+  grid-template-rows: 28px 34px 24px;
+  min-width: max-content;
+  position: relative;
+}
+
+.corner {
+  align-items: center;
+  background: var(--app-surface);
+  border-bottom: 1px solid var(--app-border);
+  border-right: 1px solid var(--app-border);
+  color: var(--app-text-muted);
+  display: flex;
+  font-size: 12px;
+  font-weight: 600;
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  left: 0;
+  padding: 0 var(--app-space-sm);
+  position: sticky;
+  top: 0;
+  z-index: 6;
+}
+
+.monthCell,
+.weekCell,
+.dayCell {
+  align-items: center;
+  background: var(--app-surface);
+  border-bottom: 1px solid var(--app-border);
+  border-right: 1px solid var(--app-border);
+  color: var(--app-text-muted);
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  z-index: 4;
+}
+
+.monthCell {
+  color: var(--app-text);
+  font-size: 12px;
+  font-weight: 600;
+  grid-row: 1;
+  top: 0;
+}
+
+.weekCell {
+  align-items: center;
+  flex-direction: column;
+  font-size: 10px;
+  grid-row: 2;
+  gap: 1px;
+  top: 28px;
+}
+
+.weekLabel {
+  color: var(--app-text);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.weekInterval {
+  color: var(--app-text-muted);
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.dayCell {
+  font-size: 10px;
+  grid-row: 3;
+  top: 62px;
+}
+
+.gridCell {
+  background: var(--app-surface);
+  border-bottom: 1px solid var(--app-border);
+  border-left: 0;
+  border-right: 1px solid var(--app-border);
+  border-top: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.gridCell:hover {
+  background: color-mix(in srgb, var(--app-brand-bg) 7%, var(--app-surface));
+}
+
+.publicHolidayDay {
+  background: color-mix(in srgb, var(--colorPaletteMarigoldBackground2) 44%, var(--app-surface));
+}
+
+.publicHolidayDay2 {
+  background: color-mix(in srgb, var(--colorPaletteCranberryBackground2) 36%, var(--app-surface));
+}
+
+.publicHolidayDay3 {
+  background: color-mix(in srgb, var(--colorPaletteDarkOrangeBackground2) 36%, var(--app-surface));
+}
+
+.schoolHolidaySgDay {
+  background: color-mix(in srgb, var(--colorPaletteBlueBackground2) 38%, var(--app-surface));
+}
+
+.schoolHolidayDubendorfDay {
+  background: color-mix(in srgb, var(--colorPaletteGreenBackground2) 38%, var(--app-surface));
+}
+
+.schoolHoliday3Day {
+  background: color-mix(in srgb, var(--colorPaletteCornflowerBackground2) 34%, var(--app-surface));
+}
+
+.weekend {
+  background: var(--app-bg-subtle);
+}
+
+.today {
+  background: color-mix(in srgb, var(--app-brand-bg) 10%, var(--app-surface));
+}
+
+.today::before {
+  background: var(--app-brand-bg);
+  bottom: 0;
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: 0;
+  width: 2px;
+}
+
+.summaryLabel,
+.weekSummary {
+  align-items: center;
+  background: var(--app-surface);
+  border-bottom: 1px solid var(--app-border);
+  border-right: 1px solid var(--app-border);
+  color: var(--app-text);
+  display: flex;
+  font-size: 12px;
+  font-weight: 700;
+  min-height: 24px;
+  padding: 0 var(--app-space-sm);
+}
+
+.summaryLabel {
+  left: 0;
+  position: sticky;
+  z-index: 3;
+}
+
+.weekSummary {
+  display: grid;
+  grid-template-rows: repeat(3, 24px);
+  justify-items: center;
+  padding: 0;
+}
+
+.weekSummary span,
+.weekSummary strong {
+  align-items: center;
+  border-bottom: 1px solid var(--app-border);
+  display: flex;
+  height: 24px;
+  justify-content: center;
+  width: 100%;
+}
+
+.weekSummary strong {
+  border-bottom: 0;
+}
+
+.statusOk::before,
+.statusWarning::before,
+.statusCritical::before {
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  content: "";
+  height: 10px;
+  width: 10px;
+}
+
+.statusOk {
+  color: var(--app-success-text);
+}
+
+.statusWarning {
+  color: var(--app-warning-text);
+}
+
+.statusCritical {
+  color: var(--app-danger-text);
+}
+
+.listView {
+  background: var(--app-surface);
+  display: grid;
+  gap: 0;
+  max-height: min(880px, calc(100vh - 240px));
+  max-height: min(880px, calc(100dvh - 240px));
+  min-height: clamp(420px, calc(100vh - 285px), 700px);
+  min-height: clamp(420px, calc(100dvh - 285px), 700px);
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.listGroup {
+  display: grid;
+}
+
+.listGroupHeader {
+  align-items: center;
+  background: var(--app-bg-subtle);
+  border-bottom: 1px solid var(--app-border);
+  color: var(--app-text);
+  display: flex;
+  font-size: 13px;
+  font-weight: 700;
+  justify-content: space-between;
+  min-height: 34px;
+  padding: 0 var(--app-space-md);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.listGroupHeader small {
+  color: var(--app-text-muted);
+  font-size: 11px;
+}
+
+.listRows {
+  display: grid;
+}
+
+.listRow {
+  align-items: center;
+  border-bottom: 1px solid var(--app-border);
+  display: grid;
+  gap: var(--app-space-md);
+  grid-template-columns: minmax(220px, 1.2fr) 120px minmax(260px, 2fr);
+  min-height: 64px;
+  padding: var(--app-space-sm) var(--app-space-md);
+}
+
+.listIdentity,
+.listEvent {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  gap: 3px;
+  padding: 0;
+  text-align: left;
+}
+
+.listIdentity strong {
+  color: var(--app-text);
+  font-size: 13px;
+}
+
+.listIdentity span,
+.listEvent small,
+.listEmpty {
+  color: var(--app-text-muted);
+  font-size: 12px;
+}
+
+.listVacation {
+  color: var(--app-text-muted);
+  display: grid;
+  font-size: 12px;
+  gap: 3px;
+}
+
+.listVacation strong {
+  color: var(--app-success-text);
+  font-size: 14px;
+}
+
+.listEvents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-xs);
+}
+
+.listEvent {
+  background: var(--app-bg-subtle);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  min-width: 150px;
+  padding: 5px 8px;
+}
+
+.listEvent span {
+  color: var(--app-text);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .frame {
+    --timeline-day-column: 34px;
+    --timeline-resource-column: 244px;
+  }
+
+  .toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .filterBar input {
+    max-width: none;
+  }
+
+  .legend {
+    justify-content: flex-start;
+  }
+
+  .viewport {
+    max-height: min(680px, calc(100vh - 300px));
+    max-height: min(680px, calc(100dvh - 300px));
+    min-height: 420px;
+  }
+
+  .listRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .frame {
+    --timeline-day-column: 32px;
+    --timeline-resource-column: 220px;
+  }
+
+  .submitNotice {
+    font-size: 12px;
+  }
+
+  .toolbar {
+    padding: var(--app-space-sm);
+  }
+
+  .filterBar {
+    padding: var(--app-space-sm);
+  }
+
+  .viewport {
+    max-height: min(640px, calc(100vh - 310px));
+    max-height: min(640px, calc(100dvh - 310px));
+    min-height: 380px;
+  }
+}

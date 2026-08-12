@@ -1,0 +1,38 @@
+# Docker build context is the repository root (see RppWebApi/Dockerfile).
+# Keep the context lean; only release.json + RppWebApi/ are needed for the API image.
+
+.git/
+.vs/
+.vscode/
+.idea/
+.grok/
+.githooks/
+.github/
+
+**/bin/
+**/obj/
+**/TestResults/
+**/node_modules/
+**/dist/
+**/publish/
+**/.env
+**/.env.*
+**/*.user
+**/*.suo
+**/*.swp
+**/*.tmp
+
+# Not part of the API image
+RppWebApi.Tests/
+tests/
+docs/
+scripts/
+src/
+public/
+teams-app-package/
+ENGINEERING-ORDERS/
+ARCHITECTURE-POLICY/
+coverage/
+
+*.md
+!release.json

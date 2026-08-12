@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Das Kalenderwesen – Wie wir die Zeit zähmen</title>
+<style>
+  :root{
+    --ink:#2b2420; --soft:#5c5148; --paper:#f6efe2; --card:#fffdf8;
+    --accent:#9c5a2d; --accent2:#c9962f; --line:#e3d8c4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Iowan Old Style",Georgia,"Times New Roman",serif;
+    font-size:19px; line-height:1.7;
+  }
+  .wrap{max-width:780px; margin:0 auto; padding:0 22px 80px;}
+  header.hero{
+    position:relative; height:min(58vh,460px); overflow:hidden;
+    display:flex; align-items:flex-end; margin-bottom:38px;
+    border-bottom:5px solid var(--accent2);
+  }
+  header.hero img{position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; filter:saturate(1.05);}
+  header.hero .veil{position:absolute; inset:0;
+    background:linear-gradient(180deg,rgba(20,12,6,.15),rgba(20,12,6,.78));}
+  header.hero .htext{position:relative; color:#fdf6e6; max-width:780px;
+    margin:0 auto; width:100%; padding:0 22px 30px;}
+  .kicker{letter-spacing:.32em; text-transform:uppercase; font-size:13px;
+    color:var(--accent2); font-family:Georgia,serif;}
+  h1{font-size:clamp(30px,6vw,50px); line-height:1.08; margin:.15em 0 .1em;
+    font-weight:700;}
+  .sub{font-size:19px; color:#f0e4cf; font-style:italic; margin:0;}
+  h2{font-size:27px; color:var(--accent); margin:2em 0 .4em; line-height:1.2;}
+  p{margin:0 0 1.15em;}
+  .lead{font-size:21px;}
+  .lead::first-letter{font-size:3.4em; float:left; line-height:.8;
+    padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  figure{margin:2em 0; }
+  figure img{width:100%; border-radius:8px; display:block;
+    box-shadow:0 10px 30px rgba(60,40,20,.18);}
+  figcaption{font-size:14.5px; color:var(--soft); font-style:italic;
+    margin-top:.6em; text-align:center;}
+  .pull{border-left:4px solid var(--accent2); background:var(--card);
+    padding:14px 20px; margin:1.8em 0; font-style:italic; font-size:20px;
+    color:#4a3b2c; border-radius:0 8px 8px 0;}
+  .box{background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:16px 20px; margin:1.6em 0;}
+  .box b{color:var(--accent);}
+  footer{border-top:1px solid var(--line); margin-top:50px; padding-top:22px;
+    font-size:13.5px; color:var(--soft); font-family:Georgia,serif;}
+  footer a{color:var(--accent);}
+  footer h3{font-size:15px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--ink);}
+  @media(max-width:560px){ body{font-size:18px;} }
+</style>
+</head>
+<body>
+<header class="hero">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Monolito%20de%20la%20Piedra%20del%20Sol.jpg?width=1400" alt="Aztekischer Sonnenstein">
+  <div class="veil"></div>
+  <div class="htext">
+    <div class="kicker">Folge 1 · Wie die Zeit funktioniert</div>
+    <h1>Das Kalenderwesen</h1>
+    <p class="sub">Wie Menschen aus Sonne, Mond und ein bisschen Mathematik die Zeit ordneten</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<p class="lead">Stell dir vor, du versprichst jemandem: „In achtzig Sonnenaufgängen treffen wir uns.“ Und du darfst dich nicht verzählen. Genau dieses Problem hat die Menschheit zehntausende Jahre lang gehabt. Ein Kalender ist nichts anderes als unser gemeinsam ausgehandelter Friedensvertrag mit dem Himmel: ein Regelwerk, das den endlosen Fluss der Zeit in handliche Portionen schneidet – Tage, Wochen, Monate, Jahre.</p>
+
+<p>Das Faszinierende daran: Die Natur hat uns drei Uhren geschenkt, die sich beharrlich weigern, miteinander zu sprechen.</p>
+
+<h2>Drei Himmelsuhren, die sich nicht einigen</h2>
+<p>Die erste Uhr ist die <b>Erde selbst</b>. Eine volle Drehung um die eigene Achse – und wir haben den Tag. Die grundlegendste, unbestreitbarste Einheit. Schon die ältesten Kulturen wussten: Wenn der Schatten eines Stabes am kürzesten ist, steht die Sonne im Zenit. Mittag. Eine Sonnenuhr aus dem alten Ägypten ist im Grunde nichts anderes als ein Schatten, der uns seit fünftausend Jahren die Zeit zeigt.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ancient-egyptian-sundial.jpg?width=1000" alt="Antike ägyptische Sonnenuhr">
+  <figcaption>Eine der ältesten bekannten Sonnenuhren aus dem alten Ägypten. Der Schatten eines Stabs war die erste „Zeigeruhr“ der Menschheit.</figcaption>
+</figure>
+
+<p>Die zweite Uhr ist der <b>Mond</b>. Er schwillt und schwindet in einem fast hypnotischen Rhythmus von rund 29½ Tagen – von Neumond zu Neumond. Diese Phasen sind so unübersehbar, dass fast jede Kultur der Welt irgendwann denselben Gedanken hatte: „Das muss der Monat sein.“ Kein Zufall, dass „Monat“ und „Mond“ (englisch <em>month</em> und <em>moon</em>) denselben Wortstamm teilen. Der Mond ist der älteste Kalender der Menschheit – und der schönste.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Moon%20phases%20en.jpg?width=1200" alt="Die Phasen des Mondes">
+  <figcaption>Der Mond durchläuft seine Phasen in etwa 29,5 Tagen – der natürliche Taktgeber für den Monat.</figcaption>
+</figure>
+
+<p>Die dritte Uhr ist wieder die Sonne, aber im großen Maßstab. Ein voller Umlauf der Erde um die Sonne ergibt das <b>Jahr</b> mit seinen Jahreszeiten. Für Bauern war das Überlebenswissen: Wann säen? Wann ernten? Wer das falsch einschätzte, verhungerte.</p>
+
+<figure>
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Seasons.svg?width=1100" alt="Die Erde umkreist die Sonne und erzeugt die Jahreszeiten">
+  <figcaption>Weil die Erdachse geneigt ist, entstehen auf ihrem Weg um die Sonne die vier Jahreszeiten.</figcaption>
+</figure>
+
+<div class="pull">Das ganze Drama des Kalenderwesens lässt sich in einem Satz zusammenfassen: Das Jahr dauert nicht genau 365 Tage, und der Monat passt nicht sauber ins Jahr.</div>
+
+<h2>Der Schönheitsfehler im System</h2>
+<p>Hier beginnt das eigentliche Drama. Ein Sonnenjahr dauert nicht 365 Tage, sondern <b>365,2422 Tage</b>. Zwölf Mondmonate ergeben nur etwa 354 Tage – elf Tage zu wenig.</p>
+<p>Die drei Uhren gehen also unweigerlich auseinander. Wer nichts unternimmt, dessen Kalender driftet langsam durch die Jahreszeiten. Irgendwann läge Weihnachten mitten im Hochsommer und die Aussaat im tiefsten Winter.</p>
+<p>Jede Kultur musste sich entscheiden, welcher Uhr sie die Treue hält:</p>
+<p><b>Reine Mondkalender</b> (wie der islamische) folgen dem Mond mit religiöser Strenge. Ihre Feste wandern dadurch gemächlich durch alle Jahreszeiten. Ramadan kann im Sommer oder im Winter liegen – und tut es auch.</p>
+<p><b>Sonnenkalender</b> (wie unserer) opfern die Mondtreue zugunsten der Jahreszeiten. Die Monate behalten ihren Namen, haben aber mit dem echten Mond kaum noch etwas zu tun.</p>
+<p><b>Lunisolare Kalender</b> (jüdisch, chinesisch, babylonisch) versuchen den Spagat. Sie schieben alle paar Jahre einen ganzen Schaltmonat ein – einen 13. Monat –, um beide Uhren wieder in Einklang zu bringen. Ein genialer, etwas unordentlicher Kompromiss.</p>
+
+<h2>Der geniale Trick: der Schalttag</h2>
+<p>Unsere Lösung für den lästigen Vierteltag ist elegant und ein wenig listig. Statt jedes Jahr um ein paar Stunden danebenzuliegen, sammeln wir die Bruchstücke und hängen sie alle vier Jahre als ganzen Tag an den Februar: den 29. Februar.</p>
+<p>Die Regel ist in drei Zeilen erzählt und dennoch ein kleines Meisterwerk der Präzision:</p>
+
+<div class="box">
+  <p style="margin:0"><b>Die Schaltjahr-Regel:</b> Ein Jahr ist ein Schaltjahr, wenn es durch 4 teilbar ist – <b>außer</b> es ist durch 100 teilbar, <b>es sei denn</b>, es ist sogar durch 400 teilbar. Deshalb war das Jahr 2000 ein Schaltjahr, 1900 aber nicht. Diese Feinjustierung hält den Kalender so genau, dass er erst nach mehr als dreitausend Jahren um einen einzigen Tag vom astronomischen Jahr abweicht.</p>
+</div>
+
+<p>Julius Cäsar ließ den Julianischen Kalender 46 v. Chr. einführen (mit Hilfe des Astronomen Sosigenes). Papst Gregor XIII. feilte 1582 die letzten Unebenheiten heraus. Seitdem leben wir im Gregorianischen Kalender – und die meisten Menschen auf dem Planeten wachen am selben Datum auf. Das ist keine Selbstverständlichkeit. Es ist ein zivilisatorisches Wunder.</p>
+
+<h2>Und woher kommt die Woche?</h2>
+<p>Die Woche ist der Sonderling. Sie hat <em>keine</em> astronomische Ursache. Weder Mond noch Sonne diktieren die Sieben-Tage-Struktur.</p>
+<p>Vermutlich stammt sie aus Babylon, wo man die sieben mit bloßem Auge sichtbaren „Wandelsterne“ verehrte: Sonne, Mond und die fünf klassischen Planeten. Ihre Namen stecken bis heute in unseren Wochentagen – mal direkt (Sonntag, Montag), mal über nordische und römische Götter umgeleitet (Dienstag = Tyr/Mars, Mittwoch = Wotan/Merkur usw.).</p>
+<p>Die Juden übernahmen das Sieben-Tage-Schema und gaben ihm mit dem Sabbat eine theologische Tiefe. Das Christentum und später der Islam verbreiteten es weltweit. Die Woche ist damit das rein menschliche Kapitel in einer ansonsten von Himmelskörpern diktierten Geschichte – ein Akt der kulturellen Willkür, der sich als erstaunlich robust erwiesen hat.</p>
+
+<p>Am Ende ist ein Kalender ein jahrtausendealtes Meisterwerk des Kompromisses. Ein Friedensvertrag zwischen Sonne, Mond und unserem unstillbaren Wunsch nach Ordnung. Dass heute Milliarden Menschen am selben Tag denselben Namen geben, ist das Ergebnis eines langen, erstaunlich klugen Ringens mit dem Himmel. Und es funktioniert so gut, dass die meisten von uns gar nicht mehr merken, wie radikal und wagemutig diese Erfindung eigentlich war.</p>
+
+<footer>
+  <h3>Bildquellen (Wikimedia Commons)</h3>
+  <p>Alle Abbildungen stammen aus Wikimedia Commons und stehen unter Public-Domain- oder Creative-Commons-Lizenzen. Bitte im Einzelfall die jeweilige Lizenz auf der verlinkten Dateiseite prüfen.</p>
+  <p>
+    Aztekischer Sonnenstein: <a href="https://commons.wikimedia.org/wiki/File:Monolito_de_la_Piedra_del_Sol.jpg">Monolito de la Piedra del Sol</a> ·
+    Sonnenuhr: <a href="https://commons.wikimedia.org/wiki/File:Ancient-egyptian-sundial.jpg">Ancient Egyptian sundial</a> ·
+    Mondphasen: <a href="https://commons.wikimedia.org/wiki/File:Moon_phases_en.jpg">Moon phases en</a> ·
+    Jahreszeiten: <a href="https://commons.wikimedia.org/wiki/File:Seasons.svg">Seasons.svg</a>
+  </p>
+</footer>
+</div>
+</body>
+</html>

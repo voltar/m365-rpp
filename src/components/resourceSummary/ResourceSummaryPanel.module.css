@@ -1,0 +1,141 @@
+.panel {
+  align-items: center;
+  background: var(--app-surface);
+  border: 0;
+  border-bottom: 1px solid var(--app-border);
+  border-right: 1px solid var(--app-border);
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  gap: var(--app-space-xs);
+  grid-template-columns: auto minmax(0, 1fr);
+  height: 68px;
+  left: 0;
+  padding: 6px var(--app-space-sm);
+  position: sticky;
+  text-align: left;
+  z-index: 3;
+}
+
+.panel:focus-visible {
+  outline: 2px solid var(--app-brand-bg);
+  outline-offset: -2px;
+}
+
+.panel:hover {
+  background: var(--app-surface-raised);
+}
+
+.content {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.topLine {
+  align-items: center;
+  display: flex;
+  gap: var(--app-space-xs);
+  min-width: 0;
+}
+
+.name {
+  color: var(--app-text);
+  font-size: 13px;
+  font-weight: 600;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.competencyLine {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.badge {
+  align-items: center;
+  border-radius: var(--app-radius-sm);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  max-width: 82px;
+  min-height: 18px;
+  overflow: hidden;
+  padding: 3px 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.organization {
+  background: var(--app-bg-subtle);
+  border: 1px solid var(--app-border);
+  color: var(--app-text-muted);
+}
+
+.competency {
+  align-items: center;
+  background: var(--app-bg-subtle);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text-muted);
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  max-width: 74px;
+  min-height: 17px;
+  overflow: hidden;
+  padding: 2px 6px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.overflow {
+  background: var(--app-warning-bg);
+  color: var(--app-warning-text);
+}
+
+.vacation {
+  align-items: center;
+  background: color-mix(in srgb, var(--app-success-bg) 35%, var(--app-surface));
+  border: 1px solid color-mix(in srgb, var(--app-success-text) 20%, var(--app-border));
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text-muted);
+  display: flex;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  gap: 8px;
+  line-height: 1;
+  min-height: 19px;
+  padding: 3px 6px;
+}
+
+.vacationLabel {
+  color: var(--app-text);
+  flex: 0 0 auto;
+  font-weight: 700;
+}
+
+.vacationMetric {
+  align-items: baseline;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 0;
+}
+
+.vacationMetric strong {
+  color: var(--app-text);
+  font-size: 11px;
+}
+
+.vacationRemaining strong {
+  color: var(--app-success-text);
+}

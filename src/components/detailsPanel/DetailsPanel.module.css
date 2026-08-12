@@ -1,0 +1,120 @@
+.overlay {
+  background: color-mix(in srgb, var(--app-text) 10%, transparent);
+  inset: 0;
+  position: fixed;
+  z-index: 30;
+}
+
+.panel {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  box-shadow: var(--app-shadow-4);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: calc(100vh - 92px);
+  height: calc(100dvh - 92px);
+  max-width: 420px;
+  position: fixed;
+  right: var(--app-space-xl);
+  top: 76px;
+  animation: slideIn 160ms ease-out;
+  width: min(420px, calc(100vw - 32px));
+  z-index: 31;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(24px);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.header {
+  align-items: center;
+  border-bottom: 1px solid var(--app-border);
+  display: flex;
+  justify-content: space-between;
+  padding: var(--app-space-xs) var(--app-space-md);
+}
+
+.title {
+  color: var(--app-text);
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.body {
+  display: grid;
+  gap: var(--app-space-sm);
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: var(--app-space-sm) var(--app-space-md);
+}
+
+.section {
+  display: grid;
+  gap: var(--app-space-sm);
+}
+
+.sectionTitle {
+  color: var(--app-text);
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.field {
+  display: grid;
+  gap: 3px;
+}
+
+.label {
+  color: var(--app-text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.value {
+  color: var(--app-text);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.identity {
+  align-items: center;
+  display: flex;
+  gap: var(--app-space-sm);
+}
+
+.identityText {
+  display: grid;
+  gap: 3px;
+}
+
+.identityName {
+  color: var(--app-text);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.identityMeta {
+  color: var(--app-text-muted);
+  font-size: 12px;
+}
+
+@media (max-width: 720px) {
+  .panel {
+    border-radius: 0;
+    height: 100vh;
+    height: 100dvh;
+    right: 0;
+    top: 0;
+    width: min(420px, 100vw);
+  }
+}

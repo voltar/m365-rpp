@@ -1,0 +1,166 @@
+.help {
+  display: flex;
+  flex-direction: column;
+  gap: var(--app-space-md);
+  min-height: 0;
+  height: 100%;
+}
+
+/* Panel variant: the panel header carries the title, so only the action row remains. */
+.panelActions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* The drawer is narrower than a page, so bubbles use the full width and the
+   composer stacks rather than sitting beside the send button. */
+.userMessage,
+.assistantMessage {
+  max-width: 100%;
+}
+
+.transcript {
+  display: flex;
+  flex-direction: column;
+  gap: var(--app-space-md);
+  flex: 1 1 auto;
+  min-height: 240px;
+  overflow-y: auto;
+  padding: var(--app-space-md);
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--app-space-md);
+}
+
+.introText {
+  margin: 0;
+  color: var(--app-text-muted);
+}
+
+.starters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-xs);
+}
+
+.starter {
+  justify-content: flex-start;
+  text-align: left;
+  max-width: 100%;
+}
+
+.userMessage,
+.assistantMessage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--app-space-xxs);
+  padding: var(--app-space-sm) var(--app-space-md);
+  border-radius: var(--app-radius-md);
+  max-width: min(680px, 100%);
+}
+
+.userMessage {
+  align-self: flex-end;
+  background: var(--app-brand-bg);
+  color: var(--app-brand-text);
+}
+
+.assistantMessage {
+  align-self: flex-start;
+  background: var(--app-bg-subtle);
+  color: var(--app-text);
+  border: 1px solid var(--app-border);
+}
+
+.author {
+  font-size: var(--fontSizeBase200);
+  font-weight: var(--fontWeightSemibold);
+  opacity: 0.85;
+}
+
+.messageText {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: var(--lineHeightBase300);
+}
+
+.sources {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--app-space-xs);
+  margin-top: var(--app-space-xxs);
+  padding-top: var(--app-space-xs);
+  border-top: 1px solid var(--app-border);
+}
+
+.sourcesLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--app-space-xxs);
+  font-size: var(--fontSizeBase200);
+  color: var(--app-text-muted);
+}
+
+.source {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--app-space-xxs);
+  font-size: var(--fontSizeBase200);
+  color: var(--app-text-muted);
+}
+
+.feedback {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--app-space-xxs);
+  margin-top: var(--app-space-xxs);
+}
+
+.feedbackLabel,
+.feedbackThanks {
+  font-size: var(--fontSizeBase200);
+  color: var(--app-text-muted);
+}
+
+.busy {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--app-space-xs);
+  color: var(--app-text-muted);
+  font-size: var(--fontSizeBase200);
+}
+
+.error {
+  margin: 0;
+  padding: var(--app-space-xs) var(--app-space-sm);
+  border-radius: var(--app-radius-sm);
+  background: var(--app-danger-bg);
+  color: var(--app-danger-text);
+}
+
+/* The drawer is narrow, so the composer stacks instead of putting the send
+   button beside a squeezed input. */
+.composer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--app-space-xs);
+}
+
+.input {
+  width: 100%;
+}
+
+.disclaimer {
+  margin: 0;
+  font-size: var(--fontSizeBase200);
+  color: var(--app-text-subtle);
+}

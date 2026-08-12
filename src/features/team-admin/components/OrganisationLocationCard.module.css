@@ -1,0 +1,107 @@
+.card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  display: grid;
+  gap: var(--app-space-md);
+  padding: var(--app-space-md) var(--app-space-lg);
+}
+
+.card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.card h5 {
+  color: var(--app-text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin: 0 0 var(--app-space-xs);
+  text-transform: uppercase;
+}
+
+.muted {
+  color: var(--app-text-muted);
+  font-size: 13px;
+  margin: 4px 0 0;
+}
+
+.listGrid {
+  display: grid;
+  gap: var(--app-space-lg);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.entryList {
+  display: grid;
+  gap: var(--app-space-xs);
+  justify-items: start;
+}
+
+.entryRow {
+  align-items: center;
+  display: flex;
+  gap: var(--app-space-xs);
+  width: 100%;
+}
+
+.entryRow input {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  color: var(--app-text);
+  flex: 1;
+  font: inherit;
+  min-height: 30px;
+  min-width: 0;
+  padding: 4px 8px;
+}
+
+.mappingSection {
+  display: grid;
+  gap: var(--app-space-xs);
+}
+
+.mappingRow {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-sm);
+}
+
+.rawValue {
+  font-size: 13px;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mappingRow select {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  color: var(--app-text);
+  font: inherit;
+  min-height: 30px;
+  padding: 4px 8px;
+}
+
+.okText {
+  color: var(--app-success-text);
+  font-size: 13px;
+  margin: 0;
+}
+
+.errorText {
+  color: var(--app-danger-text);
+  font-size: 13px;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}

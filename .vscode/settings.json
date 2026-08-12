@@ -1,0 +1,38 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "npx tsc": true
+    },
+    "sqltools.connections": [
+        {
+            "previewLimit": 200,
+            "driver": "SQLite",
+            "group": "Football",
+            "database": "C:\\DEVELOPMENT\\PYTHON\\DATA-ARC\\data\\EU_soccer.sqlite",
+            "name": "EU_Soccer"
+        },
+        {
+            "previewLimit": 200,
+            "driver": "SQLite",
+            "name": "UltimateFootball",
+            "group": "Football",
+            "database": "C:\\Users\\zanet\\football_db\\ultimate_football_db.sqlite"
+        },
+        {
+            "ssh": "Enabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "sshOptions": {
+                "port": 22,
+                "host": "voltar.ch",
+                "username": "deploy",
+                "password": "InH@FordFocus2021!"
+            },
+            "driver": "PostgreSQL",
+            "name": "HostEurope_DEV",
+            "group": "RPP",
+            "database": "postgres",
+            "username": "postgres"
+        }
+    ]
+}

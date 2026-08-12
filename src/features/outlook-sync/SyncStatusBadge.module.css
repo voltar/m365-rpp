@@ -1,0 +1,27 @@
+.badge {
+  border-radius: var(--app-radius-sm);
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 8px;
+}
+
+.notRequired {
+  background: var(--app-surface-muted);
+  color: var(--app-text-muted);
+}
+
+.pending {
+  background: var(--app-warning-bg);
+  color: var(--app-warning-text);
+}
+
+.synced {
+  background: var(--app-success-bg);
+  color: var(--app-success-text);
+}
+
+.failed {
+  background: var(--app-danger-bg);
+  color: var(--app-danger-text);
+}

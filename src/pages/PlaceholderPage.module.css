@@ -1,0 +1,282 @@
+.infoPage {
+  display: grid;
+  gap: var(--app-space-lg);
+}
+
+.hero {
+  background:
+    radial-gradient(circle at top right, rgba(98, 111, 255, 0.22), transparent 30%),
+    linear-gradient(135deg, rgba(18, 23, 43, 0.94), rgba(27, 37, 70, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--app-radius-xl);
+  box-shadow: var(--app-shadow-3);
+  color: #fff;
+  display: grid;
+  gap: var(--app-space-lg);
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.85fr);
+  overflow: hidden;
+  padding: clamp(20px, 3vw, 34px);
+}
+
+.heroContent {
+  display: grid;
+  gap: var(--app-space-sm);
+  align-content: start;
+}
+
+.kicker {
+  align-self: start;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.94);
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 6px 10px;
+  text-transform: uppercase;
+}
+
+.heroTitle {
+  color: #fff;
+  font-size: clamp(28px, 3vw, 40px);
+  line-height: 1.05;
+  margin: 0;
+  max-width: 12ch;
+}
+
+.heroDescription {
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 68ch;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-sm);
+  padding-top: var(--app-space-xs);
+}
+
+.heroPanel {
+  align-self: stretch;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--app-radius-lg);
+  display: grid;
+  gap: var(--app-space-sm);
+  padding: var(--app-space-lg);
+}
+
+.heroStat {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--app-radius-md);
+  display: grid;
+  gap: 4px;
+  padding: 14px 16px;
+}
+
+.heroStat span {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+}
+
+.heroStat strong {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.factSheet {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-xl);
+  box-shadow: var(--app-shadow-2);
+  display: grid;
+  gap: var(--app-space-md);
+  padding: var(--app-space-lg);
+}
+
+.factSheetHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--app-space-md);
+}
+
+.factSheetTitle {
+  color: var(--app-text);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.factSheetDescription {
+  color: var(--app-text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 4px 0 0;
+}
+
+.factGrid {
+  display: grid;
+  gap: var(--app-space-md);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.factItem {
+  background: linear-gradient(180deg, var(--app-surface), var(--app-bg-subtle));
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+}
+
+.factLabel {
+  color: var(--app-brand-bg);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.factValue {
+  color: var(--app-text);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.factItem p {
+  color: var(--app-text-muted);
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.actionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-sm);
+  justify-content: flex-end;
+}
+
+.runtimeCard,
+.demoDataCard {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-xl);
+  box-shadow: var(--app-shadow-2);
+  display: grid;
+  gap: var(--app-space-md);
+  padding: var(--app-space-lg);
+}
+
+.demoDataCard .actionRow {
+  justify-content: flex-start;
+}
+
+.runtimeHeader {
+  display: grid;
+  gap: 4px;
+}
+
+.runtimeTitle {
+  color: var(--app-text);
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.runtimeDescription {
+  color: var(--app-text-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.runtimeGrid {
+  display: grid;
+  gap: var(--app-space-md);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.runtimePanel {
+  background: linear-gradient(180deg, var(--app-surface), var(--app-bg-subtle));
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-lg);
+  display: grid;
+  gap: var(--app-space-sm);
+  padding: var(--app-space-md);
+}
+
+.runtimePanel h5 {
+  color: var(--app-text);
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.runtimeRows {
+  display: grid;
+  gap: 8px;
+}
+
+.runtimeRow {
+  align-items: start;
+  border-bottom: 1px dashed var(--app-border);
+  display: grid;
+  gap: var(--app-space-xs);
+  grid-template-columns: minmax(150px, 0.95fr) minmax(0, 1.05fr);
+  padding-bottom: 8px;
+}
+
+.runtimeRow:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.runtimeRow span {
+  color: var(--app-text-muted);
+  font-size: 12px;
+}
+
+.runtimeRow strong {
+  color: var(--app-text);
+  font-size: 12px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.runtimeMuted {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  margin: 0;
+}
+
+@media (max-width: 980px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .factGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .runtimeGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding: var(--app-space-lg);
+  }
+
+  .actionRow {
+    justify-content: stretch;
+  }
+}

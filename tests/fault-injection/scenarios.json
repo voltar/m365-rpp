@@ -1,0 +1,171 @@
+{
+  "$comment": "Fault-injection scenarios for tests/fault-injection/fault-proxy.mjs. IDs map to docs/resilience/fault-injection-testplan.md. Rule fields: path (substring or /regex/), method, skipFirst (leave the first N matching requests alone), onlyOnce, delayMs, blackhole, cut ('before'|'after'), respond {status, headers, body}, mutate ('pagingLoop'|'emptyObject'|'html'|'nullFields'|'truncate').",
+
+  "passthrough": {
+    "faultIds": [],
+    "description": "No fault. Baseline run - record what a healthy bootstrap looks like before injecting anything.",
+    "rules": []
+  },
+
+  "throttle-retry-after": {
+    "faultIds": ["FI-02"],
+    "description": "429 with Retry-After: 5 on the second membership page. Checks whether the header is honoured and the paging loop resumes.",
+    "rules": [
+      {
+        "path": "/api/planning/memberships",
+        "skipFirst": 1,
+        "respond": {
+          "status": 429,
+          "headers": { "Retry-After": "5" },
+          "body": { "code": "throttled", "message": "Injected: rate limit with Retry-After." }
+        }
+      }
+    ]
+  },
+
+  "throttle-bare": {
+    "faultIds": ["FI-08"],
+    "description": "429 without Retry-After on every planning read. Checks for exponential backoff with jitter versus a retry storm versus giving up.",
+    "rules": [
+      {
+        "path": "/api/planning/",
+        "respond": {
+          "status": 429,
+          "body": { "code": "throttled", "message": "Injected: rate limit without Retry-After." }
+        }
+      }
+    ]
+  },
+
+  "blackhole": {
+    "faultIds": ["FI-03"],
+    "description": "Request is accepted and never answered. Checks for a client-side timeout; without one the tab stays in 'loading' forever.",
+    "rules": [
+      { "path": "/api/planning/absences", "blackhole": true }
+    ]
+  },
+
+  "cut-connection": {
+    "faultIds": ["FI-03"],
+    "description": "Socket is destroyed after the request was received - the TCP equivalent of a dropped load balancer.",
+    "rules": [
+      { "path": "/api/planning/", "cut": "after" }
+    ]
+  },
+
+  "cut-after-request": {
+    "faultIds": ["FI-16"],
+    "description": "POST reaches the API, the answer never does. Verifies that repeating the write is safe (client-generated id + server-side upsert).",
+    "rules": [
+      { "path": "/api/planning/absences", "method": "POST", "onlyOnce": true, "cut": "after" }
+    ]
+  },
+
+  "flaky-5xx": {
+    "faultIds": ["FI-09"],
+    "description": "503 then 504 on planning reads.",
+    "rules": [
+      {
+        "path": "/api/planning/",
+        "respond": { "status": 503, "headers": { "Retry-After": "2" }, "body": { "code": "serviceUnavailable" } },
+        "alternate": { "status": 504, "body": { "code": "gatewayTimeout" } }
+      }
+    ]
+  },
+
+  "paging-loop": {
+    "faultIds": ["FI-04"],
+    "description": "Every page answers with the same nextPageToken. Checks for a page cap or repeated-token detection in listAllPages().",
+    "rules": [
+      { "path": "/api/planning/", "mutate": "pagingLoop" }
+    ]
+  },
+
+  "fail-settings": {
+    "faultIds": ["FI-05"],
+    "description": "500 on /settings only. Everything else is healthy - the plan is not empty, one call failed.",
+    "rules": [
+      {
+        "path": "/api/planning/settings",
+        "respond": { "status": 500, "body": { "code": "internalError" } }
+      }
+    ]
+  },
+
+  "fail-absences": {
+    "faultIds": ["FI-06"],
+    "description": "500 on /absences only. Checks whether the six successful parallel loads survive one failure (Promise.all versus allSettled).",
+    "rules": [
+      {
+        "path": "/api/planning/absences",
+        "method": "GET",
+        "respond": { "status": 500, "body": { "code": "internalError" } }
+      }
+    ]
+  },
+
+  "garbage-body": {
+    "faultIds": ["FI-13"],
+    "description": "200 OK with a body that is not the contract: empty object, then an HTML error page.",
+    "rules": [
+      { "path": "/api/planning/memberships", "mutate": "emptyObject" },
+      { "path": "/api/planning/events", "mutate": "html" }
+    ]
+  },
+
+  "null-fields": {
+    "faultIds": ["FI-13"],
+    "description": "Contract-shaped response whose item fields are null - the shape survives, the values do not.",
+    "rules": [
+      { "path": "/api/planning/", "mutate": "nullFields" }
+    ]
+  },
+
+  "truncated-body": {
+    "faultIds": ["FI-13"],
+    "description": "Response ends mid-JSON. Checks the parse-failure path rather than the status-code path.",
+    "rules": [
+      { "path": "/api/planning/", "mutate": "truncate" }
+    ]
+  },
+
+  "expire-token": {
+    "faultIds": ["FI-10"],
+    "description": "Every call answers 401 from a point in time onwards - the token went stale mid-session. Checks for exactly one refresh, not a 5-minute wall of 401s.",
+    "rules": [
+      {
+        "path": "/api/planning/",
+        "skipFirst": 2,
+        "respond": {
+          "status": 401,
+          "headers": { "WWW-Authenticate": "Bearer error=\"invalid_token\", error_description=\"The token expired\"" },
+          "body": { "code": "unauthenticated" }
+        }
+      }
+    ]
+  },
+
+  "forbidden": {
+    "faultIds": ["FI-11"],
+    "description": "403 on every planning read - consent revoked or the identity is refused.",
+    "rules": [
+      { "path": "/api/planning/", "respond": { "status": 403, "body": { "code": "forbidden" } } }
+    ]
+  },
+
+  "slow-graph-team": {
+    "faultIds": ["FI-21"],
+    "description": "60 s delay on membership reads. Against the API this shows the client side; run L3 to see the server-side global semaphore.",
+    "rules": [
+      { "path": "/api/planning/memberships", "delayMs": 60000 }
+    ]
+  },
+
+  "health-lies": {
+    "faultIds": ["FI-26"],
+    "description": "Everything fails except /health, which keeps answering 200. Mirrors what a real database outage looks like today.",
+    "rules": [
+      { "path": "/api/planning/", "respond": { "status": 500, "body": { "code": "internalError" } } }
+    ]
+  }
+}

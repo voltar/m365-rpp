@@ -1,0 +1,214 @@
+.page {
+  display: grid;
+  gap: var(--app-space-lg);
+}
+
+.grid {
+  display: grid;
+  gap: var(--app-space-md);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  box-shadow: var(--app-shadow-2);
+  display: grid;
+  gap: var(--app-space-md);
+  padding: var(--app-space-lg);
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+.cardHeader {
+  display: grid;
+  gap: 3px;
+}
+
+.cardTitleRow {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cardTitle {
+  color: var(--app-text);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cardDescription {
+  color: var(--app-text-muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.fieldList {
+  display: grid;
+  gap: var(--app-space-sm);
+}
+
+.fieldRow {
+  align-items: center;
+  display: grid;
+  gap: var(--app-space-sm);
+  grid-template-columns: minmax(160px, 0.4fr) minmax(0, 1fr) auto;
+}
+
+.label {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.value {
+  color: var(--app-text);
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.muted {
+  color: var(--app-text-muted);
+}
+
+.originBadge {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 999px;
+  color: var(--app-text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  justify-self: end;
+  padding: 2px 10px;
+  white-space: nowrap;
+}
+
+.originOverride {
+  border-color: color-mix(in srgb, var(--app-warning-text) 40%, var(--app-border));
+  color: var(--app-warning-text);
+}
+
+.formList {
+  display: grid;
+  gap: var(--app-space-md);
+}
+
+.testRow {
+  align-items: center;
+  display: grid;
+  gap: var(--app-space-sm);
+  grid-template-columns: minmax(140px, 0.35fr) minmax(0, 1fr) auto;
+}
+
+.testResultHealthy {
+  color: var(--app-success-text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.testResultFailed {
+  color: var(--app-danger-text);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.warning {
+  background: var(--app-warning-bg);
+  border: 1px solid color-mix(in srgb, var(--app-warning-text) 30%, var(--app-border));
+  border-radius: var(--app-radius-md);
+  color: var(--app-warning-text);
+  font-size: 13px;
+  padding: var(--app-space-sm);
+}
+
+.hint {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--app-space-sm);
+  justify-content: flex-end;
+}
+
+/* EO-424: Mailbox Sync entries */
+.syncEntries {
+  display: grid;
+  gap: var(--app-space-sm);
+}
+
+.sectionSubtitle {
+  color: var(--app-text);
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.syncEntryList {
+  display: grid;
+  gap: 4px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.syncEntryRow {
+  align-items: center;
+  display: grid;
+  gap: var(--app-space-sm);
+  grid-template-columns: 28px minmax(0, 1fr) auto;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--app-border);
+}
+
+.syncEntryRow:last-child {
+  border-bottom: none;
+}
+
+.syncEntryAction {
+  font-size: 14px;
+  text-align: center;
+}
+
+.syncEntrySubject {
+  color: var(--app-text);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.syncEntryDetail {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .fieldRow,
+  .testRow {
+    align-items: start;
+    grid-template-columns: 1fr;
+  }
+
+  .originBadge {
+    justify-self: start;
+  }
+
+  .actions {
+    justify-content: stretch;
+  }
+}

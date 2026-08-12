@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ressourcen planen – Folge 3</title>
+<style>
+  :root{
+    --ink:#2b2420; --soft:#5c5148; --paper:#f6efe2; --card:#fffdf8;
+    --accent:#9c5a2d; --accent2:#c9962f; --line:#e3d8c4;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:"Iowan Old Style",Georgia,"Times New Roman",serif;
+    font-size:19px; line-height:1.7;
+  }
+  .wrap{max-width:780px; margin:0 auto; padding:0 22px 80px;}
+  header.hero{
+    position:relative; height:min(58vh,460px); overflow:hidden;
+    display:flex; align-items:flex-end; margin-bottom:38px;
+    border-bottom:5px solid var(--accent2);
+  }
+  header.hero img{position:absolute; inset:0; width:100%; height:100%;
+    object-fit:cover; filter:saturate(1.05);}
+  header.hero .veil{position:absolute; inset:0;
+    background:linear-gradient(180deg,rgba(20,12,6,.15),rgba(20,12,6,.78));}
+  header.hero .htext{position:relative; color:#fdf6e6; max-width:780px;
+    margin:0 auto; width:100%; padding:0 22px 30px;}
+  .kicker{letter-spacing:.32em; text-transform:uppercase; font-size:13px;
+    color:var(--accent2); font-family:Georgia,serif;}
+  h1{font-size:clamp(30px,6vw,50px); line-height:1.08; margin:.15em 0 .1em;
+    font-weight:700;}
+  .sub{font-size:19px; color:#f0e4cf; font-style:italic; margin:0;}
+  h2{font-size:27px; color:var(--accent); margin:2.4em 0 .4em; line-height:1.2;}
+  h3{font-size:21px; color:var(--accent); margin:1.6em 0 .35em; line-height:1.25;}
+  p{margin:0 0 1.15em;}
+  .lead{font-size:21px;}
+  .lead::first-letter{font-size:3.4em; float:left; line-height:.8;
+    padding:6px 10px 0 0; color:var(--accent); font-weight:700;}
+  figure{margin:2em 0;}
+  figure img{width:100%; border-radius:8px; display:block;
+    box-shadow:0 10px 30px rgba(60,40,20,.18);}
+  figcaption{font-size:14.5px; color:var(--soft); font-style:italic;
+    margin-top:.6em; text-align:center;}
+  .pull{border-left:4px solid var(--accent2); background:var(--card);
+    padding:14px 20px; margin:1.8em 0; font-style:italic; font-size:20px;
+    color:#4a3b2c; border-radius:0 8px 8px 0;}
+  .box{background:var(--card); border:1px solid var(--line);
+    border-radius:10px; padding:16px 20px; margin:1.6em 0;}
+  .box b{color:var(--accent);}
+  .grid2{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin:2em 0;}
+  .grid2 figure{margin:0;}
+  ul{margin:0 0 1.2em; padding-left:1.3em;}
+  li{margin-bottom:.4em;}
+  .series-nav{
+    display:flex; justify-content:space-between; align-items:center;
+    gap:12px; margin:2.5em 0 1em; padding:14px 18px;
+    background:var(--card); border:1px solid var(--line); border-radius:10px;
+    font-size:15px; font-family:Georgia,serif;
+  }
+  .series-nav a{
+    color:var(--accent); text-decoration:none; font-weight:600;
+    white-space:nowrap;
+  }
+  .series-nav a:hover{text-decoration:underline;}
+  .series-nav .mid{color:var(--soft); letter-spacing:.08em; text-transform:uppercase;
+    font-size:12px; text-align:center;}
+  .series-nav .placeholder{visibility:hidden; pointer-events:none;}
+  footer{border-top:1px solid var(--line); margin-top:50px; padding-top:22px;
+    font-size:13.5px; color:var(--soft); font-family:Georgia,serif;}
+  footer a{color:var(--accent);}
+  footer h3{font-size:15px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--ink); border:none; margin:0 0 .6em; padding:0;}
+  hr{border:none; border-top:1px solid var(--line); margin:2.5em 0;}
+  @media(max-width:560px){
+    .grid2{grid-template-columns:1fr;}
+    body{font-size:18px;}
+    .series-nav{flex-direction:column; gap:8px;}
+  }
+</style>
+</head>
+<body>
+<header class="hero">
+  <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1400&q=80&auto=format&fit=crop" alt="Team plant gemeinsam am Whiteboard">
+  <div class="veil"></div>
+  <div class="htext">
+    <div class="kicker">Folge 3 · Vom Kalender zum Plan</div>
+    <h1>Ressourcen planen</h1>
+    <p class="sub">Wie man Zeit, Menschen und Mittel klug aufeinander abstimmt</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<nav class="series-nav">
+  <a href="2_geschichte_der_kalender.html">← Zurück</a>
+  <span class="mid">Teil 3 von 3</span>
+  <span class="placeholder">Fortsetzung →</span>
+</nav>
+
+<p class="lead">Ein Kalender sagt uns <em>wann</em> etwas passiert. Doch sobald mehrere Menschen gemeinsam etwas schaffen wollen – ein Projekt, einen Umzug, die Familienferien oder einfach den normalen Alltag –, reicht das Datum allein nicht mehr. Dann wird es interessant: <b>Wer</b> macht <b>was</b>, <b>womit</b> und <b>bis wann</b>?</p>
+
+<p>Genau das ist Ressourcenplanung. Sie ist die natürliche Fortsetzung des Kalenders: Wo dieser die Zeit ordnet, ordnet die Planung alles, was innerhalb dieser Zeit begrenzt vorhanden ist.</p>
+
+<h2>Was man eigentlich plant</h2>
+<p>Es geht um drei ganz alltägliche Dinge:</p>
+<ul>
+  <li><b>Menschen</b> und ihre Zeit</li>
+  <li><b>Termine</b> und Fristen</li>
+  <li><b>Die Mittel</b>, die man braucht</li>
+</ul>
+<p>Mittel können ganz unterschiedlich aussehen: Im Haushalt die Waschmaschine, das Auto oder der Platz im Kühlschrank. In einer Werkstatt die Maschinen und das Material. In einer Forschungsanstalt die Messgeräte, die Labore und die begrenzte Zeit an bestimmten Apparaten. In der IT die Server, die Lizenzen, die Entwicklerzeit oder einfach die Aufmerksamkeit der Leute, die gerade an mehreren Baustellen gleichzeitig ziehen.</p>
+<p>Planung bedeutet nichts anderes, als diese Dinge so zu verteilen, dass am Ende niemand dauernd überlastet ist und das Wichtige trotzdem rechtzeitig fertig wird.</p>
+
+<figure>
+  <img src="https://images.unsplash.com/photo-1435527173128-983b87201f4d?w=1200&q=80&auto=format&fit=crop" alt="Offener Monatsplaner">
+  <figcaption>Der Monatsplaner – oder der Waschküchen-Kalender: die einfachste und älteste Form der Ressourcenplanung.</figcaption>
+</figure>
+
+<h2>Der Waschküchen-Kalender</h2>
+<p>Bevor es schicke Apps und bunte Boards gab, hing in vielen Haushalten schon der Waschküchen-Kalender. Ein schlichter Wandkalender neben der Waschmaschine oder am Kühlschrank. Mit Bleistift beschrieben: Wer wäscht wann, wann kommt Besuch, wer hat am Samstag den Wagen, wann ist der Kindergeburtstag, und dass am 15. der Sperrmüll raus muss.</p>
+<p>Das war Planung in Reinform. Man sah auf einen Blick, ob zwei wichtige Dinge in derselben Woche landeten, ob jemand an drei Stellen gleichzeitig sein sollte, und ob noch Luft für etwas Neues da war. Und weil er für alle sichtbar hing, konnte niemand sagen: „Das hab ich nicht gewusst.“</p>
+
+<div class="pull">Genau das ist der Kern guter Planung: Dinge sichtbar machen, bevor sie zum Problem werden. Ob an der Waschküchentür, an der Laborwand oder im gemeinsamen Team-Kalender – das Prinzip bleibt dasselbe.</div>
+
+<h2>Warum es ohne Überblick oft schiefgeht</h2>
+<p>Ohne irgendeine Form von gemeinsamer Übersicht passiert erstaunlich oft dasselbe: Zwei wichtige Sachen fallen in derselben Woche. Dieselbe Person soll an mehreren Orten gleichzeitig sein. Am Ende sind Zeit, Geld, Geräte oder Nerven aufgebraucht, bevor das Eigentliche geschafft ist.</p>
+<p>Ein einfacher Plan – und sei es nur der Kalender an der Waschküchentür – zwingt dazu, diese Konflikte früh zu sehen und zu entscheiden: Was hat Vorrang? Was kann warten? Brauchen wir Hilfe? Oder müssen wir etwas streichen?</p>
+
+<h2>Ein paar einfache Regeln, die fast immer helfen</h2>
+<div class="box">
+  <p><b>Puffer lassen.</b> Kein Plan hält der Wirklichkeit stand, wenn jede Minute verplant ist.</p>
+  <p><b>Prioritäten setzen.</b> Wenn alles gleich wichtig ist, ist nichts wichtig.</p>
+  <p><b>Menschen und Geräte nicht bis zum Anschlag einplanen.</b> Realistisch bleiben. Es passiert immer etwas Unvorhergesehenes – ob jemand krank wird, ein Messgerät ausfällt oder ein Server streikt.</p>
+  <p style="margin-bottom:0"><b>Regelmäßig nachschauen und anpassen.</b> Ein Plan, den man nie wieder anschaut, ist wertlos. Lieber kurz und oft als einmal perfekt und dann vergessen.</p>
+</div>
+
+<p>Und noch etwas Entscheidendes: Ein Plan allein ändert nichts. Erst wenn jemand ihn an die Hand nimmt und dafür sorgt, dass er auch gelebt wird, wird aus dem Zettel an der Wand oder dem Eintrag im Kalender wirkliche Ordnung.</p>
+
+<figure>
+  <img src="https://images.unsplash.com/photo-1577394732330-38cef75bc388?w=1200&q=80&auto=format&fit=crop" alt="Markierung auf einem Kalender">
+  <figcaption>Am Ende zählt nicht der schönste Plan, sondern der, den alle verstehen und den man tatsächlich benutzt.</figcaption>
+</figure>
+
+<p>Manchmal reicht dafür schon ein Kalender an der Waschküchentür. Manchmal hängt er im Labor oder lebt in einem gemeinsamen digitalen Kalender. Das Prinzip bleibt das gleiche.</p>
+
+<p>So schließt sich der Kreis: Der Kalender hat den Menschen beigebracht, die Zeit zu ordnen. Die Planung geht einen Schritt weiter und ordnet alles, was wir in dieser Zeit tun wollen. Beide folgen demselben Wunsch – aus dem täglichen Durcheinander ein wenig verlässliche Ordnung zu machen. Und beide funktionieren am besten, wenn sie einfach genug bleiben, dass man sie wirklich pflegt.</p>
+
+<hr>
+
+<h2>Zum Schluss</h2>
+
+<h3>Kalender heißt eigentlich „ausrufen“</h3>
+<p>Am Anfang steht ein Zuruf. Lateinisch <em>calare</em> heißt „ausrufen“ – und genau das tat ein Priester: Er rief die neue Mondsichel aus und damit den Anfang des Monats. Aus diesem Ruf wurde unser Wort <em>Kalender</em> (verwandt mit dem englischen <em>to call</em>).</p>
+
+<p>Und ein Ruf will gehört werden. Sagt einer „Jetzt geht’s los“, richten sich die anderen danach – gleicher Monat, gleicher Takt, gleiche Feiertage. Viel mehr macht ein Kalender im Kern gar nicht: Er bringt viele Leute auf denselben Rhythmus.</p>
+
+<p>Dass das früher Priestersache war, gibt dem Ganzen seinen feierlichen Beiklang. Interessanterweise gehören auch „Ferien“ zur selben Wortwurzel wie lateinisch <em>fēstus</em> („festlich“, vgl. „Fest“) und <em>fānum</em> („heiliger Ort, Tempel“). Zugrunde liegt die indogermanische Wurzel <em>dhēs-</em>, die religiös-kultische Begriffe bezeichnet. Ein Ferienkalender – ein feierlicher Ruf!</p>
+
+<h3>Alle schauen nach oben</h3>
+<p>Egal wie das Wort lautet – „Ausruf“, „Tage-Zählen“, „Mondrechnung“ oder „Zurechtrücken“ –, am Ende taten alle dasselbe: Sie schauten nach oben und schrieben mit. Die Sonne ging auf und unter, der Mond wurde rund und wieder schmal, die Jahreszeiten kamen zuverlässig wieder. Das war die Vorlage, an die sich jeder Kalender hielt.</p>
+
+<p>Ein Kalender ist deshalb nichts Geheimnisvolles. Er ist die Mitschrift eines Musters, das ohnehin schon da war. Die Ägypter lasen es am Stern Sirius ab, die Babylonier am Mond, die Bauern überall an Aussaat und Ernte. Niemand hat diese Ordnung erfunden – man hat sie nur bemerkt und in handliche Kästchen übertragen.</p>
+
+<p>Das Praktische daran: Verschiedene Kulturen gaben der Sache verschiedene Namen und verschiedene Startpunkte, buchstabierten aber alle denselben Himmel. Ein chinesischer Bauer, ein römischer Priester und ein Maya-Astronom hätten sich über vieles gestritten – über den Lauf von Sonne und Mond wären sie sich erstaunlich schnell einig geworden.</p>
+
+<p>Kurz gesagt: Der Himmel gab den Takt vor, und die Menschheit hat ihn nachnotiert – jede Kultur in ihrer eigenen Handschrift.</p>
+
+<div style="margin:3em 0 2.5em; text-align:center; padding:28px 24px; background:var(--card); border:1px solid var(--line); border-radius:12px; box-shadow:0 8px 24px rgba(60,40,20,.08);">
+  <p style="margin:0; font-size:22px; line-height:1.55; color:var(--accent); font-style:italic; letter-spacing:.01em;">
+    Kein Plan, und sei er noch so schlau,<br>
+    ersetzt des Tüchtigen Glück genau.
+  </p>
+</div>
+
+<nav class="series-nav">
+  <a href="2_geschichte_der_kalender.html">← Zurück</a>
+  <span class="mid">Teil 3 von 3</span>
+  <span class="placeholder">Fortsetzung →</span>
+</nav>
+
+<footer>
+  <h3>Bildquellen</h3>
+  <p><b>Unsplash</b> (Unsplash-Lizenz, frei nutzbar): Team am Whiteboard, Monatsplaner und Kalender-Markierung.</p>
+</footer>
+</div>
+</body>
+</html>

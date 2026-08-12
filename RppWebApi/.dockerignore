@@ -1,0 +1,17 @@
+# Prefer building with repository-root context (see root .dockerignore and
+# RppWebApi/Dockerfile). This file only applies if someone builds with
+# context ./RppWebApi — that path cannot see release.json and will fail EO-427.
+
+bin/
+obj/
+.vs/
+.vscode/
+.git/
+.gitignore
+Dockerfile*
+*.md
+*.user
+*.suo
+*.swp
+*.tmp
+TestResults/

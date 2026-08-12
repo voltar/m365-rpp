@@ -1,0 +1,4 @@
+{
+  "$comment": "EO-427: the single authoritative release label. The Teams manifest version, the stamped runtime-config releaseVersion and the RppWebApi assembly version are all derived from or validated against this value. Do not confuse this file with dist/release.json, which is generated build metadata.",
+  "version": "4.0.9"
+}

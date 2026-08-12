@@ -1,0 +1,132 @@
+.page {
+  display: grid;
+  gap: var(--app-space-lg);
+}
+
+.grid {
+  display: grid;
+  gap: var(--app-space-md);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-md);
+  box-shadow: var(--app-shadow-2);
+  display: grid;
+  gap: var(--app-space-md);
+  padding: var(--app-space-lg);
+}
+
+.card h3 {
+  color: var(--app-text);
+  font-size: 17px;
+  margin: 0;
+}
+
+.card p {
+  color: var(--app-text-muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+.metricGrid {
+  display: grid;
+  gap: var(--app-space-sm);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.metric {
+  background: color-mix(in srgb, var(--app-brand-bg) 5%, var(--app-surface));
+  border: 1px solid color-mix(in srgb, var(--app-brand-bg) 16%, var(--app-border));
+  border-radius: var(--app-radius-sm);
+  display: grid;
+  gap: 4px;
+  padding: var(--app-space-sm);
+}
+
+.metric span {
+  color: var(--app-text-muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.metric strong {
+  color: var(--app-text);
+  font-size: 22px;
+}
+
+.fieldGrid {
+  display: grid;
+  gap: var(--app-space-sm);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field {
+  display: grid;
+  gap: var(--app-space-xs);
+}
+
+.field span {
+  color: var(--app-text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.field input,
+.field select,
+.field textarea {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text);
+  font: inherit;
+  min-height: 36px;
+  padding: 7px 9px;
+}
+
+.warning {
+  background: var(--app-warning-bg);
+  border: 1px solid color-mix(in srgb, var(--app-warning-text) 30%, var(--app-border));
+  border-radius: var(--app-radius-md);
+  color: var(--app-warning-text);
+  font-size: 13px;
+  padding: var(--app-space-sm);
+}
+
+.historyList {
+  display: grid;
+  gap: var(--app-space-sm);
+}
+
+.historyItem {
+  border-top: 1px solid var(--app-border);
+  display: grid;
+  gap: 2px;
+  padding-top: var(--app-space-sm);
+}
+
+.historyItem strong {
+  color: var(--app-text);
+}
+
+.historyItem span {
+  color: var(--app-text-muted);
+  font-size: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: var(--app-space-sm);
+  justify-content: flex-end;
+}
+
+@media (max-width: 900px) {
+  .grid,
+  .metricGrid,
+  .fieldGrid {
+    grid-template-columns: 1fr;
+  }
+}

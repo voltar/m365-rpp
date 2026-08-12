@@ -1,0 +1,389 @@
+/* EO-422: Outlook/Teams-style calendar grid — Fluent UI design language.
+   Structure: header row + one grid per week; multi-day bars render as one
+   continuous element in an absolutely positioned per-week overlay (like Outlook). */
+
+.calendar {
+  --calendar-kw-column: 40px;
+  --calendar-day-header-height: 30px;
+
+  display: flex;
+  flex-direction: column;
+  /* EO-422R: the calendar owns the vertical space (Outlook/Teams-like) — the
+     month navigation lives in the timeline toolbar, no extra chrome here. */
+  max-height: calc(100vh - 185px);
+  max-height: calc(100dvh - 185px);
+  min-height: 480px;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+/* ── Day-of-week header row ─────────────────────────────────────── */
+.headerRow {
+  background: var(--app-surface);
+  border-bottom: 1px solid var(--app-border-strong);
+  display: grid;
+  grid-template-columns: var(--calendar-kw-column) repeat(7, 1fr);
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.kwHeader {
+  align-items: center;
+  color: var(--app-text-subtle);
+  display: flex;
+  font-size: 11px;
+  font-weight: 600;
+  justify-content: center;
+  padding: 6px 2px;
+}
+
+.dayHeader {
+  border-left: 1px solid var(--app-border);
+  color: var(--app-text-muted);
+  font-size: 12px;
+  font-weight: 400;
+  overflow: hidden;
+  padding: 6px 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Week rows ──────────────────────────────────────────────────── */
+.weeks {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.weekRow {
+  display: grid;
+  flex: 1;
+  grid-template-columns: var(--calendar-kw-column) repeat(7, 1fr);
+  min-height: 128px;
+  position: relative;
+}
+
+.weekRow:last-child > div {
+  border-bottom: none;
+}
+
+/* ── KW column ──────────────────────────────────────────────────── */
+.kwCell {
+  border-bottom: 1px solid var(--app-border);
+  color: var(--app-text-subtle);
+  font-size: 10px;
+  font-weight: 500;
+  padding: 8px 2px;
+  text-align: center;
+}
+
+/* ── Day cells ──────────────────────────────────────────────────── */
+.dayCell {
+  background: var(--app-surface);
+  border-bottom: 1px solid var(--app-border);
+  border-left: 1px solid var(--app-border);
+  min-width: 0;
+  padding: 4px 8px;
+  transition: background 80ms ease;
+}
+
+.dayCell:hover {
+  background: var(--app-bg-subtle);
+}
+
+.dayNumber {
+  align-items: center;
+  color: var(--app-text);
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 400;
+  height: 22px;
+  justify-content: center;
+  min-width: 22px;
+  white-space: nowrap;
+}
+
+/* ── Out-of-month days ──────────────────────────────────────────── */
+.outOfMonth {
+  background: var(--app-bg);
+}
+
+.outOfMonth:hover {
+  background: var(--app-bg-subtle);
+}
+
+.outOfMonth .dayNumber {
+  color: var(--app-text-subtle);
+}
+
+/* ── Today (Teams/Outlook: brand outline on the cell + number badge) ── */
+.today {
+  box-shadow: inset 0 0 0 2px var(--app-brand-bg);
+}
+
+.today .dayNumber {
+  background: var(--app-brand-bg);
+  border-radius: 999px;
+  color: var(--app-brand-text);
+  font-weight: 600;
+  padding: 0 6px;
+}
+
+/* ── Holiday shading (same tones as the timeline) ───────────────── */
+.holidayPublic {
+  background: color-mix(in srgb, var(--colorPaletteMarigoldBackground2) 30%, var(--app-surface));
+}
+
+.holidayPublic2 {
+  background: color-mix(in srgb, var(--colorPaletteCranberryBackground2) 28%, var(--app-surface));
+}
+
+.holidayPublic3 {
+  background: color-mix(in srgb, var(--colorPaletteDarkOrangeBackground2) 28%, var(--app-surface));
+}
+
+.holidaySg {
+  background: color-mix(in srgb, var(--colorPaletteBlueBackground2) 30%, var(--app-surface));
+}
+
+.holidayDubendorf {
+  background: color-mix(in srgb, var(--colorPaletteGreenBackground2) 30%, var(--app-surface));
+}
+
+.holidaySchool3 {
+  background: color-mix(in srgb, var(--colorPaletteCornflowerBackground2) 28%, var(--app-surface));
+}
+
+/* ── Per-week event overlay (continuous bars) ───────────────────── */
+.weekOverlay {
+  bottom: 4px;
+  display: grid;
+  align-content: start;
+  grid-auto-rows: 24px;
+  grid-template-columns: repeat(7, 1fr);
+  left: var(--calendar-kw-column);
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  row-gap: 2px;
+  top: var(--calendar-day-header-height);
+}
+
+.eventBar {
+  align-items: center;
+  background: var(--app-event-vacation-bg);
+  border: none;
+  border-left: 3px solid var(--app-event-vacation-border);
+  border-radius: 4px;
+  color: var(--app-event-vacation-text);
+  cursor: pointer;
+  display: flex;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  height: 22px;
+  justify-content: center;
+  line-height: 1;
+  margin: 0 8px;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0 6px;
+  pointer-events: auto;
+  text-align: center;
+  transition: box-shadow 80ms ease, filter 80ms ease;
+  white-space: nowrap;
+}
+
+.eventBar:hover {
+  box-shadow: var(--app-shadow-2);
+  filter: brightness(0.96);
+  z-index: 2;
+}
+
+.eventBar:active {
+  filter: brightness(0.9);
+}
+
+.barLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Clamped edges: the bar continues in the previous/next week — square the
+   corner and run flush to the row edge, like Outlook. */
+.barClampedStart {
+  border-bottom-left-radius: 0;
+  border-left-width: 0;
+  border-top-left-radius: 0;
+  margin-left: 0;
+}
+
+.barClampedEnd {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  margin-right: 0;
+}
+
+/* ── Event type colors (matching TimelineEvent palette) ─────────── */
+.eventVacation {
+  background: var(--app-event-vacation-bg);
+  border-color: var(--app-event-vacation-border);
+  color: var(--app-event-vacation-text);
+}
+
+.eventCompensation {
+  background: var(--app-event-compensation-bg);
+  border-color: var(--app-event-compensation-border);
+  color: var(--app-event-compensation-text);
+}
+
+.eventEducation,
+.eventUnpaidLeave,
+.eventOtherAbsence {
+  background: var(--app-event-other-absence-bg);
+  border-color: var(--app-event-other-absence-border);
+  color: var(--app-event-other-absence-text);
+}
+
+.eventMilitary {
+  background: var(--app-event-military-bg);
+  border-color: var(--app-event-military-border);
+  color: var(--app-event-military-text);
+}
+
+.eventHomeOffice {
+  background: var(--app-event-home-office-bg);
+  border-color: var(--app-event-home-office-border);
+  color: var(--app-event-home-office-text);
+}
+
+.eventTraining {
+  background: var(--app-event-training-bg);
+  border-color: var(--app-event-training-border);
+  color: var(--app-event-training-text);
+}
+
+.eventProject {
+  background: var(--app-event-project-bg);
+  border-color: var(--app-event-project-border);
+  color: var(--app-event-project-text);
+}
+
+.eventMaintenance {
+  background: var(--app-event-maintenance-bg);
+  border-color: var(--app-event-maintenance-border);
+  color: var(--app-event-maintenance-text);
+}
+
+.eventOnCall {
+  background: var(--app-event-on-call-bg);
+  border-color: var(--app-event-on-call-border);
+  color: var(--app-event-on-call-text);
+}
+
+.eventStandby {
+  background: var(--app-event-standby-bg);
+  border-color: var(--app-event-standby-border);
+  color: var(--app-event-standby-text);
+}
+
+/* ── Approval status indicators (same language as the Gantt bars) ── */
+.approvalDraft {
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, currentColor 10%, transparent),
+    color-mix(in srgb, currentColor 10%, transparent) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+.approvalPending {
+  outline: 1px dashed currentColor;
+  outline-offset: -1px;
+}
+
+.approvalRejected {
+  opacity: 0.55;
+}
+
+/* ── Overflow indicator ("+n weitere", per day) ─────────────────── */
+.overflow {
+  align-self: center;
+  color: var(--app-text-muted);
+  font-size: 11px;
+  font-weight: 500;
+  overflow: hidden;
+  padding: 0 8px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .dayHeader {
+    font-size: 11px;
+    padding: 5px 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  .calendar {
+    --calendar-kw-column: 28px;
+    --calendar-day-header-height: 26px;
+  }
+
+  .weekRow {
+    min-height: 92px;
+  }
+
+  .weekOverlay {
+    grid-auto-rows: 20px;
+  }
+
+  .dayCell {
+    padding: 3px 4px;
+  }
+
+  .dayNumber {
+    font-size: 11px;
+    height: 18px;
+    min-width: 18px;
+  }
+
+  .eventBar {
+    font-size: 10px;
+    height: 18px;
+    margin: 0 4px;
+    padding: 0 4px;
+  }
+
+  .overflow {
+    font-size: 10px;
+    padding: 0 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .weekRow {
+    min-height: 72px;
+  }
+
+  .weekOverlay {
+    grid-auto-rows: 16px;
+    row-gap: 1px;
+  }
+
+  .dayNumber {
+    font-size: 10px;
+  }
+
+  .eventBar {
+    font-size: 9px;
+    height: 15px;
+    margin: 0 2px;
+    padding: 0 3px;
+  }
+}

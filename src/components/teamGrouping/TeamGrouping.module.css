@@ -1,0 +1,54 @@
+.groupHeader {
+  align-items: center;
+  background: var(--app-bg-subtle);
+  border-bottom: 1px solid var(--app-border);
+  border-right: 1px solid var(--app-border);
+  color: var(--app-text);
+  display: flex;
+  grid-column: 1 / -1;
+  min-height: 34px;
+  position: sticky;
+  top: 86px;
+  z-index: 2;
+}
+
+.headerContent {
+  align-items: center;
+  background: var(--app-bg-subtle);
+  border-right: 1px solid var(--app-border);
+  display: flex;
+  gap: var(--app-space-xs);
+  height: 100%;
+  left: 0;
+  min-width: var(--timeline-resource-column, 260px);
+  padding: 0 var(--app-space-xs);
+  position: sticky;
+  z-index: 3;
+}
+
+.teamName {
+  color: var(--app-text);
+  font-size: 12px;
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.countBadge {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: var(--app-radius-sm);
+  color: var(--app-text-muted);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  margin-left: auto;
+  padding: 3px 6px;
+}
+
+.rule {
+  border-top: 1px solid var(--app-border);
+  flex: 1;
+  margin-left: var(--app-space-sm);
+}
