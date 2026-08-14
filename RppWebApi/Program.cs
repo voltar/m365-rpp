@@ -286,12 +286,19 @@ app.Use(async (context, next) =>
 
     if (!context.Response.Headers.ContainsKey("Content-Security-Policy"))
     {
+        // frame-ancestors must allow the New Teams client (*.cloud.microsoft). Multiple CSP
+        // headers (e.g. Kestrel + nginx) are AND-combined by the browser — a short list here
+        // blocks Teams even when nginx allows it, and Chrome shows "refused to connect".
         context.Response.Headers["Content-Security-Policy"] =
             "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; " +
             "img-src 'self' data: blob: https://graph.microsoft.com https://*.sharepoint.com; " +
             "connect-src 'self' https://graph.microsoft.com https://*.sharepoint.com; " +
             "font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; " +
-            "frame-ancestors https://teams.microsoft.com https://*.teams.microsoft.com https://*.sharepoint.com; " +
+            "frame-ancestors 'self' " +
+            "https://teams.microsoft.com https://*.teams.microsoft.com " +
+            "https://*.microsoft365.com https://*.office.com " +
+            "https://outlook.office.com https://outlook.office365.com " +
+            "https://*.cloud.microsoft https://*.sharepoint.com; " +
             "upgrade-insecure-requests";
     }
 

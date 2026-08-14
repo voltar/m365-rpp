@@ -1,5 +1,5 @@
 import type { Logger } from "../../core/logging";
-import { isTopLevelBrowsingContext } from "../host/detectHostKind";
+import { detectHostKind } from "../host/detectHostKind";
 import { validateCriticalRuntimeConfiguration } from "./runtimeConfigValidation.js";
 
 export type PlanningMembershipSource = "mock" | "graph";
@@ -287,12 +287,14 @@ function resolveRuntimeConfigurationValues(
   let effectivePlanningMembershipSource = planningMembershipSource;
   let effectiveApprovalMode = approvalMode;
 
-  // Public demo hosts keep api/m365 inside a Teams tab (iframe / Teams UA) but show mock
-  // when the URL is opened as a top-level browser page. Top-level is the reliable signal:
-  // detectHostKind() used to treat Teams chat referrers and window.microsoftTeams (set by
-  // our own teamsApp.ts) as Teams and skipped mock — only the localStorage hack then worked.
+  // Public demo hosts (e.g. rpp.example.com): plain browser → mock; Teams/SharePoint keep
+  // deployment providers (api/m365). Host kind is the gate — not top-level alone. Teams desktop
+  // often runs the tab as a top-level WebView (self === top); treating that as "browser" forced
+  // mock inside Teams. detectHostKind no longer treats chat referrers or window.microsoftTeams
+  // as Teams (those false positives are fixed). Prefer contentUrl ?host=teams as a hard signal.
   // Local overrides still win.
-  if (standaloneBrowserUsesMock.value && isTopLevelBrowsingContext()) {
+  const hostKind = detectHostKind();
+  if (standaloneBrowserUsesMock.value && hostKind === "browser") {
     if (planningDataSource.origin !== "localOverride") {
       effectivePlanningDataSource = { value: "mock", origin: "standaloneBrowser" };
     }
@@ -310,6 +312,7 @@ function resolveRuntimeConfigurationValues(
       component: "runtimeConfig",
       operation: "applyStandaloneBrowserMock",
       details: {
+        hostKind,
         deploymentPlanningDataSource: planningDataSource.value,
         effectivePlanningDataSource: effectivePlanningDataSource.value
       }

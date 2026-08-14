@@ -10,10 +10,12 @@
   (`runtime-config-HOSTEUROPE.js`) so `https://rpp.example.com` shows the demo product
   outside Teams without a localStorage hack. Local overrides still win. Docs:
   `docs/deploy/deployment.md`, `docs/deploy/kestrel-hosteurope.md`.
-  Fix: mock now applies on **top-level** browser sessions (not only when `detectHostKind`
-  is `browser`). Teams chat referrers and `window.microsoftTeams` (set by our own
-  `teamsApp.ts`) no longer suppress the demo; host detection no longer treats those as
-  proof of a Teams tab.
+  Mock applies only when `detectHostKind()` is `browser` (not “top-level frame” alone —
+  Teams desktop WebViews are top-level and must keep API). Teams packages should use
+  `contentUrl` `…/?host=teams` so the tab is detected even without iframe ancestors.
+  Chat referrers and `window.microsoftTeams` are not treated as proof of a Teams tab.
+  CSP `frame-ancestors` includes New Teams hosts (`*.cloud.microsoft`, `*.microsoft365.com`,
+  `*.office.com`) so the tab is not blocked with “refused to connect”.
 
 - Docs: **Release Notes 4.0.9 — Friends & Family (final)** für Endnutzer DE/EN
   (`docs/release-notes/4.0.9-friends-family.*`); Kurzverweis in `friends-family.*`.
