@@ -26,9 +26,8 @@ export function detectHostKind(): HostKind {
 
 /**
  * True when this document is a top-level browsing context (address bar URL),
- * not an embedded iframe/webview child. Used by standaloneBrowserUsesMock so a
- * plain browser visit — including "Open in browser" from a Teams chat link —
- * gets the mock demo while a Teams tab (always framed) keeps API providers.
+ * not an embedded iframe child. Do not use this alone to choose mock vs API:
+ * Teams desktop tabs are often top-level WebViews. Prefer `detectHostKind()`.
  */
 export function isTopLevelBrowsingContext(): boolean {
   if (typeof window === "undefined") {
@@ -67,7 +66,7 @@ function isLikelyTeamsHost(): boolean {
     }
 
     // Desktop / mobile Teams webviews sometimes omit ancestorOrigins; UA still marks the client.
-    // Do not use document.referrer: opening rpp.example.com from a Teams chat link in an
+    // Do not use document.referrer: opening the public demo URL from a Teams chat link in an
     // external browser keeps a Teams referrer but is a standalone browser session.
     if (isTeamsClientUserAgent(navigator.userAgent)) {
       return true;

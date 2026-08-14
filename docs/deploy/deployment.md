@@ -152,13 +152,13 @@ Behaviour:
 
 | Session | Effective providers |
 |---------|---------------------|
-| Microsoft Teams tab (framed / Teams client) | deployment values (`api` / `graph` / `m365`) |
-| SharePoint embed (framed) | deployment values (unchanged) |
-| Top-level browser URL (address bar), including “open link from Teams chat” | `mock` / `mock` / `mock` when the flag is `true` |
+| Microsoft Teams tab (`detectHostKind() === "teams"`) | deployment values (`api` / `graph` / `m365`) |
+| SharePoint embed | deployment values (unchanged) |
+| Standalone browser (`detectHostKind() === "browser"`), including “open link from Teams chat” | `mock` / `mock` / `mock` when the flag is `true` |
 
-The mock switch keys off a **top-level browsing context** (`window.self === window.top`), not chat referrers or `window.microsoftTeams` (our bundle may set that outside Teams). Local overrides still win. Origin badge in App Admin: **Standalone browser (mock demo)**.
+The mock switch keys off **host kind** (ADR-004), not “top-level frame” alone. Teams desktop often runs the tab as a top-level WebView (`self === top`); that must still keep API providers. Host detection uses query (`?host=teams` on the Teams `contentUrl`), `ancestorOrigins`, and Teams client user-agent — not chat referrers or `window.microsoftTeams` (our bundle may set that outside Teams). Local overrides still win. Origin badge in App Admin: **Standalone browser (mock demo)**.
 
-The Host Europe packaging template enables the flag (`public/config/runtime-config-HOSTEUROPE.js`).
+Host Europe packages set `contentUrl` to `https://rpp.example.com/?host=teams` and leave `websiteUrl` as the plain origin (browser/demo). The packaging template enables the flag (`public/config/runtime-config-HOSTEUROPE.js`).
 
 #### Local mock override without App Admin (developer console)
 

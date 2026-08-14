@@ -35,7 +35,7 @@ SPFx/Teams hosting must enforce the same or stricter headers at the hosting laye
 Recommended production headers:
 
 ```text
-Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://graph.microsoft.com https://*.sharepoint.com; connect-src 'self' https://graph.microsoft.com https://*.sharepoint.com; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors https://teams.microsoft.com https://*.teams.microsoft.com https://*.sharepoint.com
+Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://graph.microsoft.com https://*.sharepoint.com; connect-src 'self' https://graph.microsoft.com https://*.sharepoint.com; font-src 'self' data:; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self' https://teams.microsoft.com https://*.teams.microsoft.com https://*.microsoft365.com https://*.office.com https://outlook.office.com https://outlook.office365.com https://*.cloud.microsoft https://*.sharepoint.com
 Referrer-Policy: no-referrer
 X-Content-Type-Options: nosniff
 Permissions-Policy: camera=(), microphone=(), geolocation=()
